@@ -20,116 +20,153 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="single-crumb" href="art-slert-hwtest.html"><span class="single-contents-icon"></span>SLE RT Hardware Testing</a><div class="bubble-corner active-contents"></div></div><div class="clearme"></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="single-crumb" href="art-slert-hwtest.html"><span class="single-contents-icon"></span>Show Contents: SLE RT Hardware Testing</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="clearme"></div></div><div class="clearme"></div></div><div class="active-contents bubble"><div class="bubble-container"><div id="_bubble-toc"><ol><li class="inactive"><a href="art-slert-hwtest.html#sec-hwtest-basics"><span class="number">1 </span><span class="name">General Testing Procedure and Analysis</span></a></li><li class="inactive"><a href="art-slert-hwtest.html#sec-hwtest-cyct"><span class="number">2 </span><span class="name">Determining Latencies with <code class="command">cyclictest</code></span></a></li><li class="inactive"><a href="art-slert-hwtest.html#sec-hwtest-hwlat"><span class="number">3 </span><span class="name">Determining Latencies with the Hardware Latency Detector</span></a></li><li class="inactive"><a href="art-slert-hwtest.html#sec-hwtest-more"><span class="number">4 </span><span class="name">For More Information</span></a></li><li class="inactive"><a href="art-slert-hwtest.html#id-1.4.3.8"><span class="number">5 </span><span class="name">Legal Notice</span></a></li><li class="inactive"><a href="art-slert-hwtest.html#id-1.4.3.9"><span class="number">6 </span><span class="name">GNU Free Documentation License</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_toc-bubble-wrap"></div><div id="_content" class="draft "><div class="documentation"><div xml:lang="en" class="article " id="art-slert-hwtest" lang="en"><div class="titlepage"><div><h6 class="version-info"><span class="productname "><span class="productname"><span class="phrase">SUSE Linux Enterprise Real Time</span></span></span> <span class="productnumber "><span class="productnumber"><span class="phrase">15 SP2</span></span></span></h6><div><h1 class="title">SLE RT Hardware Testing <a title="Permalink" class="permalink" href="art-slert-hwtest.html#">#</a></h1></div><div><h3 class="subtitle"><em><span class="productname"><span class="phrase">SUSE Linux Enterprise Real Time</span></span> <span class="productnumber"><span class="phrase">15 SP2</span></span></em></h3></div><div class="abstract "><p> Using <span class="productname"><span class="phrase">SUSE® Linux Enterprise Real Time</span></span> needs real-time capable hardware.
-        This paper describes the tools that can be used to determine if
-        a specific hardware has the needed real-time capabilities.
-        Specifically, we describe <code class="systemitem">cyclictest</code> and
-          <span class="quote">“<span class="quote ">hardware latency detector</span>”</span> and the ways to
-        analyze their results. </p><p> Both the <code class="systemitem">cyclictest</code> and the
-       <span class="quote">“<span class="quote ">hardware latency detector</span>”</span> are
-        parts of the <span class="productname"><span class="phrase">SUSE Linux Enterprise Real Time</span></span> product. </p></div><div class="date"><span class="imprint-label">Publication Date: </span>02/20/2021
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="single-crumb" href="art-slert-hwtest.html"><span class="single-contents-icon"></span>SLE RT Hardware Testing</a><div class="bubble-corner active-contents"></div></div><div class="clearme"></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="single-crumb" href="art-slert-hwtest.html"><span class="single-contents-icon"></span>Show Contents: SLE RT Hardware Testing</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="clearme"></div></div><div class="clearme"></div></div><div class="active-contents bubble"><div class="bubble-container"><div id="_bubble-toc"><ol><li class="inactive"><a href="art-slert-hwtest.html#sec-hwtest-basics"><span class="number">1 </span><span class="name">General Testing Procedure and Analysis</span></a></li><li class="inactive"><a href="art-slert-hwtest.html#sec-hwtest-cyct"><span class="number">2 </span><span class="name">Determining Latencies with <code class="command">cyclictest</code></span></a></li><li class="inactive"><a href="art-slert-hwtest.html#sec-hwtest-hwlat"><span class="number">3 </span><span class="name">Determining Latencies with the Hardware Latency Detector</span></a></li><li class="inactive"><a href="art-slert-hwtest.html#sec-hwtest-more"><span class="number">4 </span><span class="name">For More Information</span></a></li><li class="inactive"><a href="art-slert-hwtest.html#id-1.4.3.8"><span class="number">5 </span><span class="name">Legal Notice</span></a></li><li class="inactive"><a href="art-slert-hwtest.html#id-1.4.3.9"><span class="number">6 </span><span class="name">GNU Free Documentation License</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_toc-bubble-wrap"></div><div id="_content" class="draft "><div class="documentation"><div xml:lang="en" class="article " id="art-slert-hwtest" lang="en"><div class="titlepage"><div><h6 class="version-info"><span class="productname "><span class="productname"><span class="phrase">SUSE Linux Enterprise Real Time</span></span></span> <span class="productnumber "><span class="productnumber"><span class="phrase">15 SP2</span></span></span></h6><div><h1 class="title">SLE RT Hardware Testing <a title="Permalink" class="permalink" href="art-slert-hwtest.html#">#</a></h1></div><div><h3 class="subtitle"><em><span class="productname"><span class="phrase">SUSE Linux Enterprise Real Time</span></span> <span class="productnumber"><span class="phrase">15 SP2</span></span></em></h3></div><div class="abstract "><p>
+    Using <span class="productname"><span class="phrase">SUSE® Linux Enterprise Real Time</span></span> needs real-time capable hardware. This paper
+    describes the tools that can be used to determine if a specific hardware
+    has the needed real-time capabilities. Specifically, we describe
+    <code class="systemitem">cyclictest</code> and <span class="quote">“<span class="quote ">hardware latency
+    detector</span>”</span> and the ways to analyze their results.
+   </p><p>
+    Both the <code class="systemitem">cyclictest</code> and the <span class="quote">“<span class="quote ">hardware
+    latency detector</span>”</span> are parts of the <span class="productname"><span class="phrase">SUSE Linux Enterprise Real Time</span></span> product.
+   </p></div><div class="date"><span class="imprint-label">Publication Date: </span>05/07/2021
 </div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="art-slert-hwtest.html#sec-hwtest-basics"><span class="number">1 </span><span class="name">General Testing Procedure and Analysis</span></a></span></dt><dt><span class="sect1"><a href="art-slert-hwtest.html#sec-hwtest-cyct"><span class="number">2 </span><span class="name">Determining Latencies with <code class="command">cyclictest</code></span></a></span></dt><dt><span class="sect1"><a href="art-slert-hwtest.html#sec-hwtest-hwlat"><span class="number">3 </span><span class="name">Determining Latencies with the Hardware Latency Detector</span></a></span></dt><dt><span class="sect1"><a href="art-slert-hwtest.html#sec-hwtest-more"><span class="number">4 </span><span class="name">For More Information</span></a></span></dt><dt><span class="sect1"><a href="art-slert-hwtest.html#id-1.4.3.8"><span class="number">5 </span><span class="name">Legal Notice</span></a></span></dt><dt><span class="sect1"><a href="art-slert-hwtest.html#id-1.4.3.9"><span class="number">6 </span><span class="name">GNU Free Documentation License</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-hwtest-basics"><div class="titlepage"><div><div><h2 class="title"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">General Testing Procedure and Analysis</span> <a title="Permalink" class="permalink" href="art-slert-hwtest.html#sec-hwtest-basics">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>art_slert_hw_testing.xml</li><li><span class="ds-label">ID: </span>sec-hwtest-basics</li></ul></div></div></div></div><p>
-    The first task you need to do when evaluating hardware for real-time
-    is described in the following procedure:
-   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Determine the largest allowable latency of the system using
-       the hardware latency detector:</p><ol type="a" class="substeps "><li class="step "><p>
-          Set the machine for real-time performance.
-        </p><p> Some servers have special settings for real-time, but they are
-        strictly vendor specific. </p></li><li class="step "><p>
-         Set everything to lowest possible latency.
-        </p></li><li class="step "><p>
-         Turn memory scrubbing down to as little as possible.
-        </p></li><li class="step "><p>
-          Use the hardware latency detector (see <a class="xref" href="art-slert-hwtest.html#sec-hwtest-hwlat" title="3. Determining Latencies with the Hardware Latency Detector">Section 3, “Determining Latencies with the Hardware Latency Detector”</a> for details).
-        </p></li></ol></li><li class="step "><p>Check the latencies measured by the hardware latency detector. </p><p>The latencies should be low enough to support your real-time
-       application with enough of a margin to meet its deadlines. If it is
-       not the case, even after tweaking the machine setting for better
-       real-time performance, the hardware is not good enough for your
-       application. Use a different hardware.
-      </p></li><li class="step "><p>
-       Measure latencies using <code class="command">cyclictest</code> (see <a class="xref" href="art-slert-hwtest.html#sec-hwtest-cyct" title="2. Determining Latencies with cyclictest">Section 2, “Determining Latencies with <code class="command">cyclictest</code>”</a> for details).
+   The first task you need to do when evaluating hardware for real-time is
+   described in the following procedure:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Determine the largest allowable latency of the system using the hardware
+     latency detector:
+    </p><ol type="a" class="substeps "><li class="step "><p>
+       Set the machine for real-time performance.
       </p><p>
-       In a typical situation
-       the latencies measured with <code class="command">cyclictest</code> should be
-       mostly the same from those measured by the hardware latency
-       detector. Latencies measured by <code class="command">cyclictest</code>
-       include the latencies caused by the operating system and are thus
-       closer to latencies measured in a real computing situation. 
-      </p></li></ol></div></div><p>
-      If you encounter a significant difference between latencies
-      measured by both methods there might be a software bug involved.
-      Such latencies are a significant part caused by the operating system,
-      not the hardware. In such a case, contact SUSE for support.
-    </p></div><div class="sect1 " id="sec-hwtest-cyct"><div class="titlepage"><div><div><h2 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Determining Latencies with <code class="command">cyclictest</code></span> <a title="Permalink" class="permalink" href="art-slert-hwtest.html#sec-hwtest-cyct">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>art_slert_hw_testing.xml</li><li><span class="ds-label">ID: </span>sec-hwtest-cyct</li></ul></div></div></div></div><p> The <code class="command">cyclictest</code> command is part of the
-      real-time kernel test suite contained in the
-        <span class="package ">rt-tests</span> RPM package. This package is distributed
-     as part of <span class="productname"><span class="phrase">SUSE Linux Enterprise Real Time</span></span>. </p><p> Make sure to be <code class="systemitem">root</code> or use <code class="command">sudo</code> to
-      run <code class="command">cyclictest</code>.</p><p> When <code class="command">cyclictest</code> is running, it shows the
-      number of cycles performed and the minimal, actual, average and
-      maximum latency measured. To change the behaviour of
-     <code class="command">cyclictest</code>, the following list gives you an overview
-     of the available options:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
-      The values shown are in microseconds. To use nanoseconds instead
-      of microseconds, use the 
-      <code class="option">--nsec</code> option.
-     </p></li><li class="listitem "><p>
-      By default, <code class="command">cyclictest</code> runs forever. The number of
-      cycles can be limited with the
-      <code class="option">--loops=<em class="replaceable ">NUMBER_OF_CYCLES</em></code>
-      option.
-     </p></li><li class="listitem "><p>
-      By default, only one thread is run. You can use the 
-      <code class="option">--threads=<em class="replaceable ">NUMBER_OF_THREADS</em></code>
-      option to set the number of threads used. Without specifying a
-      number, all available processors are used. With the 
-      <code class="option">--affinity</code> option, the threads are pinned to the
-      processors with the same number.
-     </p></li><li class="listitem "><p>
-      To create a histogram with the  latency
-      values, use the <code class="option">--histogram=<em class="replaceable ">NUMBER_OF_MICROSECONDS</em></code>
-      option, where <em class="replaceable ">NUMBER_OF_MICROSECONDS</em>
-      determines the maximum tracking time. Larger values are reported
-      as histogram overflows. The histogram is written to standard out (STDOUT),
-      but you can redirect it to a file:
-     </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cyclictest</code> --loops=1000 \
---histogram=1000 &gt; histogram</pre></div><p> The histogram file can be visualized with the
-        <code class="command">cyclictest_plot.sh</code> script. The result is a
-      PNG file. </p></li></ul></div></div><div class="sect1 " id="sec-hwtest-hwlat"><div class="titlepage"><div><div><h2 class="title"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Determining Latencies with the Hardware Latency Detector</span> <a title="Permalink" class="permalink" href="art-slert-hwtest.html#sec-hwtest-hwlat">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>art_slert_hw_testing.xml</li><li><span class="ds-label">ID: </span>sec-hwtest-hwlat</li></ul></div></div></div></div><p> The <span class="emphasis"><em>hardware latency detector</em></span>
-        (<code class="filename">hwlat_detector.ko</code>) is installed with the
-      real-time kernel (the <span class="package ">kernel-rt</span> package).
-      It is a special kernel module that is used to detect large system
-      latencies. It is caused by the behavior of underlying hardware or
-      firmware, independent of Linux itself (system management
-      interrupts, SMIs). </p><p> The hardware latency detector module works by making all CPUs
-      busy for a configurable amounts of time. This is done by calling
-      <code class="systemitem">stop_machine()</code>, polling the CPU Time Stamp Counter (TSC)
-      for some period, and then looking for gaps in the TSC data.
-      These gaps indicate times when the polling was disturbed by
-      System Management Interrupts (SMI).</p><p> To start using hardware latency detector, use as
-      <code class="systemitem">root</code>: </p><div class="verbatim-wrap"><pre class="screen">modprobe hwlat_detector enabled=1 threshold=10</pre></div><p> The <code class="literal">threshold</code> value is the minimum latency
-      value to be considered in microseconds. Use the value that is
-      relevant for your particular situation. </p><p> After the module is loaded, the
-        <code class="filename">/sys/kernel/debug/hwlat_detector/</code> directory
-      is created. The directory contains several files: </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.3.6.8.1"><span class="term "><code class="filename">count</code></span></dt><dd><p> Contains the number of latency spikes (larger than
-              <code class="literal">threshold</code>) observed since the last
-            reset. </p></dd><dt id="id-1.4.3.6.8.2"><span class="term "><code class="filename">enable</code></span></dt><dd><p> The global enable/disable toggle
-              (<code class="literal">0/1</code>), resets the count. </p></dd><dt id="id-1.4.3.6.8.3"><span class="term "><code class="filename">max</code></span></dt><dd><p> The maximum hardware latency that has been observed, in
-            microseconds. </p></dd><dt id="id-1.4.3.6.8.4"><span class="term "><code class="filename">sample</code></span></dt><dd><p> A pipe from which to read current raw sample data in
-            the format <code class="literal"><em class="replaceable ">timestamp</em>
-              <em class="replaceable ">observed latency in microseconds</em></code>
-           (can be opened with parameter <em class="parameter ">O_NONBLOCK</em>
-            for a single sample). </p></dd><dt id="id-1.4.3.6.8.5"><span class="term "><code class="filename">threshold</code></span></dt><dd><p> The minimum latency value to be considered, in
-            microseconds. </p></dd><dt id="id-1.4.3.6.8.6"><span class="term "><code class="filename">width</code></span></dt><dd><p> The time period to sample with CPUs held, in
-            microseconds. Must be less than the total window size
-            (enforced). </p></dd><dt id="id-1.4.3.6.8.7"><span class="term "><code class="filename">window</code></span></dt><dd><p> The total size of the sampling window (including the
-            width), in microseconds. </p></dd></dl></div><p> After running the hardware latency detector for a significant
-      amount of time, check the values of <code class="systemitem">count</code>
-      and <code class="systemitem">max</code>. For a detailed analysis, you can
-      use the output from <code class="systemitem">sample</code>. </p></div><div class="sect1 " id="sec-hwtest-more"><div class="titlepage"><div><div><h2 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">For More Information</span> <a title="Permalink" class="permalink" href="art-slert-hwtest.html#sec-hwtest-more">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>art_slert_hw_testing.xml</li><li><span class="ds-label">ID: </span>sec-hwtest-more</li></ul></div></div></div></div><p> For more information on <code class="command">cyclictest</code>, see <code class="command">man 8
-        cyclictest</code>. </p><p> For more information on the hardware latency detector, see
-        <code class="filename">/usr/src/linux/Documentation/hwlat_detector.txt</code>.
-    </p></div><div class="sect1 " id="id-1.4.3.8"><div class="titlepage"><div><div><h2 class="title"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Legal Notice</span> <a title="Permalink" class="permalink" href="art-slert-hwtest.html#id-1.4.3.8">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_copyright_quick.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+       Some servers have special settings for real-time, but they are strictly
+       vendor specific.
+      </p></li><li class="step "><p>
+       Set everything to lowest possible latency.
+      </p></li><li class="step "><p>
+       Turn memory scrubbing down to as little as possible.
+      </p></li><li class="step "><p>
+       Use the hardware latency detector (see
+       <a class="xref" href="art-slert-hwtest.html#sec-hwtest-hwlat" title="3. Determining Latencies with the Hardware Latency Detector">Section 3, “Determining Latencies with the Hardware Latency Detector”</a> for details).
+      </p></li></ol></li><li class="step "><p>
+     Check the latencies measured by the hardware latency detector.
+    </p><p>
+     The latencies should be low enough to support your real-time application
+     with enough of a margin to meet its deadlines. If it is not the case, even
+     after tweaking the machine setting for better real-time performance, the
+     hardware is not good enough for your application. Use a different
+     hardware.
+    </p></li><li class="step "><p>
+     Measure latencies using <code class="command">cyclictest</code> (see
+     <a class="xref" href="art-slert-hwtest.html#sec-hwtest-cyct" title="2. Determining Latencies with cyclictest">Section 2, “Determining Latencies with <code class="command">cyclictest</code>”</a> for details).
+    </p><p>
+     In a typical situation 
+     the latencies measured with <code class="command">cyclictest</code> should be mostly
+     the same from those measured by the hardware latency detector. Latencies
+     measured by <code class="command">cyclictest</code> include the latencies caused by
+     the operating system and are thus closer to latencies measured in a real
+     computing situation.
+    </p></li></ol></div></div><p>
+   If you encounter a significant difference between latencies measured by both
+   methods there might be a software bug involved. Such latencies are a
+   significant part caused by the operating system, not the hardware. In such a
+   case, contact SUSE for support.
+  </p></div><div class="sect1 " id="sec-hwtest-cyct"><div class="titlepage"><div><div><h2 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Determining Latencies with <code class="command">cyclictest</code></span> <a title="Permalink" class="permalink" href="art-slert-hwtest.html#sec-hwtest-cyct">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>art_slert_hw_testing.xml</li><li><span class="ds-label">ID: </span>sec-hwtest-cyct</li></ul></div></div></div></div><p>
+   The <code class="command">cyclictest</code> command is part of the real-time kernel
+   test suite contained in the <span class="package ">rt-tests</span> RPM package. This
+   package is distributed as part of <span class="productname"><span class="phrase">SUSE Linux Enterprise Real Time</span></span>.
+  </p><p>
+   Make sure to be <code class="systemitem">root</code> or use <code class="command">sudo</code> to run
+   <code class="command">cyclictest</code>.
+  </p><p>
+   When <code class="command">cyclictest</code> is running, it shows the number of cycles
+   performed and the minimal, actual, average and maximum latency measured. To
+   change the behaviour of <code class="command">cyclictest</code>, the following list
+   gives you an overview of the available options:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     The values shown are in microseconds. To use nanoseconds instead of
+     microseconds, use the 
+     <code class="option">--nsec</code> option.
+    </p></li><li class="listitem "><p>
+     By default, <code class="command">cyclictest</code> runs forever. The number of
+     cycles can be limited with the
+     <code class="option">--loops=<em class="replaceable ">NUMBER_OF_CYCLES</em></code>
+     option.
+    </p></li><li class="listitem "><p>
+     By default, only one thread is run. You can use the 
+     <code class="option">--threads=<em class="replaceable ">NUMBER_OF_THREADS</em></code>
+     option to set the number of threads used. Without specifying a number, all
+     available processors are used. With the 
+     <code class="option">--affinity</code> option, the threads are pinned to the
+     processors with the same number.
+    </p></li><li class="listitem "><p>
+     To create a histogram with the  latency values, use the
+     <code class="option">--histogram=<em class="replaceable ">NUMBER_OF_MICROSECONDS</em></code>
+     option, where <em class="replaceable ">NUMBER_OF_MICROSECONDS</em> determines
+     the maximum tracking time. Larger values are reported as histogram
+     overflows. The histogram is written to standard out (STDOUT), but you can
+     redirect it to a file:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cyclictest</code> --loops=1000 \
+--histogram=1000 &gt; histogram</pre></div><p>
+     The histogram file can be visualized with the
+     <code class="command">cyclictest_plot.sh</code> script. The result is a PNG file.
+    </p></li></ul></div></div><div class="sect1 " id="sec-hwtest-hwlat"><div class="titlepage"><div><div><h2 class="title"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Determining Latencies with the Hardware Latency Detector</span> <a title="Permalink" class="permalink" href="art-slert-hwtest.html#sec-hwtest-hwlat">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>art_slert_hw_testing.xml</li><li><span class="ds-label">ID: </span>sec-hwtest-hwlat</li></ul></div></div></div></div><p>
+   The <span class="emphasis"><em>hardware latency detector</em></span>
+   (<code class="command">hwlatdetect</code>) is a program that controls the kernel
+   latency detector module (<code class="filename">hwlat_detector.ko</code>), installed
+   with the real-time debug kernel (the <span class="package ">kernel-rt_debug</span>
+   package). This is a special kernel module that is used to detect large
+   system latencies, caused by the behavior of the underlying hardware or
+   firmware, independent of Linux itself (system management interrupts, SMIs).
+  </p><p>
+   The hardware latency detector module works by making all CPUs busy for
+   configurable amounts of time. This is done by calling
+   <code class="systemitem">stop_machine()</code>,
+   polling the CPU Time Stamp Counter (TSC) for some period, and then looking
+   for gaps in the TSC data. These gaps indicate times when the polling was
+   disturbed by SMIs.
+  </p><p>
+   To start using hardware latency detector, use as
+   <code class="systemitem">root</code>:
+  </p><div class="verbatim-wrap"><pre class="screen">hwlatdetect threshold=10</pre></div><p>
+   The <code class="literal">threshold</code> value is the minimum latency value to be
+   considered in microseconds. Use the value which is relevant for your
+   particular situation.
+  </p><p>
+   <code class="command">hwlatdetect</code> has the below options:
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.3.6.8.1"><span class="term "><code class="literal">--duration="time"{s,m,d}</code></span></dt><dd><p>
+      Run the detector logic for the specified duration. The duration is a base
+      10 integer number that defaults to a value in seconds. An optional suffix
+      may be specified to indicate minutes, hours, or days.
+     </p></dd><dt id="id-1.4.3.6.8.2"><span class="term "><code class="literal">--threshold="microsecond"</code></span></dt><dd><p>
+      Specify the TSC gap used to detect an SMI. Any gap value greater than
+      "threshold" is considered to be the result of an SMI occurring.
+     </p></dd><dt id="id-1.4.3.6.8.3"><span class="term "><code class="literal">--hardlimit="microsecond"</code></span></dt><dd><p>
+      The test is considered to have failed if a value above the hardlimit
+      occurs.
+     </p></dd><dt id="id-1.4.3.6.8.4"><span class="term "><code class="literal">--window="time"{us,ms,s,m,d}</code></span></dt><dd><p>
+      Specify the size of the sample window. Converted to microseconds when
+      passed to the kernel module.
+     </p></dd><dt id="id-1.4.3.6.8.5"><span class="term "><code class="literal">--width="time"{us,ms,s,m,d}</code></span></dt><dd><p>
+      The amount of time within the sample window where the detector is
+      actually sampling. Must be less than the <code class="literal">--window</code>
+      value.
+     </p></dd><dt id="id-1.4.3.6.8.6"><span class="term "><code class="literal">--report=<em class="replaceable ">FILE_NAME</em></code></span></dt><dd><p>
+      Specify the output file name of the detector report. The default behavior
+      is to print to standard output.
+     </p></dd><dt id="id-1.4.3.6.8.7"><span class="term "><code class="literal">--debug</code></span></dt><dd><p>
+      Turn on debug output
+     </p></dd><dt id="id-1.4.3.6.8.8"><span class="term "><code class="literal">--quiet</code></span></dt><dd><p>
+      Turn off information output.
+     </p></dd><dt id="id-1.4.3.6.8.9"><span class="term "><code class="literal">--watch</code></span></dt><dd><p>
+      Print sample data to stdout as it arrives.
+     </p></dd></dl></div></div><div class="sect1 " id="sec-hwtest-more"><div class="titlepage"><div><div><h2 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">For More Information</span> <a title="Permalink" class="permalink" href="art-slert-hwtest.html#sec-hwtest-more">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>art_slert_hw_testing.xml</li><li><span class="ds-label">ID: </span>sec-hwtest-more</li></ul></div></div></div></div><p>
+   For more information on <code class="command">cyclictest</code>, see <code class="command">man 8
+   cyclictest</code>.
+  </p><p>
+   For more information on the hardware latency detector, see
+   <code class="filename">/usr/src/linux/Documentation/hwlat_detector.txt</code>.
+  </p></div><div class="sect1 " id="id-1.4.3.8"><div class="titlepage"><div><div><h2 class="title"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Legal Notice</span> <a title="Permalink" class="permalink" href="art-slert-hwtest.html#id-1.4.3.8">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_copyright_quick.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
   Copyright© 2006–
 2021
 
