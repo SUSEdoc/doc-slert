@@ -134,25 +134,37 @@ hljs.configure({
    particular situation.
   </p><p>
    <code class="command">hwlatdetect</code> has the following options:
-  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.3.6.8.1"><span class="term "><code class="literal">--duration="<em class="replaceable ">VALUE</em>"{s,m,h,d}</code></span></dt><dd><p>
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.3.6.8.1"><span class="term "><code class="literal">--duration="<em class="replaceable ">VALUE</em>"{s,m,h,d,w}</code></span></dt><dd><p>
       Run the detector logic for the specified duration.
       Provide the duration as a decimal integer value.
-      The default duration unit is seconds.
+      The default duration unit for this value is seconds.
       To use a different unit, append <code class="literal">m</code> (minutes),
-      <code class="literal">h</code> (hours), or <code class="literal">d</code> (days) to the value.
-     </p></dd><dt id="id-1.4.3.6.8.2"><span class="term "><code class="literal">--threshold="<em class="replaceable ">VALUE_IN_MICROSECONDS</em>"</code></span></dt><dd><p>
+      <code class="literal">h</code> (hours), <code class="literal">d</code> (days), or
+      <code class="literal">w</code> (weeks) to the value.
+     </p></dd><dt id="id-1.4.3.6.8.2"><span class="term "><code class="literal">--threshold="<em class="replaceable ">VALUE</em>"{us,ms,s}</code></span></dt><dd><p>
       Specify the TSC gap used to detect an SMI. Any gap value greater than
       threshold value is considered to be the result of an SMI occurring.
-     </p></dd><dt id="id-1.4.3.6.8.3"><span class="term "><code class="literal">--hardlimit="<em class="replaceable ">VALUE_IN_MICROSECONDS</em>"</code></span></dt><dd><p>
+      The default duration unit for this value is microseconds.
+      To use a different unit, append <code class="literal">ms</code> (milliseconds) or
+      <code class="literal">s</code> (seconds) to the value.
+     </p></dd><dt id="id-1.4.3.6.8.3"><span class="term "><code class="literal">--hardlimit="<em class="replaceable ">VALUE</em>"{us,ms,s}</code></span></dt><dd><p>
       The test is considered to have failed if a value above the hard limit
       value occurs.
-     </p></dd><dt id="id-1.4.3.6.8.4"><span class="term "><code class="literal">--window="<em class="replaceable ">VALUE</em>"{us,ms,s,m,h,d}</code></span></dt><dd><p>
-      Specify the size of the sample window. Converted to microseconds when
-      passed to the kernel module.
-     </p></dd><dt id="id-1.4.3.6.8.5"><span class="term "><code class="literal">--width="<em class="replaceable ">VALUE</em>"{us,ms,s,m,h,d}</code></span></dt><dd><p>
+      The default duration unit for this value is microseconds.
+      To use a different unit, append <code class="literal">ms</code> (milliseconds) or
+      <code class="literal">s</code> (seconds) to the value.
+     </p></dd><dt id="id-1.4.3.6.8.4"><span class="term "><code class="literal">--window="<em class="replaceable ">VALUE</em>"{us,ms,s}</code></span></dt><dd><p>
+      Specify the size of the sample window.
+      The default duration unit for this value is microseconds.
+      To use a different unit, append <code class="literal">ms</code> (milliseconds) or
+      <code class="literal">s</code> (seconds) to the value.
+     </p></dd><dt id="id-1.4.3.6.8.5"><span class="term "><code class="literal">--width="<em class="replaceable ">VALUE</em>"{us,ms,s}</code></span></dt><dd><p>
       The amount of time within the sample window where the detector is
       actually sampling. Must be less than the <code class="literal">--window</code>
       value.
+      The default duration unit for this value is microseconds.
+      To use a different unit, append <code class="literal">ms</code> (milliseconds) or
+      <code class="literal">s</code> (seconds) to the value.
      </p></dd><dt id="id-1.4.3.6.8.6"><span class="term "><code class="literal">--report=<em class="replaceable ">FILE_NAME</em></code></span></dt><dd><p>
       Specify the output file name of the detector report. The default behavior
       is to print to standard output.
