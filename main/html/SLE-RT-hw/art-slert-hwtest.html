@@ -29,7 +29,7 @@ hljs.configure({
    </p><p>
     Both the <code class="systemitem">cyclictest</code> and the <span class="quote">“<span class="quote ">hardware
     latency detector</span>”</span> are parts of the <span class="productname"><span class="phrase">SUSE Linux Enterprise Real Time</span></span> product.
-   </p></div><div class="date"><span class="imprint-label">Publication Date: </span>05/10/2021
+   </p></div><div class="date"><span class="imprint-label">Publication Date: </span>05/11/2021
 </div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="art-slert-hwtest.html#sec-hwtest-basics"><span class="number">1 </span><span class="name">General Testing Procedure and Analysis</span></a></span></dt><dt><span class="sect1"><a href="art-slert-hwtest.html#sec-hwtest-cyct"><span class="number">2 </span><span class="name">Determining Latencies with <code class="command">cyclictest</code></span></a></span></dt><dt><span class="sect1"><a href="art-slert-hwtest.html#sec-hwtest-hwlat"><span class="number">3 </span><span class="name">Determining Latencies with the Hardware Latency Detector</span></a></span></dt><dt><span class="sect1"><a href="art-slert-hwtest.html#sec-hwtest-more"><span class="number">4 </span><span class="name">For More Information</span></a></span></dt><dt><span class="sect1"><a href="art-slert-hwtest.html#id-1.4.3.8"><span class="number">5 </span><span class="name">Legal Notice</span></a></span></dt><dt><span class="sect1"><a href="art-slert-hwtest.html#id-1.4.3.9"><span class="number">6 </span><span class="name">GNU Free Documentation License</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-hwtest-basics"><div class="titlepage"><div><div><h2 class="title"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">General Testing Procedure and Analysis</span> <a title="Permalink" class="permalink" href="art-slert-hwtest.html#sec-hwtest-basics">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>art_slert_hw_testing.xml</li><li><span class="ds-label">ID: </span>sec-hwtest-basics</li></ul></div></div></div></div><p>
    The first task you need to do when evaluating hardware for real-time is
    described in the following procedure:
@@ -128,7 +128,7 @@ hljs.configure({
   </p><p>
    To start using hardware latency detector, use as
    <code class="systemitem">root</code>:
-  </p><div class="verbatim-wrap"><pre class="screen">hwlatdetect threshold=10</pre></div><p>
+  </p><div class="verbatim-wrap"><pre class="screen">hwlatdetect --threshold=10</pre></div><p>
    The <code class="literal">threshold</code> value is the minimum latency value to be
    considered in microseconds. Use the value which is relevant for your
    particular situation.
