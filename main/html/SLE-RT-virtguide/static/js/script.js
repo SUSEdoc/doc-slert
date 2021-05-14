@@ -125,7 +125,13 @@ $(function() {
   }
 
   addBugLinks();
-  addClipboardButtons();
+  // hljs likes to unset click handlers, so run after it
+  var hljsInterval = window.setInterval(function() {
+    if (typeof(hljs) !== 'undefined') {
+      addClipboardButtons();
+      window.clearInterval(hljsInterval);
+    };
+  }, 500);
 });
 
 
@@ -212,7 +218,7 @@ function addClipboardButtons() {
   $( ".verbatim-wrap > pre" ).each(function () {
       var clipButton = $('<button/>', {
           class: 'clip-button',
-          text: 'Copy code',
+          text: 'Copy',
           click: function () {
             var elm = this.previousSibling;
             copyToClipboard(elm);
