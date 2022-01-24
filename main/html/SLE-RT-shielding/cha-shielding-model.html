@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>The basic shielding model | Shielding Linux Resources | SUSE Linux Enterprise Real Time 15 SP3</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.2.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.81.0 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE Linux Enterprise Real Time" /><meta name="product-number" content="15 SP3" /><meta name="book-title" content="Shielding Linux Resources" /><meta name="chapter-title" content="Chapter 2. The basic shielding model" /><meta name="description" content="Although any setup of cpusets can really be described as shielding, there is one prevalent shielding model in use that is so common that cset has a subcommand that is dedicated to its use. This subcommand is called shield." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-assignee" content="thomas.schraitle@suse.com" /><meta name="tracker-bsc-component" content="Other" /><meta name="tracker-bsc-product" content="SUSE Linux Enterprise Real Time 15 SP3" /><link rel="home" href="index.html" title="SUSE Linux Enterprise Real Time Documentation" /><link rel="up" href="book-shielding.html" title="Shielding Linux Resources" /><link rel="prev" href="cha-shielding-intro.html" title="Chapter 1. Introduction" /><link rel="next" href="cha-shielding-cpuset.html" title="Chapter 3. Full-featured cpuset manipulation commands" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Shielding Linux Resources"><span class="book-icon">Shielding Linux Resources</span></a><span> › </span><a class="crumb" href="cha-shielding-model.html">The basic shielding model</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Shielding Linux Resources</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="cha-shielding-intro.html"><span class="number">1 </span><span class="name">Introduction</span></a></li><li class="inactive"><a href="cha-shielding-model.html"><span class="number">2 </span><span class="name">The basic shielding model</span></a></li><li class="inactive"><a href="cha-shielding-cpuset.html"><span class="number">3 </span><span class="name">Full-featured cpuset manipulation commands</span></a></li><li class="inactive"><a href="cha-shielding-shortcuts.html"><span class="number">4 </span><span class="name">Using shortcuts</span></a></li><li class="inactive"><a href="cha-shieldingt-help.html"><span class="number">5 </span><span class="name">What to do if there are problems</span></a></li><li class="inactive"><a href="bk01apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 1. Introduction" href="cha-shielding-intro.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Full-featured cpuset manipulation commands" href="cha-shielding-cpuset.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Shielding Linux Resources"><span class="book-icon">Shielding Linux Resources</span></a><span> › </span><a class="crumb" href="cha-shielding-model.html">The basic shielding model</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 1. Introduction" href="cha-shielding-intro.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Full-featured cpuset manipulation commands" href="cha-shielding-cpuset.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="cha-shielding-model"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname ">SUSE Linux Enterprise Real Time</span> <span class="productnumber ">15 SP3</span></div><div><h1 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">The basic shielding model</span> <a title="Permalink" class="permalink" href="cha-shielding-model.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>slert_shielding_model.xml</li><li><span class="ds-label">ID: </span>cha-shielding-model</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha-shielding-model.html#sec-shielding-model-ex"><span class="number">2.1 </span><span class="name">A simple shielding example</span></a></span></dt><dt><span class="sect1"><a href="cha-shielding-model.html#sec-shielding-model-ex-setup-teardown"><span class="number">2.2 </span><span class="name">Setup and teardown of the shield</span></a></span></dt><dt><span class="sect1"><a href="cha-shielding-model.html#sec-shielding-model-ex-move"><span class="number">2.3 </span><span class="name">Moving interesting tasks into and out of the shield</span></a></span></dt></dl></div></div><p>
+  Although any setup of <code class="systemitem">cpuset</code>s can really be described as
+  <span class="emphasis"><em>shielding</em></span>, there is one prevalent shielding model in
+  use that is so common that cset has a subcommand that is dedicated to its
+  use. This subcommand is called <code class="command">shield</code>.
+ </p><p>
+  The concept behind this model is the use of three <code class="systemitem">cpuset</code>s:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><span class="formalpara-title">Root <code class="systemitem">cpuset</code>. </span>is always present in all configurations and contains all CPUs.</p></li><li class="listitem "><p><span class="formalpara-title">System <code class="systemitem">cpuset</code>. </span>contains CPUs which are used for system tasks. These are the normal
+     tasks that are not important, but which need to run on the system.
+    </p></li><li class="listitem "><p><span class="formalpara-title">User <code class="systemitem">cpuset</code>. </span><span class="quote">“<span class="quote ">the shield</span>”</span>, contains CPUs which are used for
+     important tasks. Only those tasks that are somehow important, usually
+     tasks whose performance determines the overall rating for the machine,
+     are run in the <code class="systemitem">user</code> <code class="systemitem">cpuset</code>.
+    </p></li></ul></div><p>
+  The <code class="command">shield</code> subcommand manages all of these <code class="systemitem">cpuset</code>s and
+  lets you define the CPUs and memory nodes that are in the
+  <code class="literal">shielded</code> and <code class="literal">unshielded</code> sets. 
+  The subcommand automatically moves all movable tasks on the system into the
+  <code class="literal">unshielded</code> <code class="systemitem">cpuset</code> on shield activation, and back into
+  the <code class="systemitem">root</code> <code class="systemitem">cpuset</code> on shield tear down. The subcommand
+  lets you move tasks into and out of the shield. Additionally, you can move
+  special tasks (kernel threads) which normally run in the
+  <code class="systemitem">root</code> <code class="systemitem">cpuset</code> into the <code class="literal">unshielded</code>
+  set. This makes your shield have even less disturbance.
+ </p><p>
+  The <code class="command">shield</code> subcommand abstracts the management of these <code class="systemitem">cpuset</code>s away from
+  you. It provides options that drive how the shield is set up, which tasks
+  are to be shielded or not, and the status of the shield. In
+  fact, you need not be bothered with the naming of the required <code class="systemitem">cpuset</code>s or
+  even where the <code class="systemitem">cpuset</code> file system is mounted. <code class="command">cset</code> and
+  the <code class="command">shield</code> subcommand takes care of all that.
+ </p><p>
+  If you need to define more <code class="systemitem">cpuset</code>s for your application, it is likely
+  that this simple shielding is not rich enough for you. In this
+  case, you should transition to using the <code class="command">set</code> and
+  <code class="command">proc</code> subcommands described in
+  <a class="xref" href="cha-shielding-cpuset.html" title="Chapter 3. Full-featured cpuset manipulation commands">Chapter 3, <em>Full-featured cpuset manipulation commands</em></a>.
+ </p><div class="sect1 " id="sec-shielding-model-ex"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">A simple shielding example</span> <a title="Permalink" class="permalink" href="cha-shielding-model.html#sec-shielding-model-ex">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>slert_shielding_model.xml</li><li><span class="ds-label">ID: </span>sec-shielding-model-ex</li></ul></div></div></div></div><p>
+   Assume a four-core machine that has uniform memory access.
+   This means there are four CPUs at your disposal and there is only one memory node
+   available. On such machines, there is no need to specify any memory node
+   parameters to cset, it sets up the only available memory node by default.
+  </p><p>
+   Usually, one wants to dedicate as many CPUs to the shield as possible and
+   leave a minimal set of CPUs for normal system processing. The reasoning
+   for this is, the performance of the important tasks will rule the
+   performance of the installation as a whole. These important tasks need
+   as many resources available to them as possible, exclusive of other,
+   unimportant tasks that are running on the system.
+  </p><div id="id-1.3.4.9.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note: Definition of task</h6><p>
+    In this document <span class="emphasis"><em>task</em></span> is used to represent either a
+    process or a thread that is running on the system.
+   </p></div></div><div class="sect1 " id="sec-shielding-model-ex-setup-teardown"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setup and teardown of the shield</span> <a title="Permalink" class="permalink" href="cha-shielding-model.html#sec-shielding-model-ex-setup-teardown">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>slert_shielding_model.xml</li><li><span class="ds-label">ID: </span>sec-shielding-model-ex-setup-teardown</li></ul></div></div></div></div><p>
+    To set up a shield of three CPUs with one CPU left for low priority system
+    processing, issue the following command.
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -c 1-3
+cset: --&gt; activating shielding:
+cset: moving 176 tasks from root into system cpuset...
+[==================================================]%
+cset: "system" cpuset of CPUSPEC(0) with 176 tasks running
+cset: "user" cpuset of CPUSPEC(1-3) with 0 tasks running</pre></div><p>
+    This command does several things. First, it creates a
+    <code class="literal">user</code> <code class="systemitem">cpuset</code> with what is called a CPUSPEC (CPU
+    specification) from the <code class="option">-c/--cpu</code> option. This CPUSPEC
+    specifies to use CPUs 1 through 3 inclusively. Next, the command creates
+    a <code class="literal">system</code> <code class="systemitem">cpuset</code> with a CPUSPEC that is the inverse of
+    the <code class="option">-c</code> option for the current machine. On this machine
+    that <code class="systemitem">cpuset</code> will only contain the first CPU, CPU0. Next, all user space
+    processes running in the <code class="literal">root</code> <code class="systemitem">cpuset</code> are transferred
+    to the <code class="literal">system</code> <code class="systemitem">cpuset</code>. This makes all those processes
+    run only on CPU0. The effect of this is that the shield consists of CPUs
+    1 through 3 and they are now idling.
+   </p><p>
+    Note that the command did not move the kernel threads that are running
+    in the <code class="literal">root</code> <code class="systemitem">cpuset</code> to the <code class="literal">system</code>
+    <code class="systemitem">cpuset</code>. This is because you may want these kernel threads to use all
+    available CPUs. If you do not, then you can use the
+    <code class="option">-k</code>/<code class="option">--kthread</code> option as described below.
+   </p><p>
+    The shield setup command above outputs the information of which <code class="systemitem">cpuset</code>s
+    were created and how many tasks are running on each. To see
+    the current status of the shield again, issue this command:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield
+cset: --&gt; shielding system active with
+cset: "system" cpuset of CPUSPEC(0) with 176 tasks running
+cset: "user" cpuset of CPUSPEC(1-3) with 0 tasks running</pre></div><p>
+    Which shows us that the shield is set up and that 176 tasks are running
+    in the <code class="literal">system</code> <code class="systemitem">cpuset</code>—the
+    <span class="emphasis"><em>unshielded</em></span> <code class="systemitem">cpuset</code>.
+   </p><p>
+    It is important to move all possible tasks from the
+    <code class="literal">root</code> <code class="systemitem">cpuset</code> to the unshielded
+    <code class="literal">system</code> <code class="systemitem">cpuset</code> because a task’s <code class="systemitem">cpuset</code> property is
+    inherited by its children. As all running tasks (including init) have been
+    moved to the unshielded <code class="literal">system</code> <code class="systemitem">cpuset</code>,
+    that means that any new tasks that are spawned will also run in the
+    unshielded <code class="literal">system</code> <code class="systemitem">cpuset</code>.
+   </p><p><span class="formalpara-title">Note. </span>There is a minor chance that a task forks during move and its
+    child remains in the root <code class="systemitem">cpuset</code>.
+   </p><p>
+    Some kernel threads can be moved into the unshielded
+    <code class="literal">system</code> <code class="systemitem">cpuset</code> as well. These are the threads that are
+    not bound to specific CPUs. If a kernel thread is bound to a specific
+    CPU, then it is generally not a good idea to move that thread to the
+    <code class="literal">system</code> set because at worst it may hang the system
+    and at best it will slow the system down significantly. These threads
+    are usually the IRQ threads on a real time Linux kernel, for example,
+    and you should not move these kernel threads into
+    <code class="literal">system</code>. If you leave them in the
+    <code class="literal">root</code> <code class="systemitem">cpuset</code>, then they will have access to all CPUs.
+   </p><p>
+    However, if your application demands an even <span class="quote">“<span class="quote ">quieter</span>”</span>
+    shield, then you can move all movable kernel threads into the unshielded
+    <code class="literal">system</code> set with the following command.
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -k on
+cset: --&gt; activating kthread shielding
+cset: kthread shield activated, moving 70 tasks into system cpuset...
+[==================================================]%
+cset: done</pre></div><p>
+    You can see that this moved an additional 70 tasks to the unshielded
+    <code class="literal">system</code> <code class="systemitem">cpuset</code>. Note that the <code class="option">-k</code>/<code class="option">--kthread on</code> parameter can be given at the shield's
+    creation time. You do not need to perform these two steps separately if you know
+    you will want kernel thread shielding as well. Executing
+    <code class="command">cset shield</code> again shows us the current state of the
+    shield.
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield
+cset: --&gt; shielding system active with
+cset: "system" cpuset of CPUSPEC(0) with 246 tasks running
+cset: "user" cpuset of CPUSPEC(1-3) with 0 tasks running</pre></div><p>
+    You can get a detailed listing of what is running in the shield by
+    adding either <code class="option">-s/--shield</code> or
+    <code class="option">-u/--unshield</code> to the <code class="command">shield</code>
+    subcommand and using the verbose flag. You will get output similar to
+    the following.
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield --unshield -v
+cset: "system" cpuset of CPUSPEC(0) with 251 tasks running
+USER     PID   PPID  SPPr TASK NAME
+-------- ----- ----- ---- ---------
+root     1     0     Soth init [5]
+root     2     0     Soth [kthreadd]
+root     84    2     Sf50 [IRQ-9
+]...
+tux      31796 31789 Soth less
+root     32653 25222 Roth python ./cset shield --unshield -v</pre></div><p>
+    The previous listing is abbreviated—there are 251 tasks running in
+    the <code class="literal">system</code> set. However, the <code class="literal">SPPr</code>
+    field may need a little
+    explanation. SPPr stands for <code class="literal">State, Policy and
+    Priority</code>. You can see that the initial two tasks are Stopped
+    and running in timeshare priority, marked as <code class="literal">oth</code> (for
+    <code class="literal">other</code>). The [IRQ-9] task is also stopped, but marked
+    at real time FIFO policy with a priority of 50. The last task in the
+    listing is the <code class="command">cset</code> command itself and is marked as
+    running. Also note that adding a second <code class="option">-v/--verbose</code>
+    option will not restrict the output to fit into an 80 character screen.
+   </p><p>
+    Tear down of the shield, stopping the shield in other words, is done
+    with the <code class="option">-r/--reset</code> option to the shield subcommand.
+    When this command is issued, both the <code class="literal">system</code> and
+    <code class="literal">user</code> <code class="systemitem">cpuset</code>s are deleted and any tasks that are
+    running in both of those <code class="systemitem">cpuset</code>s are moved to the
+    <code class="literal">root</code> <code class="systemitem">cpuset</code>. Once so moved, all tasks will have
+    access to all resources on the system. For example:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield --reset
+cset: --&gt; deactivating/reseting shielding
+cset: moving 0 tasks from "/user" user set to root set...
+cset: moving 250 tasks from "/system" system set to root set...
+[==================================================]%
+cset: deleting "/user" and "/system" sets
+cset: done</pre></div></div><div class="sect1 " id="sec-shielding-model-ex-move"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Moving interesting tasks into and out of the shield</span> <a title="Permalink" class="permalink" href="cha-shielding-model.html#sec-shielding-model-ex-move">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>slert_shielding_model.xml</li><li><span class="ds-label">ID: </span>sec-shielding-model-ex-move</li></ul></div></div></div></div><p>
+    Now that a shield is running, the objective is to run processes that
+    you have categorized as important in that shield. These processes can
+    be anything, but usually they are directly related to the purpose of the
+    machine. There are two ways to run tasks in the shield:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      Execute a process into the shield
+     </p></li><li class="listitem "><p>
+      Move an already running task into the shield
+     </p></li></ul></div><div class="sect2 " id="sec-shielding-model-ex-move-exec"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Executing a process into the shield</span> <a title="Permalink" class="permalink" href="cha-shielding-model.html#sec-shielding-model-ex-move-exec">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>slert_shielding_model.xml</li><li><span class="ds-label">ID: </span>sec-shielding-model-ex-move-exec</li></ul></div></div></div></div><p>
+     Running a new process in the shield can be done with the
+     <code class="option">-e</code>/<code class="option">--exec</code> option to the <code class="command">shield</code>
+     subcommand. This is the simplest way to get a task to run in the
+     shield. For this example, execute a new Bash shell into the shield
+     with the following commands.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -s
+cset: "user" cpuset of CPUSPEC(1-3) with 0 tasks running
+cset: done
+
+
+<code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -e bash
+cset: --&gt; last message, executed args into cpuset "/user", new pid is: 13300
+
+
+<code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -s -v
+cset: "user" cpuset of CPUSPEC(1-3) with 2 tasks running
+USER     PID   PPID  SPPr TASK NAME
+-------- ----- ----- ---- ---------
+root     13300 8583  Soth bash
+root     13329 13300 Roth python ./cset shield -s -v
+
+
+<code class="prompt user">tux &gt; </code><code class="command">exit</code>
+
+
+<code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -s
+cset: "user" cpuset of CPUSPEC(1-3) with 0 tasks running
+cset: done</pre></div><p>
+     The first command above lists the status of the shield. You see that
+     the shield is defined as CPUs 1 through 3 inclusive and currently there
+     are no tasks running in it.
+    </p><p>
+     The second command executes the Bash shell into the shield with the
+     <code class="option">-e</code> option. The last message of <code class="command">cset</code>
+     lists the PID of the new process.
+    </p><div id="id-1.3.4.11.4.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note: Separating the tool options from the <code class="command">cset</code> command</h6><p>
+      <code class="command">cset</code> follows the tradition of separating the tool
+      options from the command to be executed options with a double hyphen
+      (<code class="literal">--</code>). This is not shown in this simple example, but
+      if the command you want to execute also takes options, separate them with
+      the double hyphen as follows:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -e mycommand -- -v</pre></div><p>
+      The <code class="option">-v</code> will be passed to mycommand, and not to cset.
+     </p></div><p>
+     The next command lists the status of the shield again. There are two
+     tasks running shielded: our new shell and the cset status command
+     itself. Remember that the <code class="systemitem">cpuset</code> property of a task is inherited by its
+     children. Since running the new shell in the shield, its child, which is
+     the status command, also ran in the shield.
+    </p><div id="id-1.3.4.11.4.8" class="admonition tip normal"><img class="symbol" alt="Tip" title="Tip" src="static/images/icon-tip.svg" /><h6>Tip: Executing a shell into a shield</h6><p>
+      Executing a shell into a shield is a useful way to experiment with
+      running tasks in the shield since all children of the shell will also
+      run in the shield.
+     </p></div><p>
+     The last command exits the shell. After this, shield status is requested
+     again but again, it does not contain any tasks.
+    </p><p>
+     You may have noticed in the output above that both the new shell and
+     the status command are running as the <code class="systemitem">root</code> user. This is
+     because cset needs to run as <code class="systemitem">root</code> and so all it is children
+     will also run as <code class="systemitem">root</code>. If you need to run a process under a
+     different user and or group, you may use the <code class="option">--user</code>
+     and <code class="option">--group</code> options for execution as follows.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield --user=tux --group=users -e bash
+cset: --&gt; last message, executed args into cpuset "/user", new pid is: 14212
+
+
+<code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -s -v
+cset: "user" cpuset of CPUSPEC(1-3) with 2 tasks running
+USER     PID   PPID  SPPr TASK NAME
+-------- ----- ----- ---- ---------
+tux      14212 8583  Soth bash
+tux      14241 14212 Roth python ./cset shield -s -v</pre></div></div><div class="sect2 " id="sec-shielding-model-ex-move-shield-unshield"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Moving a running task into and out of the shield</span> <a title="Permalink" class="permalink" href="cha-shielding-model.html#sec-shielding-model-ex-move-shield-unshield">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>slert_shielding_model.xml</li><li><span class="ds-label">ID: </span>sec-shielding-model-ex-move-shield-unshield</li></ul></div></div></div></div><p>
+     While executing a process into the shield is undoubtedly useful, most of
+     the time, you will want to move already running tasks into and out of
+     the shield. The <code class="command">cset</code> shield subcommand includes two
+     options for doing this: <code class="option">-s/--shield</code> and
+     <code class="option">-u/--unshield</code>. These options require a PIDSPEC
+     (process specification) to also be specified with the
+     <code class="option">-p/--pid</code> option. The PIDSPEC defines which tasks get
+     operated on. The PIDSPEC can be a single process ID, a list of process
+     IDs separated by commas, and a list of process ID ranges separated by
+     dashes, groups of which are separated by commas. For example:
+    </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.11.5.3.1"><span class="term "><code class="option">--shield --pid</code> 1234</span></dt><dd><p>
+        This PIDSPEC argument specifies that PID <code class="literal">1234</code> be
+        shielded.
+       </p></dd><dt id="id-1.3.4.11.5.3.2"><span class="term "><code class="option">--shield --pid</code> 1234,42,1934,15000,15001,15002</span></dt><dd><p>
+        This PIDSPEC argument specifies that this list of PIDs only be moved
+        into the shield.
+       </p></dd><dt id="id-1.3.4.11.5.3.3"><span class="term "><code class="option">--unshield -p</code> 5000,5100,6010-7000,9232</span></dt><dd><p>
+        This PIDSPEC argument specifies that PIDs <code class="literal">5000</code>,
+        <code class="literal">5100</code> and <code class="literal">9232</code> be unshielded
+        (moved out of the shield) along with any existing PID that is in the
+        range <code class="literal">6010</code> through <code class="literal">7000</code>
+        inclusive.
+       </p></dd></dl></div><div id="id-1.3.4.11.5.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note: Information about the range in a PIDSPEC</h6><p>
+      A range in a PIDSPEC does not need to have tasks running for every
+      number in that range. In fact, it is not even an error if there are no
+      tasks running in that range: none will be moved in that case. The
+      range only specifies to act on any tasks that have a PID or TID that
+      is within that range.
+     </p></div><p>
+     Use of the appropriate PIDSPEC can thus be handy to move tasks and
+     groups of tasks into and out of the shield. Additionally, there is one
+     more option that can help with multi-threaded processes, and that is
+     the <code class="option">--threads</code> flag. If this flag is used together with a
+     <code class="command">shield</code> or <code class="command">unshield</code> command with a
+     PIDSPEC and if any of the task IDs in the PIDSPEC belong to a thread in
+     a process container, then all the
+     sibling threads in that process container will get shielded or
+     unshielded as well. This flag provides an easy mechanism to
+     shield/unshield all threads of a process by simply specifying one
+     thread in that process.
+    </p><p>
+     The following example moves the current shell into the shield
+     with a range PIDSPEC and back out with the Bash variable for the
+     current PID.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">echo</code> $$
+22018
+
+
+<code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -s -p 22010-22020
+cset: --&gt; shielding following pidspec: 22010-22020
+cset: done
+
+
+<code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -s -v
+cset: "user" cpuset of CPUSPEC(1-3) with 2 tasks running
+USER     PID   PPID  SPPr TASK NAME
+-------- ----- ----- ---- ---------
+root     3770  22018 Roth python ./cset shield -s -v
+root     22018 5034  Soth bash
+cset: done
+
+
+<code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -u -p $$
+cset: --&gt; unshielding following pidspec: 22018
+cset: done
+
+
+<code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -s
+cset: "user" cpuset of CPUSPEC(1-3) with 0 tasks running
+cset: done</pre></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha-shielding-cpuset.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 3 </span>Full-featured cpuset manipulation commands</span></a><a class="nav-link" href="cha-shielding-intro.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 1 </span>Introduction</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2022 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
