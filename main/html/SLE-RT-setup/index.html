@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Setup Guide | SUSE Linux Enterprise Real Time 15 SP3</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.2.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.81.0 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE Linux Enterprise Real Time" /><meta name="product-number" content="15 SP3" /><meta name="book-title" content="Setup Guide" /><meta name="description" content="SUSE Linux Enterprise Real Time is part of SUSE® Linux Enterprise family. It allows you to run tasks which require deterministic real-time processing in a SUSE Linux Enterprise environment." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-assignee" content="thomas.schraitle@suse.com" /><meta name="tracker-bsc-component" content="Other" /><meta name="tracker-bsc-product" content="SUSE Linux Enterprise Real Time 15 SP3" /><link rel="home" href="index.html" title="SUSE Linux Enterprise Real Time Documentation" /><link rel="up" href="book-slert-qs.html" title="Quick Start Guides" /><link rel="prev" href="book-slert-qs.html" title="Quick Start Guides" /><link rel="next" href="bk02ar01apa.html" title="A. GNU Licenses" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>Setup Guide | SUSE Linux Enterprise Real Time 15 SP3</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Setup Guide | SUSE Linux Enterprise Real Time 15 SP3"/>
+<meta name="description" content="SUSE Linux Enterprise Real Time is part of SUSE® Linux Enterprise family. It allows you to run tasks which require deterministic real-time processing in a SUSE…"/>
+<meta name="product-name" content="SUSE Linux Enterprise Real Time"/>
+<meta name="product-number" content="15 SP3"/>
+<meta name="book-title" content="Setup Guide"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-assignee" content="thomas.schraitle@suse.com"/>
+<meta name="tracker-bsc-component" content="Other"/>
+<meta name="tracker-bsc-product" content="SUSE Linux Enterprise Real Time 15 SP3"/>
+<meta property="og:title" content="Setup Guide | SUSE Linux Enterprise Real Time 15 SP3"/>
+<meta property="og:description" content="SUSE Linux Enterprise Real Time is part of SUSE® Linux Enterprise family. It allows you to run tasks which require deterministic real-time processing in a SUSE…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Setup Guide | SUSE Linux Enterprise Real Time 15 SP3"/>
+<meta name="twitter:description" content="SUSE Linux Enterprise Real Time is part of SUSE® Linux Enterprise family. It allows you to run tasks which require deterministic real-time processing in a SUSE…"/>
+<link rel="prev" href="book-slert-qs.html" title="Quick Start Guides"/><link rel="next" href="bk02ar01apa.html" title="A. GNU Licenses"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -17,15 +34,15 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="single-crumb" href="article-setup.html"><span class="single-contents-icon"></span>Setup Guide</a><div class="bubble-corner active-contents"></div></div><div class="clearme"></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="single-crumb" href="article-setup.html"><span class="single-contents-icon"></span>Show Contents: Setup Guide</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="clearme"></div></div><div class="clearme"></div></div><div class="active-contents bubble"><div class="bubble-container"><div id="_bubble-toc"><ol><li class="inactive"><a href="article-setup.html#sec-slert-quick-overview"><span class="number">1 </span><span class="name">Product overview</span></a></li><li class="inactive"><a href="article-setup.html#sec-slert-quick-install"><span class="number">2 </span><span class="name">Installing SUSE Linux Enterprise Real Time</span></a></li><li class="inactive"><a href="article-setup.html#sec-slert-quick-cset"><span class="number">3 </span><span class="name">Managing CPU sets with <code class="command">cset</code></span></a></li><li class="inactive"><a href="article-setup.html#sec-slert-csets-tree"><span class="number">4 </span><span class="name">Managing tree-like structures with <code class="command">cset</code></span></a></li><li class="inactive"><a href="article-setup.html#sec-quick-chrt"><span class="number">5 </span><span class="name">Setting Real-time Attributes of a Process with <code class="command">chrt</code></span></a></li><li class="inactive"><a href="article-setup.html#sec-quick-taskset"><span class="number">6 </span><span class="name">Specifying CPU affinity with <code class="command">taskset</code></span></a></li><li class="inactive"><a href="article-setup.html#sec-quick-ionice"><span class="number">7 </span><span class="name">Changing I/O priorities with <code class="command">ionice</code></span></a></li><li class="inactive"><a href="article-setup.html#sec-quick-io-block-change"><span class="number">8 </span><span class="name">Changing the I/O scheduler for block devices</span></a></li><li class="inactive"><a href="article-setup.html#sec-quick-io-block-tune"><span class="number">9 </span><span class="name">Tuning the block device I/O scheduler</span></a></li><li class="inactive"><a href="article-setup.html#sec-quick-more"><span class="number">10 </span><span class="name">More information</span></a></li><li class="inactive"><a href="bk02ar01apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_toc-bubble-wrap"></div><div id="_content" class="draft "><div class="documentation"><div xml:lang="en" class="article " id="article-setup" lang="en"><div class="titlepage"><div><h6 class="version-info"><span class="productname ">SUSE Linux Enterprise Real Time</span> <span class="productnumber ">15 SP3</span></h6><div><h1 class="title">Setup Guide <a title="Permalink" class="permalink" href="article-setup.html#">#</a></h1></div><div class="abstract "><p>
+</script></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Setup Guide</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Setup Guide</div> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section xml:lang="en" class="article" id="article-setup" data-id-title="Setup Guide"><div class="titlepage"><div><div class="big-version-info"><span class="productname">SUSE Linux Enterprise Real Time</span> <span class="productnumber">15 SP3</span></div><div><h1 class="title">Setup Guide <a title="Permalink" class="permalink" href="article-setup.html#">#</a></h1></div><div class="abstract"><p>
     SUSE Linux Enterprise Real Time is part of SUSE® Linux Enterprise family. It allows you to run tasks which
     require deterministic real-time processing in a SUSE Linux Enterprise environment.
    </p><p>
     To meet this requirement, SUSE Linux Enterprise Real Time offers several options for CPU and I/O
     scheduling, CPU shielding, and for setting CPU affinities of processes.
    </p></div><div class="date"><span class="imprint-label">Publication Date: </span>
-01/21/2022
-</div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="article-setup.html#sec-slert-quick-overview"><span class="number">1 </span><span class="name">Product overview</span></a></span></dt><dt><span class="sect1"><a href="article-setup.html#sec-slert-quick-install"><span class="number">2 </span><span class="name">Installing SUSE Linux Enterprise Real Time</span></a></span></dt><dt><span class="sect1"><a href="article-setup.html#sec-slert-quick-cset"><span class="number">3 </span><span class="name">Managing CPU sets with <code class="command">cset</code></span></a></span></dt><dt><span class="sect1"><a href="article-setup.html#sec-slert-csets-tree"><span class="number">4 </span><span class="name">Managing tree-like structures with <code class="command">cset</code></span></a></span></dt><dt><span class="sect1"><a href="article-setup.html#sec-quick-chrt"><span class="number">5 </span><span class="name">Setting Real-time Attributes of a Process with <code class="command">chrt</code></span></a></span></dt><dt><span class="sect1"><a href="article-setup.html#sec-quick-taskset"><span class="number">6 </span><span class="name">Specifying CPU affinity with <code class="command">taskset</code></span></a></span></dt><dt><span class="sect1"><a href="article-setup.html#sec-quick-ionice"><span class="number">7 </span><span class="name">Changing I/O priorities with <code class="command">ionice</code></span></a></span></dt><dt><span class="sect1"><a href="article-setup.html#sec-quick-io-block-change"><span class="number">8 </span><span class="name">Changing the I/O scheduler for block devices</span></a></span></dt><dt><span class="sect1"><a href="article-setup.html#sec-quick-io-block-tune"><span class="number">9 </span><span class="name">Tuning the block device I/O scheduler</span></a></span></dt><dt><span class="sect1"><a href="article-setup.html#sec-quick-more"><span class="number">10 </span><span class="name">More information</span></a></span></dt><dt><span class="appendix"><a href="bk02ar01apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></span></dt><dd><dl><dt><span class="sect1"><a href="bk02ar01apa.html#id-1.4.2.13.4"><span class="number">A.1 </span><span class="name">GNU Free Documentation License</span></a></span></dt></dl></dd></dl></div></div><div><div class="legalnotice" id="id-1.4.2.2.3"><p>
+05/11/2022
+</div></div></div><div><div class="legalnotice" id="id-1.4.2.2.3"><p>
   Copyright © 2006–2022
 
   SUSE LLC and contributors. All rights reserved.
@@ -34,7 +51,7 @@ hljs.configure({
   under the terms of the GNU Free Documentation License, Version 1.2 or (at
   your option) version 1.3; with the Invariant Section being this copyright
   notice and license. A copy of the license version 1.2 is included in the
-  section entitled <span class="quote">“<span class="quote ">GNU Free Documentation License</span>”</span>.
+  section entitled <span class="quote">“<span class="quote">GNU Free Documentation License</span>”</span>.
  </p><p>
   For SUSE trademarks, see
   <a class="link" href="http://www.suse.com/company/legal/" target="_blank">http://www.suse.com/company/legal/</a>. All other
@@ -46,52 +63,52 @@ hljs.configure({
   to detail. However, this does not guarantee complete accuracy. Neither
   SUSE LLC, its affiliates, the authors nor the translators shall be held
   liable for possible errors or the consequences thereof.
- </p></div></div><div class="sect1 " id="sec-slert-quick-overview"><div class="titlepage"><div><div><h2 class="title"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Product overview</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-overview">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-slert-quick-overview</li></ul></div></div></div></div><p>
+ </p></div></div><section class="sect1" id="sec-slert-quick-overview" data-id-title="Product overview"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">1 </span><span class="title-name">Product overview</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-overview">#</a></h2></div></div></div><p>
    If your business can respond more quickly to new information and changing
    market conditions, you have a distinct advantage over those that cannot.
    Running your time-sensitive mission-critical applications using SUSE Linux Enterprise Real Time
    reduces process dispatch latencies and gives you the time advantage you need
    to increase profits, or avoid further financial losses, ahead of your
    competitors.
-  </p><div class="sect2 " id="sec-slert-quick-key-features"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Key features</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-key-features">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-slert-quick-key-features</li></ul></div></div></div></div><p>
+  </p><section class="sect2" id="sec-slert-quick-key-features" data-id-title="Key features"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">1.1 </span><span class="title-name">Key features</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-key-features">#</a></h3></div></div></div><p>
     Some of the key features for SUSE Linux Enterprise Real Time are:
-   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
       Pre-emptible real-time kernel.
-     </p></li><li class="listitem "><p>
+     </p></li><li class="listitem"><p>
       Ability to assign high-priority processes.
-     </p></li><li class="listitem "><p>
+     </p></li><li class="listitem"><p>
       Greater predictability to complete critical processes on time, every
       time.
      </p><p>
       In comparison to the normal Linux kernel, which is optimized for overall
       system performance regardless of individual process response time, the
       SUSE Linux Enterprise Real Time kernel is tuned toward predictable process response time.
-     </p></li><li class="listitem "><p>
+     </p></li><li class="listitem"><p>
       Increased reliability.
-     </p></li><li class="listitem "><p>
+     </p></li><li class="listitem"><p>
       Lower infrastructure costs.
-     </p></li><li class="listitem "><p>
+     </p></li><li class="listitem"><p>
       Tracing and debugging tools that help you analyze and identify
       bottlenecks in mission-critical applications.
-     </p></li></ul></div></div><div class="sect2 " id="sec-slert-quick-scenarios"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Specific scenario</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-scenarios">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-slert-quick-scenarios</li></ul></div></div></div></div><p>
+     </p></li></ul></div></section><section class="sect2" id="sec-slert-quick-scenarios" data-id-title="Specific scenario"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">1.2 </span><span class="title-name">Specific scenario</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-scenarios">#</a></h3></div></div></div><p>
     SUSE Linux Enterprise Real Time 15 SP3 supports virtualization and Docker usage as a
     Technology Preview (best-effort support). For reference, see
     <span class="intraxref">Article “Virtualization Guide”</span>.
-   </p></div></div><div class="sect1 " id="sec-slert-quick-install"><div class="titlepage"><div><div><h2 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installing SUSE Linux Enterprise Real Time</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-install">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-slert-quick-install</li></ul></div></div></div></div><p>
-   To install SUSE Linux Enterprise Real Time 15 SP3, refer to the <em class="citetitle ">Installation Quick Start</em> of
+   </p></section></section><section class="sect1" id="sec-slert-quick-install" data-id-title="Installing SUSE Linux Enterprise Real Time"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">2 </span><span class="title-name">Installing SUSE Linux Enterprise Real Time</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-install">#</a></h2></div></div></div><p>
+   To install SUSE Linux Enterprise Real Time 15 SP3, refer to the <em class="citetitle">Installation Quick Start</em> of
    SUSE Linux Enterprise Server 15 SP3
    <a class="link" href="https://documentation.suse.com/sles/15-SP3/#redirectmsg" target="_blank">https://documentation.suse.com/sles/15-SP3/#redirectmsg</a>
   </p><p>
    The following sections provide a brief introduction to the tools and
    possibilities of SUSE Linux Enterprise Real Time.
-  </p></div><div class="sect1 " id="sec-slert-quick-cset"><div class="titlepage"><div><div><h2 class="title"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing CPU sets with <code class="command">cset</code></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-cset">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-slert-quick-cset</li></ul></div></div></div></div><p>
+  </p></section><section class="sect1" id="sec-slert-quick-cset" data-id-title="Managing CPU sets with cset"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">3 </span><span class="title-name">Managing CPU sets with <code class="command">cset</code></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-cset">#</a></h2></div></div></div><p>
    In some circumstances, it is beneficial to be able to run specific tasks
    only on defined CPUs. For this reason, the Linux kernel provides a
    feature called <span class="emphasis"><em>cpuset</em></span>. The <code class="systemitem">cpuset</code> feature provides the
-   means to do so-called <span class="quote">“<span class="quote ">soft partitioning</span>”</span> of the system. This
+   means to do so-called <span class="quote">“<span class="quote">soft partitioning</span>”</span> of the system. This
    enables you to dedicate CPUs, together with some predefined memory,
    to work on particular tasks.
-  </p><div id="id-1.4.2.5.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note: CPUs, processors, and cores</h6><p>
+  </p><div id="id-1.4.2.5.3" data-id-title="CPUs, processors, and cores" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><h6>Note: CPUs, processors, and cores</h6><p>
     Modern servers are typically built around multi-core CPUs, which means that
     a single processor socket typically contains many separate processor units.
     For example, a low-end processor might have four cores, while a high-end one
@@ -104,24 +121,24 @@ hljs.configure({
    </p><p>
     The <code class="systemitem">cpuset</code> feature works on the level of logical processors: individual
     cores or SMT units, not processor sockets. When this document
-    refers to <span class="quote">“<span class="quote ">a CPU</span>”</span>, this denotes a logical processor.
+    refers to <span class="quote">“<span class="quote">a CPU</span>”</span>, this denotes a logical processor.
    </p></div><p>
-   <code class="command">cset</code> consists of one <span class="quote">“<span class="quote ">super command</span>”</span> called
-   <code class="command">shield</code> and the <span class="quote">“<span class="quote ">regular commands</span>”</span>
+   <code class="command">cset</code> consists of one <span class="quote">“<span class="quote">super command</span>”</span> called
+   <code class="command">shield</code> and the <span class="quote">“<span class="quote">regular commands</span>”</span>
    <code class="command">set</code> and <code class="command">proc</code>. The purpose of the super
    command <code class="command">shield</code> is to create a common CPU shielding setup
    within one step by combining regular commands.
   </p><p>
    For more information about the options and parameters of the
    <code class="command">shield</code> subcommand, view its help by running:
-  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> help shield</pre></div><div class="sect2 " id="sec-slert-quick-settingup-cpushield-single"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setting up a CPU shield for a single CPU</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-settingup-cpushield-single">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-slert-quick-settingup-cpushield-single</li></ul></div></div></div></div><p>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> help shield</pre></div><section class="sect2" id="sec-slert-quick-settingup-cpushield-single" data-id-title="Setting up a CPU shield for a single CPU"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.1 </span><span class="title-name">Setting up a CPU shield for a single CPU</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-settingup-cpushield-single">#</a></h3></div></div></div><p>
     The command <code class="command">cset</code> provides the high level functionality
     to set up and manipulate CPU Sets. An example for setting up a CPU shield
     is:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --cpu=3</pre></div><p>
     On a machine with four CPUs, this will shield CPU #3. CPUs #0-2 are
     unshielded.
-   </p></div><div class="sect2 " id="sec-slert-quick-settingup-cpushield-multi"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setting up CPU shields for multiple CPUs</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-settingup-cpushield-multi">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-slert-quick-settingup-cpushield-multi</li></ul></div></div></div></div><p>
+   </p></section><section class="sect2" id="sec-slert-quick-settingup-cpushield-multi" data-id-title="Setting up CPU shields for multiple CPUs"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.2 </span><span class="title-name">Setting up CPU shields for multiple CPUs</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-settingup-cpushield-multi">#</a></h3></div></div></div><p>
     If you need to shield more than one CPU, the argument of the
     <code class="option">--cpu</code> option accepts comma-separated lists of CPUs,
     including range specifications:
@@ -140,7 +157,7 @@ hljs.configure({
     following command:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --cpu=3-7</pre></div><p>
     Now only CPUs #3-7 are shielded. CPUs #0-2 are available for system usage.
-   </p></div><div class="sect2 " id="sec-slert-quick-showing-cpu-shields"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Showing CPU shields</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-showing-cpu-shields">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-slert-quick-showing-cpu-shields</li></ul></div></div></div></div><p>
+   </p></section><section class="sect2" id="sec-slert-quick-showing-cpu-shields" data-id-title="Showing CPU shields"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.3 </span><span class="title-name">Showing CPU shields</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-showing-cpu-shields">#</a></h3></div></div></div><p>
     After the CPU shielding is set up you can display the current configuration
     by running <code class="command">cset shield</code> without additional options:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield
@@ -148,20 +165,20 @@ cset: --&gt; shielding system active with
 cset: "system" cpuset of: 0-2 cpu, with: 47
 cset: "user" cpuset of:  3-7 cpu,  with: 0</pre></div><p>
     By default, CPU shielding consists of at least of three <code class="systemitem">cpuset</code>s:
-   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
       <code class="systemitem">root</code> exists always and contains
       all available CPUs.
-     </p></li><li class="listitem "><p>
+     </p></li><li class="listitem"><p>
       <code class="systemitem">system</code> is the <code class="systemitem">cpuset</code> of
       unshielded CPUs.
-     </p></li><li class="listitem "><p>
+     </p></li><li class="listitem"><p>
       <code class="systemitem">user</code> is the <code class="systemitem">cpuset</code> of
       shielded CPUs
-     </p></li></ul></div></div><div class="sect2 " id="sec-slert-quick-shielding-processes"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Shielding processes</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-shielding-processes">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-slert-quick-shielding-processes</li></ul></div></div></div></div><p>
+     </p></li></ul></div></section><section class="sect2" id="sec-slert-quick-shielding-processes" data-id-title="Shielding processes"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.4 </span><span class="title-name">Shielding processes</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-shielding-processes">#</a></h3></div></div></div><p>
     After a shielded CPU set is created, certain processes or groups of
     processes can be assigned to the shielded <code class="systemitem">cpuset</code>. To start a new process
     in the shielded CPU set, use the <code class="option">--exec</code> option:
-   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --exec <em class="replaceable ">APPLICATION</em></pre></div><p>
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --exec <em class="replaceable">APPLICATION</em></pre></div><p>
     To move already-running processes to the shielded CPU set, use the
     <code class="option">--shield</code> and <code class="option">--pid</code> options. The
     <code class="option">--pid</code> option accepts a comma-separated list of PIDs and
@@ -172,14 +189,14 @@ cset: "user" cpuset of:  3-7 cpu,  with: 0</pre></div><p>
     available process will be moved to the shield without warning.
     The <code class="command">cset</code> command handles threads like processes and will
     also interpret TIDs and assign them to the required CPU set.
-   </p><div id="id-1.4.2.5.10.7" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning</h6><p>
+   </p><div id="id-1.4.2.5.10.7" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><h6>Warning</h6><p>
      The <code class="option">--shield</code> option does not check the processes you
      request to move into the shield. This means that the command will move
      <span class="emphasis"><em>any</em></span> processes that are bound to specific
      CPUs—even kernel threads. You can cause a complete system lockup by
      indiscriminately specifying arbitrary PIDs to the
      <code class="option">--shield</code> command.
-    </p></div></div><div class="sect2 " id="sec-slert-quick-showing-shielded-processes"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Showing shielded processes</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-showing-shielded-processes">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-slert-quick-showing-shielded-processes</li></ul></div></div></div></div><p>
+    </p></div></section><section class="sect2" id="sec-slert-quick-showing-shielded-processes" data-id-title="Showing shielded processes"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.5 </span><span class="title-name">Showing shielded processes</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-showing-shielded-processes">#</a></h3></div></div></div><p>
     Use the <code class="command">cset shield</code> command to show the number of
     currently shielded processes. (The same command can be used to show the
     current CPU shield setup.) To list shielded and unshielded processes, add
@@ -195,7 +212,7 @@ cset: "system" cpuset of: 0-2,4-15 cpu, with:
 cset: "user" cpuset of:    3 cpu, with: 1
    USER       PID  PPID S TASK NAME
       -------- ----- ----- - ---------
-         root     10202 10170 S application</pre></div></div><div class="sect2 " id="sec-slert-quick-unshielding-processes"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Unshielding processes</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-unshielding-processes">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-slert-quick-unshielding-processes</li></ul></div></div></div></div><p>
+         root     10202 10170 S application</pre></div></section><section class="sect2" id="sec-slert-quick-unshielding-processes" data-id-title="Unshielding processes"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.6 </span><span class="title-name">Unshielding processes</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-unshielding-processes">#</a></h3></div></div></div><p>
     To remove a process (or group of processes) from the CPU shield, use the
     <code class="option">--unshield</code> option. The argument for
     <code class="option">--unshield</code> is similar to the <code class="option">--shield</code>
@@ -204,11 +221,11 @@ cset: "user" cpuset of:    3 cpu, with: 1
    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --unshield --pid=2,650-655</pre></div><p>
     This command will unshield the process with the PID <code class="literal">2</code> and
     the processes in the range between 650 and 655.
-   </p></div><div class="sect2 " id="sec-slert-quick-resetting-cpusets"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Resetting CPU sets</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-resetting-cpusets">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-slert-quick-resetting-cpusets</li></ul></div></div></div></div><p>
+   </p></section><section class="sect2" id="sec-slert-quick-resetting-cpusets" data-id-title="Resetting CPU sets"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.7 </span><span class="title-name">Resetting CPU sets</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-resetting-cpusets">#</a></h3></div></div></div><p>
     To delete CPU sets, use the <code class="command">cset</code> option
     <code class="option">--reset</code>. This will unshield all CPUs and migrate dedicated
     processes to all available CPUs again.
-   </p></div></div><div class="sect1 " id="sec-slert-csets-tree"><div class="titlepage"><div><div><h2 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing tree-like structures with <code class="command">cset</code></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-csets-tree">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-slert-csets-tree</li></ul></div></div></div></div><p>
+   </p></section></section><section class="sect1" id="sec-slert-csets-tree" data-id-title="Managing tree-like structures with cset"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">4 </span><span class="title-name">Managing tree-like structures with <code class="command">cset</code></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-csets-tree">#</a></h2></div></div></div><p>
    More detailed configuration of cpusets can be done with the
    <code class="command">cset</code> commands <code class="option">set</code> and
    <code class="option">proc</code>.
@@ -237,11 +254,11 @@ cset: "user" cpuset of:    3 cpu, with: 1
    you create a <code class="systemitem">cpuset</code> that contains CPU3, and then attempt to create a child
    of that <code class="systemitem">cpuset</code> with a CPU other than 3, you will get an error, and the
    <code class="systemitem">cpuset</code> will not be created. The resulting error is somewhat cryptic and is
-   usually <span class="quote">“<span class="quote ">Permission denied</span>”</span>.
+   usually <span class="quote">“<span class="quote">Permission denied</span>”</span>.
   </p><p>
    To show a table containing useful information, such as CPU lists and memory
-   lists, use the <code class="option">-r</code> parameter. The <span class="quote">“<span class="quote ">-X</span>”</span> column
-   shows the exclusive state of CPU or memory. The <span class="quote">“<span class="quote ">path</span>”</span> column
+   lists, use the <code class="option">-r</code> parameter. The <span class="quote">“<span class="quote">-X</span>”</span> column
+   shows the exclusive state of CPU or memory. The <span class="quote">“<span class="quote">path</span>”</span> column
    shows the real path in the virtual <code class="systemitem">cpuset</code> file system.
   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> set -r</pre></div><p>
    On NUMA machines, memory nodes can be assigned to a <code class="systemitem">cpuset</code> similar to CPUs.
@@ -284,7 +301,7 @@ cset: "user" cpuset of:    3 cpu, with: 1
    --toset new_set</pre></div><p>
    For more detailed information about options and parameters of the subcommand
    <code class="command">proc</code>, view the help:
-  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> help proc</pre></div></div><div class="sect1 " id="sec-quick-chrt"><div class="titlepage"><div><div><h2 class="title"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setting Real-time Attributes of a Process with <code class="command">chrt</code></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-chrt">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-quick-chrt</li></ul></div></div></div></div><p>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> help proc</pre></div></section><section class="sect1" id="sec-quick-chrt" data-id-title="Setting Real-time Attributes of a Process with chrt"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">5 </span><span class="title-name">Setting Real-time Attributes of a Process with <code class="command">chrt</code></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-chrt">#</a></h2></div></div></div><p>
    Use the <code class="command">chrt</code> command to manipulate the real-time
    attributes of an already-running process (such as scheduling policy and
    priority), or to execute a new process with specified real-time attributes.
@@ -306,11 +323,11 @@ cset: "user" cpuset of:    3 cpu, with: 1
    process with PID 1437 running and with scheduler policy
    <code class="literal">SCHED_FIFO</code> and priority 40. Scheduler policy
    abbreviations are:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      <code class="literal">TS - SCHED_OTHER</code>
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      <code class="literal">FF - SCHED_FIFO</code>
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      <code class="literal">RR - SCHED_RR</code>
     </p></li></ul></div><p>
    It is also possible to obtain the current scheduler policy, and the priority
@@ -328,7 +345,7 @@ cset: "user" cpuset of:    3 cpu, with: 1
    <code class="literal">SCHED_OTHER</code>. The following example will change the
    scheduler policy to <code class="literal">SCHED_FIFO</code> with priority 42 for PID
    1437:
-  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">chrt</code> --fifo -p 42 1437</pre></div><div id="id-1.4.2.7.14" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning</h6><p>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">chrt</code> --fifo -p 42 1437</pre></div><div id="id-1.4.2.7.14" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><h6>Warning</h6><p>
     Handle the changing of real-time attributes of processes with care.
     Increasing the priority of certain processes can harm the entire system,
     depending on the behavior of the process. In some cases, this can lead to a
@@ -336,7 +353,7 @@ cset: "user" cpuset of:    3 cpu, with: 1
    </p></div><p>
    For more information about <code class="command">chrt</code>, see the
    <code class="command">chrt</code> man page with <code class="command">man 1 chrt</code>.
-  </p></div><div class="sect1 " id="sec-quick-taskset"><div class="titlepage"><div><div><h2 class="title"><span class="number">6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Specifying CPU affinity with <code class="command">taskset</code></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-taskset">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-quick-taskset</li></ul></div></div></div></div><p>
+  </p></section><section class="sect1" id="sec-quick-taskset" data-id-title="Specifying CPU affinity with taskset"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">6 </span><span class="title-name">Specifying CPU affinity with <code class="command">taskset</code></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-taskset">#</a></h2></div></div></div><p>
    The default behavior of the kernel is to keep a process running on the same
    CPU if the system load is balanced over the available CPUs. Otherwise, the
    kernel tries to improve the load balancing by moving processes to an idling
@@ -356,14 +373,14 @@ cset: "user" cpuset of:    3 cpu, with: 1
    represented by a hexadecimal number. If you count the bits of this bitmask,
    the lowest bit represents the first logical CPU as found in
    <code class="filename">/proc/cpuinfo</code>. For example:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      <code class="literal">0x00000001</code> means CPU <code class="literal">0</code>.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      <code class="literal">0x00000002</code> means CPU <code class="literal">1</code>.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      <code class="literal">0x00000003</code> means CPUs <code class="literal">0</code> and
      <code class="literal">1</code>.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      <code class="literal">0xFFFFFFFE</code> means all but the first CPU.
     </p></li></ul></div><p>
    If a given dialog does not contain any valid CPU on the system, the
@@ -373,25 +390,25 @@ cset: "user" cpuset of:    3 cpu, with: 1
   </p><p>
    The command <code class="command">taskset</code> starts a new process with a given CPU
    affinity, or to redefine the CPU affinity of an already running process.
-  </p><div class="variablelist "><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="name">Examples </span><a title="Permalink" class="permalink" href="article-setup.html#id-1.4.2.8.8">#</a></h6></div><dl class="variablelist"><dt id="id-1.4.2.8.8.2"><span class="term "><code class="option">taskset -p <em class="replaceable ">PID</em></code></span></dt><dd><p>
+  </p><div class="variablelist"><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="title-name">Examples </span><a title="Permalink" class="permalink" href="article-setup.html#id-1.4.2.8.8">#</a></h6></div><dl class="variablelist"><dt id="id-1.4.2.8.8.2"><span class="term"><code class="option">taskset -p <em class="replaceable">PID</em></code></span></dt><dd><p>
       Retrieves the current CPU affinity of the process with PID
-      <em class="replaceable ">pid</em>.
-     </p></dd><dt id="id-1.4.2.8.8.3"><span class="term "><code class="option">taskset -p <em class="replaceable ">mask</em><em class="replaceable ">PID</em></code></span></dt><dd><p>
+      <em class="replaceable">pid</em>.
+     </p></dd><dt id="id-1.4.2.8.8.3"><span class="term"><code class="option">taskset -p <em class="replaceable">mask</em><em class="replaceable">PID</em></code></span></dt><dd><p>
       Sets the CPU affinity of the process with the
-      <em class="replaceable ">PID</em> to <em class="replaceable ">mask</em>.
-     </p></dd><dt id="id-1.4.2.8.8.4"><span class="term "><code class="option">taskset <em class="replaceable ">mask</em><em class="replaceable ">command</em></code></span></dt><dd><p>
-      Runs <em class="replaceable ">command</em> with a CPU affinity of
+      <em class="replaceable">PID</em> to <em class="replaceable">mask</em>.
+     </p></dd><dt id="id-1.4.2.8.8.4"><span class="term"><code class="option">taskset <em class="replaceable">mask</em><em class="replaceable">command</em></code></span></dt><dd><p>
+      Runs <em class="replaceable">command</em> with a CPU affinity of
       <code class="literal">mask</code>.
      </p></dd></dl></div><p>
    For more detailed information about <code class="command">taskset</code>, see the man
    page <code class="command">man 1 taskset</code>.
-  </p></div><div class="sect1 " id="sec-quick-ionice"><div class="titlepage"><div><div><h2 class="title"><span class="number">7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Changing I/O priorities with <code class="command">ionice</code></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-ionice">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-quick-ionice</li></ul></div></div></div></div><p>
+  </p></section><section class="sect1" id="sec-quick-ionice" data-id-title="Changing I/O priorities with ionice"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">7 </span><span class="title-name">Changing I/O priorities with <code class="command">ionice</code></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-ionice">#</a></h2></div></div></div><p>
    Handling I/O is one of the critical issues for all high-performance systems.
    If a task has lots of CPU power available, but must wait for the disk, it
    will not work as efficiently as it could. The Linux kernel provides three
    different scheduling classes to determine the I/O handling for a process.
    All of these classes can be fine-tuned with a <code class="literal">nice</code> level.
-  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.2.9.3.1"><span class="term ">The <span class="emphasis"><em>Best Effort</em></span> scheduler</span></dt><dd><p>
+  </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.2.9.3.1"><span class="term">The <span class="emphasis"><em>Best Effort</em></span> scheduler</span></dt><dd><p>
       The <span class="emphasis"><em>Best Effort</em></span> scheduler is the default I/O
       scheduler, and is used for all processes that do not specify a different
       I/O scheduler class. By default, this scheduler sets its
@@ -404,7 +421,7 @@ cset: "user" cpuset of:    3 cpu, with: 1
       priority is <code class="literal">0</code>.
      </p><p>
       This scheduler has the scheduling class number <code class="literal">2</code>.
-     </p></dd><dt id="id-1.4.2.9.3.2"><span class="term ">The <span class="emphasis"><em>Real Time</em></span> scheduler</span></dt><dd><p>
+     </p></dd><dt id="id-1.4.2.9.3.2"><span class="term">The <span class="emphasis"><em>Real Time</em></span> scheduler</span></dt><dd><p>
       The real-time I/O class always gets the highest priority for disk access.
       The other schedulers will only be served if no real-time request is
       present. This scheduling class may easily lock up the system if not
@@ -414,7 +431,7 @@ cset: "user" cpuset of:    3 cpu, with: 1
       the <span class="emphasis"><em>Best Effort</em></span> scheduler).
      </p><p>
       This scheduler has the scheduling class number <code class="literal">1</code>.
-     </p></dd><dt id="id-1.4.2.9.3.3"><span class="term ">The <span class="emphasis"><em>Idle</em></span> scheduler</span></dt><dd><p>
+     </p></dd><dt id="id-1.4.2.9.3.3"><span class="term">The <span class="emphasis"><em>Idle</em></span> scheduler</span></dt><dd><p>
       The <span class="emphasis"><em>Idle</em></span> scheduler does not define any
       <code class="literal">nice</code> levels. I/O is only done in this class if no other
       scheduler is running an I/O request. This scheduler has the lowest
@@ -427,34 +444,34 @@ cset: "user" cpuset of:    3 cpu, with: 1
    <code class="command">ionice</code> command. This provides a means to tune the
    scheduler of already-running processes, or to start new processes with
    specific I/O settings.
-  </p><div class="variablelist "><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="name">Examples </span><a title="Permalink" class="permalink" href="article-setup.html#id-1.4.2.9.5">#</a></h6></div><dl class="variablelist"><dt id="id-1.4.2.9.5.2"><span class="term "><code class="command">ionice -c3 -p$$</code></span></dt><dd><p>
+  </p><div class="variablelist"><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="title-name">Examples </span><a title="Permalink" class="permalink" href="article-setup.html#id-1.4.2.9.5">#</a></h6></div><dl class="variablelist"><dt id="id-1.4.2.9.5.2"><span class="term"><code class="command">ionice -c3 -p$$</code></span></dt><dd><p>
       Sets the scheduler of the current shell to <code class="literal">Idle</code>.
-     </p></dd><dt id="id-1.4.2.9.5.3"><span class="term "><code class="command">ionice</code></span></dt><dd><p>
+     </p></dd><dt id="id-1.4.2.9.5.3"><span class="term"><code class="command">ionice</code></span></dt><dd><p>
       Without additional parameters, this prints the I/O scheduler settings of
       the current shell.
-     </p></dd><dt id="id-1.4.2.9.5.4"><span class="term "><code class="command">ionice -c1 -p42 -n2</code></span></dt><dd><p>
+     </p></dd><dt id="id-1.4.2.9.5.4"><span class="term"><code class="command">ionice -c1 -p42 -n2</code></span></dt><dd><p>
       Sets the scheduler of the process with process ID 42 to <code class="literal">Real
       Time</code>, and its <code class="literal">nice</code> value to
       <code class="literal">2</code>.
-     </p></dd><dt id="id-1.4.2.9.5.5"><span class="term "><code class="command">ionice -c3 /bin/bash</code></span></dt><dd><p>
+     </p></dd><dt id="id-1.4.2.9.5.5"><span class="term"><code class="command">ionice -c3 /bin/bash</code></span></dt><dd><p>
       Starts the Bash shell with the <code class="literal">Idle</code> I/O scheduler.
      </p></dd></dl></div><p>
    For more detailed information about <code class="command">ionice</code>, see the
    <code class="command">ionice</code> man page with <code class="command">man 1 ionice</code>
-  </p></div><div class="sect1 " id="sec-quick-io-block-change"><div class="titlepage"><div><div><h2 class="title"><span class="number">8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Changing the I/O scheduler for block devices</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-io-block-change">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-quick-io-block-change</li></ul></div></div></div></div><p>
+  </p></section><section class="sect1" id="sec-quick-io-block-change" data-id-title="Changing the I/O scheduler for block devices"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">8 </span><span class="title-name">Changing the I/O scheduler for block devices</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-io-block-change">#</a></h2></div></div></div><p>
    The Linux kernel provides several block device schedulers that can be
    selected individually for each block device. All but the
    <code class="literal">noop</code> scheduler perform a kind of ordering of requested
    blocks to reduce head movements on the hard disk. If you use an external
    storage system that has its own scheduler, you should disable the Linux
    internal reordering by selecting the <code class="literal">noop</code> scheduler.
-  </p><div class="variablelist "><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="name">The Linux I/O schedulers </span><a title="Permalink" class="permalink" href="article-setup.html#id-1.4.2.10.3">#</a></h6></div><dl class="variablelist"><dt id="id-1.4.2.10.3.2"><span class="term ">noop</span></dt><dd><p>
+  </p><div class="variablelist"><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="title-name">The Linux I/O schedulers </span><a title="Permalink" class="permalink" href="article-setup.html#id-1.4.2.10.3">#</a></h6></div><dl class="variablelist"><dt id="id-1.4.2.10.3.2"><span class="term">noop</span></dt><dd><p>
       The <span class="emphasis"><em>noop</em></span> scheduler is a very simple scheduler that
       performs basic merging and sorting on I/O requests. This scheduler is
       mainly used for specialized environments that run their own schedulers
       optimized for the used hardware, such as storage systems or hardware RAID
       controllers.
-     </p></dd><dt id="id-1.4.2.10.3.3"><span class="term ">deadline</span></dt><dd><p>
+     </p></dd><dt id="id-1.4.2.10.3.3"><span class="term">deadline</span></dt><dd><p>
       The main point of <span class="emphasis"><em>deadline</em></span> scheduling is to try hard
       to answer a request before a given deadline. This results in very good
       I/O for a random single I/O in real-time environments.
@@ -465,7 +482,7 @@ cset: "user" cpuset of:    3 cpu, with: 1
       Normally, requests are served according to the block sequence, but if a
       request reaches its deadline, the scheduler starts to work on this
       request.
-     </p></dd><dt id="id-1.4.2.10.3.4"><span class="term ">cfq</span></dt><dd><p>
+     </p></dd><dt id="id-1.4.2.10.3.4"><span class="term">cfq</span></dt><dd><p>
       The <span class="emphasis"><em>Completely Fair Queuing</em></span> scheduler uses a
       separate I/O queue for each process. All of these queues get a similar
       time slice for disk access. With this procedure, the
@@ -494,70 +511,70 @@ noop deadline [cfq]</pre></div><p>
   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">echo</code> "noop" &gt; /sys/block/sda/queue/scheduler</pre></div><p>
    To set other variables in the <code class="filename">/sys</code> file system, use a
    similar approach.
-  </p></div><div class="sect1 " id="sec-quick-io-block-tune"><div class="titlepage"><div><div><h2 class="title"><span class="number">9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Tuning the block device I/O scheduler</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-io-block-tune">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-quick-io-block-tune</li></ul></div></div></div></div><p>
+  </p></section><section class="sect1" id="sec-quick-io-block-tune" data-id-title="Tuning the block device I/O scheduler"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">9 </span><span class="title-name">Tuning the block device I/O scheduler</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-io-block-tune">#</a></h2></div></div></div><p>
    All schedulers, except for the <span class="emphasis"><em>noop</em></span> scheduler, have
    several common parameters that may be tuned for each block device. You can
    access these parameters with <code class="filename">sysfs</code> in the
    <code class="filename">/sys/block/&lt;device&gt;/queue/iosched/</code> directory. The
    following parameters are tuneable for the respective scheduler:
-  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.2.11.3.1"><span class="term ">Anticipatory scheduler</span></dt><dd><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.2.11.3.1.2.1.1"><span class="term "><code class="option">read_batch_expire</code></span></dt><dd><p>
+  </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.2.11.3.1"><span class="term">Anticipatory scheduler</span></dt><dd><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.2.11.3.1.2.1.1"><span class="term"><code class="option">read_batch_expire</code></span></dt><dd><p>
          If write requests are scheduled, this is the time in milliseconds that
          reads are served before pending writes get a time slice. If writes are
          more important than reads, set this value lower than
          <code class="option">read_expire</code>.
-        </p></dd><dt id="id-1.4.2.11.3.1.2.1.2"><span class="term "><code class="option">write_batch_expire</code></span></dt><dd><p>
+        </p></dd><dt id="id-1.4.2.11.3.1.2.1.2"><span class="term"><code class="option">write_batch_expire</code></span></dt><dd><p>
          Similar to <code class="option">read_batch_expire</code> for write requests.
-        </p></dd></dl></div></dd><dt id="id-1.4.2.11.3.2"><span class="term ">Deadline scheduler</span></dt><dd><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.2.11.3.2.2.1.1"><span class="term "><code class="option">read_expire</code></span></dt><dd><p>
+        </p></dd></dl></div></dd><dt id="id-1.4.2.11.3.2"><span class="term">Deadline scheduler</span></dt><dd><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.2.11.3.2.2.1.1"><span class="term"><code class="option">read_expire</code></span></dt><dd><p>
          The main focus of this scheduler is to limit the start latency for a
          request to a given time. Therefore, for each request, a deadline is
          calculated from the current time plus the value of
          <code class="option">read_expire</code> in milliseconds.
-        </p></dd><dt id="id-1.4.2.11.3.2.2.1.2"><span class="term "><code class="option">write_expire</code></span></dt><dd><p>
+        </p></dd><dt id="id-1.4.2.11.3.2.2.1.2"><span class="term"><code class="option">write_expire</code></span></dt><dd><p>
          Similar to <code class="option">read_expire</code> for write requests.
-        </p></dd><dt id="id-1.4.2.11.3.2.2.1.3"><span class="term "><code class="option">fifo_batch</code></span></dt><dd><p>
+        </p></dd><dt id="id-1.4.2.11.3.2.2.1.3"><span class="term"><code class="option">fifo_batch</code></span></dt><dd><p>
          If a request hits its deadline, it is necessary to move the request
          from the sorted I/O scheduler list to the dispatch queue. The variable
          <code class="option">fifo_batch</code> controls how many requests are moved,
          depending on the cost of each request.
-        </p></dd><dt id="id-1.4.2.11.3.2.2.1.4"><span class="term "><code class="option">front_merges</code></span></dt><dd><p>
+        </p></dd><dt id="id-1.4.2.11.3.2.2.1.4"><span class="term"><code class="option">front_merges</code></span></dt><dd><p>
          The scheduler normally tries to find contiguous I/O requests and
          merges them. There are two kinds of merges: The new I/O request may be
          in front of the existing I/O request (front merge), or it may follow
          behind the existing request (back merge). Most merges are back merges.
          Therefore, you can disable the front merge functionality by setting
          <code class="option">front_merges</code> to <code class="literal">0</code>.
-        </p></dd><dt id="id-1.4.2.11.3.2.2.1.5"><span class="term "><code class="option">write_starved</code></span></dt><dd><p>
+        </p></dd><dt id="id-1.4.2.11.3.2.2.1.5"><span class="term"><code class="option">write_starved</code></span></dt><dd><p>
          In case some read or write requests hit their deadline, the scheduler
          prefers the read requests by default. To prevent write requests from
          being postponed forever, the variable <code class="option">write_starved</code>
          controls how often read requests are preferred until write requests
          are preferred over read requests.
-        </p></dd></dl></div></dd><dt id="id-1.4.2.11.3.3"><span class="term ">CFQ Scheduler</span></dt><dd><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.2.11.3.3.2.1.1"><span class="term "><code class="option">back_seek_max</code> and <code class="option">back_seek_penalty</code></span></dt><dd><p>
+        </p></dd></dl></div></dd><dt id="id-1.4.2.11.3.3"><span class="term">CFQ Scheduler</span></dt><dd><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.2.11.3.3.2.1.1"><span class="term"><code class="option">back_seek_max</code> and <code class="option">back_seek_penalty</code></span></dt><dd><p>
          The <span class="emphasis"><em>CFQ</em></span> scheduler normally uses a strict
          ascending elevator. When needed, it also allows small backward seeks,
          but it puts some penalty on them. The maximum backward sector seek is
          defined with <code class="option">back_seek_max</code>, and the multiplier for
          the penalty is set by <code class="option">back_seek_penalty</code>.
-        </p></dd><dt id="id-1.4.2.11.3.3.2.1.2"><span class="term "><code class="option">fifo_expire_async</code> and <code class="option">fifo_expire_sync</code></span></dt><dd><p>
+        </p></dd><dt id="id-1.4.2.11.3.3.2.1.2"><span class="term"><code class="option">fifo_expire_async</code> and <code class="option">fifo_expire_sync</code></span></dt><dd><p>
          The <code class="option">fifo_expire_*</code> variables define the timeout in
          milliseconds for asynchronous and synchronous I/O requests. To prefer
          synchronous operations over asynchronous ones,
          <code class="option">fifo_expire_sync</code> value should be lower than
          fifo_expire_async.
-        </p></dd><dt id="id-1.4.2.11.3.3.2.1.3"><span class="term "><code class="option">quantum</code></span></dt><dd><p>
+        </p></dd><dt id="id-1.4.2.11.3.3.2.1.3"><span class="term"><code class="option">quantum</code></span></dt><dd><p>
          Defines number of I/O requests to be dispatched at once by the block
          device. This parameter is used for synchronous requests.
-        </p></dd><dt id="id-1.4.2.11.3.3.2.1.4"><span class="term "><code class="option">slice_async</code>, <code class="option">slice_async_rq</code>, <code class="option">slice_sync</code>, and <code class="option">slice_idle</code></span></dt><dd><p>
+        </p></dd><dt id="id-1.4.2.11.3.3.2.1.4"><span class="term"><code class="option">slice_async</code>, <code class="option">slice_async_rq</code>, <code class="option">slice_sync</code>, and <code class="option">slice_idle</code></span></dt><dd><p>
          These variables define the time slices a block device gets for
          synchronous or asynchronous operations.
-        </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+        </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
            <code class="option">slice_async</code> and <code class="option">slice_sync</code> serve
            as a base value in milliseconds for asynchronous or synchronous disk
            slice length calculations.
-          </p></li><li class="listitem "><p>
+          </p></li><li class="listitem"><p>
            <code class="option">slice_async_rq</code> for how many requests can an
            asynchronous disk slice accommodate.
-          </p></li><li class="listitem "><p>
+          </p></li><li class="listitem"><p>
            <code class="option">slice_idle</code> defines how long I/O scheduler idles
            before servicing next thread.
           </p></li></ul></div></dd></dl></div></dd></dl></div><p>
@@ -565,32 +582,31 @@ noop deadline [cfq]</pre></div><p>
    parameter <code class="literal">elevator=</code>. For example,
    <code class="literal">elevator=deadline</code> changes the I/O Scheduler to
    <code class="literal">deadline</code>.
-  </p></div><div class="sect1 " id="sec-quick-more"><div class="titlepage"><div><div><h2 class="title"><span class="number">10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">More information</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-more">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>article_setup.xml</li><li><span class="ds-label">ID: </span>sec-quick-more</li></ul></div></div></div></div><p>
+  </p></section><section class="sect1" id="sec-quick-more" data-id-title="More information"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">10 </span><span class="title-name">More information</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-more">#</a></h2></div></div></div><p>
    A lot of information about real-time implementations and administration can
    be found on the Internet. The following list contains several selected
    links:
 
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      More detailed information about the real-time Linux development and an
      introduction how to write a real-time application can be found in the
      real-time Linux community Wiki.
      <a class="link" href="https://rt.wiki.kernel.org" target="_blank">https://rt.wiki.kernel.org</a>, <a class="link" href="https://rt.wiki.kernel.org/index.php/HOWTO:_Build_an_RT-application" target="_blank">https://rt.wiki.kernel.org/index.php/HOWTO:_Build_an_RT-application</a>
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The <code class="systemitem">cpuset</code> feature of the kernel is explained in
      <code class="filename">/usr/src/linux/Documentation/cgroups/cpusets.txt</code>.
      More detailed documentation is available from
 
      <a class="link" href="http://lwn.net/Articles/127936/" target="_blank">http://lwn.net/Articles/127936/</a>. --&gt;
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      For more information about the deadline I/O scheduler, refer to
      <a class="link" href="https://en.wikipedia.org/wiki/Deadline_scheduler" target="_blank">https://en.wikipedia.org/wiki/Deadline_scheduler</a>.
 
      In your installed system, find further information in
      <code class="filename">/usr/src/linux/Documentation/block/deadline-iosched.txt</code>.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The CFQ I/O scheduler is covered in detail in
      <a class="link" href="http://en.wikipedia.org/wiki/CFQ" target="_blank">http://en.wikipedia.org/wiki/CFQ</a> and
      <code class="filename">/usr/src/linux/Documentation/block/cfq-iosched.txt</code>.
-    </p></li></ul></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="bk02ar01apa.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Appendix A </span>GNU Licenses</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+    </p></li></ul></div></section></section><nav class="bottom-pagination"><div> </div><div><a class="pagination-link next" href="bk02ar01apa.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Appendix A </span>GNU Licenses</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="article-setup.html#sec-slert-quick-overview"><span class="title-number">1 </span><span class="title-name">Product overview</span></a></span></li><li><span class="sect1"><a href="article-setup.html#sec-slert-quick-install"><span class="title-number">2 </span><span class="title-name">Installing SUSE Linux Enterprise Real Time</span></a></span></li><li><span class="sect1"><a href="article-setup.html#sec-slert-quick-cset"><span class="title-number">3 </span><span class="title-name">Managing CPU sets with <code class="command">cset</code></span></a></span></li><li><span class="sect1"><a href="article-setup.html#sec-slert-csets-tree"><span class="title-number">4 </span><span class="title-name">Managing tree-like structures with <code class="command">cset</code></span></a></span></li><li><span class="sect1"><a href="article-setup.html#sec-quick-chrt"><span class="title-number">5 </span><span class="title-name">Setting Real-time Attributes of a Process with <code class="command">chrt</code></span></a></span></li><li><span class="sect1"><a href="article-setup.html#sec-quick-taskset"><span class="title-number">6 </span><span class="title-name">Specifying CPU affinity with <code class="command">taskset</code></span></a></span></li><li><span class="sect1"><a href="article-setup.html#sec-quick-ionice"><span class="title-number">7 </span><span class="title-name">Changing I/O priorities with <code class="command">ionice</code></span></a></span></li><li><span class="sect1"><a href="article-setup.html#sec-quick-io-block-change"><span class="title-number">8 </span><span class="title-name">Changing the I/O scheduler for block devices</span></a></span></li><li><span class="sect1"><a href="article-setup.html#sec-quick-io-block-tune"><span class="title-number">9 </span><span class="title-name">Tuning the block device I/O scheduler</span></a></span></li><li><span class="sect1"><a href="article-setup.html#sec-quick-more"><span class="title-number">10 </span><span class="title-name">More information</span></a></span></li><li><span class="appendix"><a href="bk02ar01apa.html"><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></span><ul><li><span class="sect1"><a href="bk02ar01apa.html#id-1.4.2.13.4"><span class="title-number">A.1 </span><span class="title-name">GNU Free Documentation License</span></a></span></li></ul></li></ul></div><div class="side-title">Give feedback</div><ul class="feedback" id="_give-feedback"><li><a id="_feedback-reportbug" href="#" rel="nofollow" target="_blank">Report an issue</a></li></ul><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>
