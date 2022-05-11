@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>SLE RT Hardware Testing | SUSE Linux Enterprise Real Time 15 SP1</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="SLE RT Hardware Testing | SUSE Linux Enterprise Real T…" />
-<meta name="description" content="Using SUSE® Linux Enterprise Real Time needs real-time capable hardware. This paper describes the tools that can be used to determine if a specific hardware ha…" />
-<meta name="product-name" content="SUSE Linux Enterprise Real Time" />
-<meta name="product-number" content="15 SP1" />
-<meta name="book-title" content="SLE RT Hardware Testing" />
-<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
-<meta name="tracker-type" content="bsc" />
-<meta name="tracker-bsc-assignee" content="thomas.schraitle@suse.com" />
-<meta name="tracker-bsc-component" content="Other" />
-<meta name="tracker-bsc-product" content="SUSE Linux Enterprise Real Time 15 SP1" />
-<meta property="og:title" content="SLE RT Hardware Testing | SUSE Linux Enterprise Real T…" />
-<meta property="og:description" content="Using SUSE® Linux Enterprise Real Time needs real-time…" />
-<meta property="og:type" content="article" />
-<meta property="twitter:card" content="summary" />
-<meta property="twitter:title" content="SLE RT Hardware Testing | SUSE Linux Enterprise Real T…" />
-<meta property="twitter:description" content="Using SUSE® Linux Enterprise Real Time needs real-time…" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SLE RT Hardware Testing | SUSE Linux Enterprise Real Time 15 SP1</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="SLE RT Hardware Testing | SUSE Linux Enterprise Real T…"/>
+<meta name="description" content="Using SUSE® Linux Enterprise Real Time needs real-time capable hardware. This paper describes the tools that can be used to determine if a specific hardware ha…"/>
+<meta name="product-name" content="SUSE Linux Enterprise Real Time"/>
+<meta name="product-number" content="15 SP1"/>
+<meta name="book-title" content="SLE RT Hardware Testing"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-assignee" content="thomas.schraitle@suse.com"/>
+<meta name="tracker-bsc-component" content="Other"/>
+<meta name="tracker-bsc-product" content="SUSE Linux Enterprise Real Time 15 SP1"/>
+<meta property="og:title" content="SLE RT Hardware Testing | SUSE Linux Enterprise Real T…"/>
+<meta property="og:description" content="Using SUSE® Linux Enterprise Real Time needs real-time capable hardware. This paper describes the tools that can be used to determine if a specific hardware ha…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SLE RT Hardware Testing | SUSE Linux Enterprise Real T…"/>
+<meta name="twitter:description" content="Using SUSE® Linux Enterprise Real Time needs real-time capable hardware. This paper describes the tools that can be used to determine if a specific hardware ha…"/>
 
 <script type="text/javascript">
 
@@ -23,7 +23,7 @@ if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,33 +34,33 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft single offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs inactive"><a class="single-crumb" href="#art-slert-hwtest" accesskey="c"><span class="single-contents-icon"></span>SLE RT Hardware Testing</a><div class="bubble-corner active-contents"></div></div><div class="clearme"></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs inactive"><a class="single-crumb" href="#art-slert-hwtest" accesskey="c"><span class="single-contents-icon"></span>Show Contents: SLE RT Hardware Testing</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="clearme"></div></div><div class="clearme"></div></div><div class="active-contents bubble"><div class="bubble-container"><div id="_bubble-toc"><ol><li class="inactive"><a href="#sec-hwtest-basics"><span class="number">1 </span><span class="name">General Testing Procedure and Analysis</span></a></li><li class="inactive"><a href="#sec-hwtest-cyct"><span class="number">2 </span><span class="name">Determining Latencies with <code class="command">cyclictest</code></span></a></li><li class="inactive"><a href="#sec-hwtest-hwlat"><span class="number">3 </span><span class="name">Determining Latencies with the Hardware Latency Detector</span></a></li><li class="inactive"><a href="#sec-hwtest-more"><span class="number">4 </span><span class="name">For More Information</span></a></li><li class="inactive"><a href="#id-1.4.3.8"><span class="number">5 </span><span class="name">Legal Notice</span></a></li><li class="inactive"><a href="#id-1.4.3.9"><span class="number">6 </span><span class="name">GNU Free Documentation License</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_toc-bubble-wrap"></div><div id="_content" class="draft "><div class="documentation"><div xml:lang="en" class="article " id="art-slert-hwtest" lang="en"><div class="titlepage"><div><h6 class="version-info"><span class="productname ">SUSE Linux Enterprise Real Time</span> <span class="productnumber ">15 SP1</span></h6><div><h1 class="title">SLE RT Hardware Testing <a title="Permalink" class="permalink" href="#art-slert-hwtest">#</a></h1></div><div><h3 class="subtitle"><em>SUSE Linux Enterprise Real Time 15 SP1</em></h3></div><div class="abstract "><div class="abstract-title-wrap"><h6 class="abstract-title">Abstract<a title="Permalink" class="permalink" href="#id-1.4.3.3.4">#</a></h6></div><p> Using SUSE® Linux Enterprise Real Time needs real-time capable hardware.
+</script></head><body class="draft single normal offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="#art-slert-hwtest">SLE RT Hardware Testing</a></div></div><main id="_content"><nav class="side-toc placebo" id="_side-toc-overall"> </nav><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section xml:lang="en" class="article" id="art-slert-hwtest" data-id-title="SLE RT Hardware Testing"><div class="titlepage"><div><div class="big-version-info"><span class="productname">SUSE Linux Enterprise Real Time</span> <span class="productnumber">15 SP1</span></div><div><h1 class="title">SLE RT Hardware Testing <a title="Permalink" class="permalink" href="#art-slert-hwtest">#</a></h1></div><div><h3 class="subtitle"><em>SUSE Linux Enterprise Real Time 15 SP1</em></h3></div><div class="abstract"><p> Using SUSE® Linux Enterprise Real Time needs real-time capable hardware.
         This paper describes the tools that can be used to determine if
         a specific hardware has the needed real-time capabilities.
         Specifically, we describe <code class="systemitem">cyclictest</code> and
-          <span class="quote">“<span class="quote ">hardware latency detector</span>”</span> and the ways to
+          <span class="quote">“<span class="quote">hardware latency detector</span>”</span> and the ways to
         analyze their results. </p><p> Both the <code class="systemitem">cyclictest</code> and the
-       <span class="quote">“<span class="quote ">hardware latency detector</span>”</span> are
-        parts of the SUSE Linux Enterprise Real Time product. </p></div><div class="date"><span class="imprint-label">Publication Date: </span>01/24/2022
-</div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-hwtest-basics"><span class="number">1 </span><span class="name">General Testing Procedure and Analysis</span></a></span></dt><dt><span class="sect1"><a href="#sec-hwtest-cyct"><span class="number">2 </span><span class="name">Determining Latencies with <code class="command">cyclictest</code></span></a></span></dt><dt><span class="sect1"><a href="#sec-hwtest-hwlat"><span class="number">3 </span><span class="name">Determining Latencies with the Hardware Latency Detector</span></a></span></dt><dt><span class="sect1"><a href="#sec-hwtest-more"><span class="number">4 </span><span class="name">For More Information</span></a></span></dt><dt><span class="sect1"><a href="#id-1.4.3.8"><span class="number">5 </span><span class="name">Legal Notice</span></a></span></dt><dt><span class="sect1"><a href="#id-1.4.3.9"><span class="number">6 </span><span class="name">GNU Free Documentation License</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-hwtest-basics"><div class="titlepage"><div><div><h2 class="title"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">General Testing Procedure and Analysis</span> <a title="Permalink" class="permalink" href="#sec-hwtest-basics">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>art_slert_hw_testing.xml</li><li><span class="ds-label">ID: </span>sec-hwtest-basics</li></ul></div></div></div></div><p>
+       <span class="quote">“<span class="quote">hardware latency detector</span>”</span> are
+        parts of the SUSE Linux Enterprise Real Time product. </p></div><div class="date"><span class="imprint-label">Publication Date: </span>05/11/2022
+</div></div></div><section class="sect1" id="sec-hwtest-basics" data-id-title="General Testing Procedure and Analysis"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">1 </span><span class="title-name">General Testing Procedure and Analysis</span> <a title="Permalink" class="permalink" href="#sec-hwtest-basics">#</a></h2></div></div></div><p>
     The first task you need to do when evaluating hardware for real-time
     is described in the following procedure:
-   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Determine the largest allowable latency of the system using
-       the hardware latency detector:</p><ol type="a" class="substeps "><li class="step "><p>
+   </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Determine the largest allowable latency of the system using
+       the hardware latency detector:</p><ol type="a" class="substeps"><li class="step"><p>
           Set the machine for real-time performance.
         </p><p> Some servers have special settings for real-time, but they are
-        strictly vendor specific. </p></li><li class="step "><p>
+        strictly vendor specific. </p></li><li class="step"><p>
          Set everything to lowest possible latency.
-        </p></li><li class="step "><p>
+        </p></li><li class="step"><p>
          Turn memory scrubbing down to as little as possible.
-        </p></li><li class="step "><p>
+        </p></li><li class="step"><p>
           Use the hardware latency detector (see <a class="xref" href="#sec-hwtest-hwlat" title="3. Determining Latencies with the Hardware Latency Detector">Section 3, “Determining Latencies with the Hardware Latency Detector”</a> for details).
-        </p></li></ol></li><li class="step "><p>Check the latencies measured by the hardware latency detector. </p><p>The latencies should be low enough to support your real-time
+        </p></li></ol></li><li class="step"><p>Check the latencies measured by the hardware latency detector. </p><p>The latencies should be low enough to support your real-time
        application with enough of a margin to meet its deadlines. If it is
        not the case, even after tweaking the machine setting for better
        real-time performance, the hardware is not good enough for your
        application. Use a different hardware.
-      </p></li><li class="step "><p>
+      </p></li><li class="step"><p>
        Measure latencies using <code class="command">cyclictest</code> (see <a class="xref" href="#sec-hwtest-cyct" title="2. Determining Latencies with cyclictest">Section 2, “Determining Latencies with <code class="command">cyclictest</code>”</a> for details).
       </p><p>
        In a typical situation
@@ -74,44 +74,44 @@ hljs.configure({
       measured by both methods there might be a software bug involved.
       Such latencies are a significant part caused by the operating system,
       not the hardware. In such a case, contact SUSE for support.
-    </p></div><div class="sect1 " id="sec-hwtest-cyct"><div class="titlepage"><div><div><h2 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Determining Latencies with <code class="command">cyclictest</code></span> <a title="Permalink" class="permalink" href="#sec-hwtest-cyct">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>art_slert_hw_testing.xml</li><li><span class="ds-label">ID: </span>sec-hwtest-cyct</li></ul></div></div></div></div><p> The <code class="command">cyclictest</code> command is part of the
+    </p></section><section class="sect1" id="sec-hwtest-cyct" data-id-title="Determining Latencies with cyclictest"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">2 </span><span class="title-name">Determining Latencies with <code class="command">cyclictest</code></span> <a title="Permalink" class="permalink" href="#sec-hwtest-cyct">#</a></h2></div></div></div><p> The <code class="command">cyclictest</code> command is part of the
       real-time kernel test suite contained in the
-        <span class="package ">rt-tests</span> RPM package. This package is distributed
+        <span class="package">rt-tests</span> RPM package. This package is distributed
      as part of SUSE Linux Enterprise Real Time. </p><p> Make sure to be <code class="systemitem">root</code> or use <code class="command">sudo</code> to
       run <code class="command">cyclictest</code>.</p><p> When <code class="command">cyclictest</code> is running, it shows the
       number of cycles performed and the minimal, actual, average and
       maximum latency measured. To change the behaviour of
      <code class="command">cyclictest</code>, the following list gives you an overview
      of the available options:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
       The values shown are in microseconds. To use nanoseconds instead
       of microseconds, use the 
       <code class="option">--nsec</code> option.
-     </p></li><li class="listitem "><p>
+     </p></li><li class="listitem"><p>
       By default, <code class="command">cyclictest</code> runs forever. The number of
       cycles can be limited with the
-      <code class="option">--loops=<em class="replaceable ">NUMBER_OF_CYCLES</em></code>
+      <code class="option">--loops=<em class="replaceable">NUMBER_OF_CYCLES</em></code>
       option.
-     </p></li><li class="listitem "><p>
+     </p></li><li class="listitem"><p>
       By default, only one thread is run. You can use the 
-      <code class="option">--threads=<em class="replaceable ">NUMBER_OF_THREADS</em></code>
+      <code class="option">--threads=<em class="replaceable">NUMBER_OF_THREADS</em></code>
       option to set the number of threads used. Without specifying a
       number, all available processors are used. With the 
       <code class="option">--affinity</code> option, the threads are pinned to the
       processors with the same number.
-     </p></li><li class="listitem "><p>
+     </p></li><li class="listitem"><p>
       To create a histogram with the  latency
-      values, use the <code class="option">--histogram=<em class="replaceable ">NUMBER_OF_MICROSECONDS</em></code>
-      option, where <em class="replaceable ">NUMBER_OF_MICROSECONDS</em>
+      values, use the <code class="option">--histogram=<em class="replaceable">NUMBER_OF_MICROSECONDS</em></code>
+      option, where <em class="replaceable">NUMBER_OF_MICROSECONDS</em>
       determines the maximum tracking time. Larger values are reported
       as histogram overflows. The histogram is written to standard out (STDOUT),
       but you can redirect it to a file:
      </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cyclictest</code> --loops=1000 \
 --histogram=1000 &gt; histogram</pre></div><p> The histogram file can be visualized with the
         <code class="command">cyclictest_plot.sh</code> script. The result is a
-      PNG file. </p></li></ul></div></div><div class="sect1 " id="sec-hwtest-hwlat"><div class="titlepage"><div><div><h2 class="title"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Determining Latencies with the Hardware Latency Detector</span> <a title="Permalink" class="permalink" href="#sec-hwtest-hwlat">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>art_slert_hw_testing.xml</li><li><span class="ds-label">ID: </span>sec-hwtest-hwlat</li></ul></div></div></div></div><p> The <span class="emphasis"><em>hardware latency detector</em></span>
+      PNG file. </p></li></ul></div></section><section class="sect1" id="sec-hwtest-hwlat" data-id-title="Determining Latencies with the Hardware Latency Detector"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">3 </span><span class="title-name">Determining Latencies with the Hardware Latency Detector</span> <a title="Permalink" class="permalink" href="#sec-hwtest-hwlat">#</a></h2></div></div></div><p> The <span class="emphasis"><em>hardware latency detector</em></span>
         (<code class="filename">hwlat_detector.ko</code>) is installed with the
-      real-time kernel (the <span class="package ">kernel-rt</span> package).
+      real-time kernel (the <span class="package">kernel-rt</span> package).
       It is a special kernel module that is used to detect large system
       latencies. It is caused by the behavior of underlying hardware or
       firmware, independent of Linux itself (system management
@@ -125,25 +125,25 @@ hljs.configure({
       value to be considered in microseconds. Use the value that is
       relevant for your particular situation. </p><p> After the module is loaded, the
         <code class="filename">/sys/kernel/debug/hwlat_detector/</code> directory
-      is created. The directory contains several files: </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.3.6.8.1"><span class="term "><code class="filename">count</code></span></dt><dd><p> Contains the number of latency spikes (larger than
+      is created. The directory contains several files: </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.3.6.8.1"><span class="term"><code class="filename">count</code></span></dt><dd><p> Contains the number of latency spikes (larger than
               <code class="literal">threshold</code>) observed since the last
-            reset. </p></dd><dt id="id-1.4.3.6.8.2"><span class="term "><code class="filename">enable</code></span></dt><dd><p> The global enable/disable toggle
-              (<code class="literal">0/1</code>), resets the count. </p></dd><dt id="id-1.4.3.6.8.3"><span class="term "><code class="filename">max</code></span></dt><dd><p> The maximum hardware latency that has been observed, in
-            microseconds. </p></dd><dt id="id-1.4.3.6.8.4"><span class="term "><code class="filename">sample</code></span></dt><dd><p> A pipe from which to read current raw sample data in
-            the format <code class="literal"><em class="replaceable ">timestamp</em>
-              <em class="replaceable ">observed latency in microseconds</em></code>
-           (can be opened with parameter <em class="parameter ">O_NONBLOCK</em>
-            for a single sample). </p></dd><dt id="id-1.4.3.6.8.5"><span class="term "><code class="filename">threshold</code></span></dt><dd><p> The minimum latency value to be considered, in
-            microseconds. </p></dd><dt id="id-1.4.3.6.8.6"><span class="term "><code class="filename">width</code></span></dt><dd><p> The time period to sample with CPUs held, in
+            reset. </p></dd><dt id="id-1.4.3.6.8.2"><span class="term"><code class="filename">enable</code></span></dt><dd><p> The global enable/disable toggle
+              (<code class="literal">0/1</code>), resets the count. </p></dd><dt id="id-1.4.3.6.8.3"><span class="term"><code class="filename">max</code></span></dt><dd><p> The maximum hardware latency that has been observed, in
+            microseconds. </p></dd><dt id="id-1.4.3.6.8.4"><span class="term"><code class="filename">sample</code></span></dt><dd><p> A pipe from which to read current raw sample data in
+            the format <code class="literal"><em class="replaceable">timestamp</em>
+              <em class="replaceable">observed latency in microseconds</em></code>
+           (can be opened with parameter <em class="parameter">O_NONBLOCK</em>
+            for a single sample). </p></dd><dt id="id-1.4.3.6.8.5"><span class="term"><code class="filename">threshold</code></span></dt><dd><p> The minimum latency value to be considered, in
+            microseconds. </p></dd><dt id="id-1.4.3.6.8.6"><span class="term"><code class="filename">width</code></span></dt><dd><p> The time period to sample with CPUs held, in
             microseconds. Must be less than the total window size
-            (enforced). </p></dd><dt id="id-1.4.3.6.8.7"><span class="term "><code class="filename">window</code></span></dt><dd><p> The total size of the sampling window (including the
+            (enforced). </p></dd><dt id="id-1.4.3.6.8.7"><span class="term"><code class="filename">window</code></span></dt><dd><p> The total size of the sampling window (including the
             width), in microseconds. </p></dd></dl></div><p> After running the hardware latency detector for a significant
       amount of time, check the values of <code class="systemitem">count</code>
       and <code class="systemitem">max</code>. For a detailed analysis, you can
-      use the output from <code class="systemitem">sample</code>. </p></div><div class="sect1 " id="sec-hwtest-more"><div class="titlepage"><div><div><h2 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">For More Information</span> <a title="Permalink" class="permalink" href="#sec-hwtest-more">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>art_slert_hw_testing.xml</li><li><span class="ds-label">ID: </span>sec-hwtest-more</li></ul></div></div></div></div><p> For more information on <code class="command">cyclictest</code>, see <code class="command">man 8
+      use the output from <code class="systemitem">sample</code>. </p></section><section class="sect1" id="sec-hwtest-more" data-id-title="For More Information"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">4 </span><span class="title-name">For More Information</span> <a title="Permalink" class="permalink" href="#sec-hwtest-more">#</a></h2></div></div></div><p> For more information on <code class="command">cyclictest</code>, see <code class="command">man 8
         cyclictest</code>. </p><p> For more information on the hardware latency detector, see
         <code class="filename">/usr/src/linux/Documentation/hwlat_detector.txt</code>.
-    </p></div><div class="sect1 " id="id-1.4.3.8"><div class="titlepage"><div><div><h2 class="title"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Legal Notice</span> <a title="Permalink" class="permalink" href="#id-1.4.3.8">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_copyright_quick.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></section><section class="sect1" id="id-1.4.3.8" data-id-title="Legal Notice"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">5 </span><span class="title-name">Legal Notice</span> <a title="Permalink" class="permalink" href="#id-1.4.3.8">#</a></h2></div></div></div><p>
   Copyright© 2006–
 2022
 
@@ -153,7 +153,7 @@ hljs.configure({
   under the terms of the GNU Free Documentation License, Version 1.2 or (at
   your option) version 1.3; with the Invariant Section being this copyright
   notice and license. A copy of the license version 1.2 is included in the
-  section entitled <span class="quote">“<span class="quote ">GNU Free Documentation License</span>”</span>.
+  section entitled <span class="quote">“<span class="quote">GNU Free Documentation License</span>”</span>.
  </p><p>
   For SUSE trademarks, see
   <a class="link" href="http://www.suse.com/company/legal/" target="_blank">http://www.suse.com/company/legal/</a>. All other
@@ -165,12 +165,12 @@ hljs.configure({
   to detail. However, this does not guarantee complete accuracy. Neither
   SUSE LLC, its affiliates, the authors, nor the translators shall be held
   liable for possible errors or the consequences thereof.
- </p></div><div class="legal-section"><div class="sect1 " id="id-1.4.3.9"><div class="titlepage"><div><div><h2 class="title"><span class="number">6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GNU Free Documentation License</span> <a title="Permalink" class="permalink" href="#id-1.4.3.9">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_gfdl1.2_i.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+ </p></section><div class="legal-section"><section class="sect1" id="id-1.4.3.9" data-id-title="GNU Free Documentation License"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">6 </span><span class="title-name">GNU Free Documentation License</span> <a title="Permalink" class="permalink" href="#id-1.4.3.9">#</a></h2></div></div></div><p>
   Copyright (C) 2000, 2001, 2002 Free Software Foundation, Inc. 51 Franklin
   St, Fifth Floor, Boston, MA 02110-1301 USA. Everyone is permitted to copy
   and distribute verbatim copies of this license document, but changing it
   is not allowed.
- </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.3"><span class="name">
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.3"><span class="name">
     0. PREAMBLE
   </span><a title="Permalink" class="permalink" href="#id-1.4.3.9.3">#</a></h5></div><p>
   The purpose of this License is to make a manual, textbook, or other
@@ -193,7 +193,7 @@ hljs.configure({
   for any textual work, regardless of subject matter or whether it is
   published as a printed book. We recommend this License principally for
   works whose purpose is instruction or reference.
- </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.7"><span class="name">
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.7"><span class="name">
     1. APPLICABILITY AND DEFINITIONS
   </span><a title="Permalink" class="permalink" href="#id-1.4.3.9.7">#</a></h5></div><p>
   This License applies to any manual or other work, in any medium, that
@@ -276,7 +276,7 @@ hljs.configure({
   but only as regards disclaiming warranties: any other implication that
   these Warranty Disclaimers may have is void and has no effect on the
   meaning of this License.
- </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.18"><span class="name">
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.18"><span class="name">
     2. VERBATIM COPYING
   </span><a title="Permalink" class="permalink" href="#id-1.4.3.9.18">#</a></h5></div><p>
   You may copy and distribute the Document in any medium, either
@@ -291,7 +291,7 @@ hljs.configure({
  </p><p>
   You may also lend copies, under the same conditions stated above, and you
   may publicly display copies.
- </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.21"><span class="name">
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.21"><span class="name">
     3. COPYING IN QUANTITY
   </span><a title="Permalink" class="permalink" href="#id-1.4.3.9.21">#</a></h5></div><p>
   If you publish printed copies (or copies in media that commonly have
@@ -325,7 +325,7 @@ hljs.configure({
   It is requested, but not required, that you contact the authors of the
   Document well before redistributing any large number of copies, to give
   them a chance to provide you with an updated version of the Document.
- </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.26"><span class="name">
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.26"><span class="name">
     4. MODIFICATIONS
   </span><a title="Permalink" class="permalink" href="#id-1.4.3.9.26">#</a></h5></div><p>
   You may copy and distribute a Modified Version of the Document under the
@@ -334,36 +334,36 @@ hljs.configure({
   filling the role of the Document, thus licensing distribution and
   modification of the Modified Version to whoever possesses a copy of it. In
   addition, you must do these things in the Modified Version:
- </p><div class="orderedlist "><ol class="orderedlist" type="A"><li class="listitem "><p>
+ </p><div class="orderedlist"><ol class="orderedlist" type="A"><li class="listitem"><p>
     Use in the Title Page (and on the covers, if any) a title distinct from
     that of the Document, and from those of previous versions (which should,
     if there were any, be listed in the History section of the Document).
     You may use the same title as a previous version if the original
     publisher of that version gives permission.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     List on the Title Page, as authors, one or more persons or entities
     responsible for authorship of the modifications in the Modified Version,
     together with at least five of the principal authors of the Document
     (all of its principal authors, if it has fewer than five), unless they
     release you from this requirement.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     State on the Title page the name of the publisher of the Modified
     Version, as the publisher.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Preserve all the copyright notices of the Document.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Add an appropriate copyright notice for your modifications adjacent to
     the other copyright notices.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Include, immediately after the copyright notices, a license notice
     giving the public permission to use the Modified Version under the terms
     of this License, in the form shown in the Addendum below.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Preserve in that license notice the full lists of Invariant Sections and
     required Cover Texts given in the Document's license notice.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Include an unaltered copy of this License.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Preserve the section Entitled "History", Preserve its Title, and add to
     it an item stating at least the title, year, new authors, and publisher
     of the Modified Version as given on the Title Page. If there is no
@@ -371,7 +371,7 @@ hljs.configure({
     title, year, authors, and publisher of the Document as given on its
     Title Page, then add an item describing the Modified Version as stated
     in the previous sentence.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Preserve the network location, if any, given in the Document for public
     access to a Transparent copy of the Document, and likewise the network
     locations given in the Document for previous versions it was based on.
@@ -379,22 +379,22 @@ hljs.configure({
     location for a work that was published at least four years before the
     Document itself, or if the original publisher of the version it refers
     to gives permission.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     For any section Entitled "Acknowledgements" or "Dedications", Preserve
     the Title of the section, and preserve in the section all the substance
     and tone of each of the contributor acknowledgements and/or dedications
     given therein.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Preserve all the Invariant Sections of the Document, unaltered in their
     text and in their titles. Section numbers or the equivalent are not
     considered part of the section titles.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Delete any section Entitled "Endorsements". Such a section may not be
     included in the Modified Version.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Do not retitle any existing section to be Entitled "Endorsements" or to
     conflict in title with any Invariant Section.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Preserve any Warranty Disclaimers.
    </p></li></ol></div><p>
   If the Modified Version includes new front-matter sections or appendices
@@ -422,7 +422,7 @@ hljs.configure({
   The author(s) and publisher(s) of the Document do not by this License give
   permission to use their names for publicity for or to assert or imply
   endorsement of any Modified Version.
- </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.33"><span class="name">
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.33"><span class="name">
     5. COMBINING DOCUMENTS
   </span><a title="Permalink" class="permalink" href="#id-1.4.3.9.33">#</a></h5></div><p>
   You may combine the Document with other documents released under this
@@ -446,7 +446,7 @@ hljs.configure({
   likewise combine any sections Entitled "Acknowledgements", and any
   sections Entitled "Dedications". You must delete all sections Entitled
   "Endorsements".
- </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.37"><span class="name">
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.37"><span class="name">
     6. COLLECTIONS OF DOCUMENTS
   </span><a title="Permalink" class="permalink" href="#id-1.4.3.9.37">#</a></h5></div><p>
   You may make a collection consisting of the Document and other documents
@@ -459,7 +459,7 @@ hljs.configure({
   it individually under this License, provided you insert a copy of this
   License into the extracted document, and follow this License in all other
   respects regarding verbatim copying of that document.
- </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.40"><span class="name">
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.40"><span class="name">
     7. AGGREGATION WITH INDEPENDENT WORKS
   </span><a title="Permalink" class="permalink" href="#id-1.4.3.9.40">#</a></h5></div><p>
   A compilation of the Document or its derivatives with other separate and
@@ -477,7 +477,7 @@ hljs.configure({
   the Document within the aggregate, or the electronic equivalent of covers
   if the Document is in electronic form. Otherwise they must appear on
   printed covers that bracket the whole aggregate.
- </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.43"><span class="name">
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.43"><span class="name">
     8. TRANSLATION
   </span><a title="Permalink" class="permalink" href="#id-1.4.3.9.43">#</a></h5></div><p>
   Translation is considered a kind of modification, so you may distribute
@@ -495,7 +495,7 @@ hljs.configure({
   If a section in the Document is Entitled "Acknowledgements",
   "Dedications", or "History", the requirement (section 4) to Preserve its
   Title (section 1) will typically require changing the actual title.
- </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.46"><span class="name">
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.46"><span class="name">
     9. TERMINATION
   </span><a title="Permalink" class="permalink" href="#id-1.4.3.9.46">#</a></h5></div><p>
   You may not copy, modify, sublicense, or distribute the Document except as
@@ -505,7 +505,7 @@ hljs.configure({
   who have received copies, or rights, from you under this License will not
   have their licenses terminated so long as such parties remain in full
   compliance.
- </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.48"><span class="name">
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.48"><span class="name">
     10. FUTURE REVISIONS OF THIS LICENSE
   </span><a title="Permalink" class="permalink" href="#id-1.4.3.9.48">#</a></h5></div><p>
   The Free Software Foundation may publish new, revised versions of the GNU
@@ -522,7 +522,7 @@ hljs.configure({
   Foundation. If the Document does not specify a version number of this
   License, you may choose any version ever published (not as a draft) by the
   Free Software Foundation.
- </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.51"><span class="name">
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.3.9.51"><span class="name">
     ADDENDUM: How to use this License for your documents
   </span><a title="Permalink" class="permalink" href="#id-1.4.3.9.51">#</a></h5></div><div class="verbatim-wrap"><pre class="screen">   Copyright (c) YEAR YOUR NAME.
    Permission is granted to copy, distribute and/or modify this document
@@ -543,6 +543,5 @@ hljs.configure({
   recommend releasing these examples in parallel under your choice of free
   software license, such as the GNU General Public License, to permit their
   use in free software.
- </p></div></div></div></div><div class="page-bottom"><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+ </p></section></div></section></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="#sec-hwtest-basics"><span class="title-number">1 </span><span class="title-name">General Testing Procedure and Analysis</span></a></span></li><li><span class="sect1"><a href="#sec-hwtest-cyct"><span class="title-number">2 </span><span class="title-name">Determining Latencies with <code class="command">cyclictest</code></span></a></span></li><li><span class="sect1"><a href="#sec-hwtest-hwlat"><span class="title-number">3 </span><span class="title-name">Determining Latencies with the Hardware Latency Detector</span></a></span></li><li><span class="sect1"><a href="#sec-hwtest-more"><span class="title-number">4 </span><span class="title-name">For More Information</span></a></span></li><li><span class="sect1"><a href="#id-1.4.3.8"><span class="title-number">5 </span><span class="title-name">Legal Notice</span></a></span></li><li><span class="sect1"><a href="#id-1.4.3.9"><span class="title-number">6 </span><span class="title-name">GNU Free Documentation License</span></a></span></li></ul></div><div class="side-title">Give feedback</div><ul class="feedback" id="_give-feedback"><li><a id="_feedback-reportbug" href="#" rel="nofollow" target="_blank">Report an issue</a></li></ul><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>
