@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SLE RT 15 SP3 | Shielding Linux Resources | Using shortcuts</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Using shortcuts | SLE RT 15 SP3"/>
+<meta name="description" content="The commands listed in the previous sections always used all the required options. However, cset does have a shortcut facility that will execute cert…"/>
+<meta name="product-name" content="SUSE Linux Enterprise Real Time"/>
+<meta name="product-number" content="15 SP3"/>
+<meta name="book-title" content="Shielding Linux Resources"/>
+<meta name="chapter-title" content="Chapter 4. Using shortcuts"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-assignee" content="thomas.schraitle@suse.com"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE Linux Enterprise Real Time 15 SP4"/>
+<meta property="og:title" content="Using shortcuts | SLE RT 15 SP3"/>
+<meta property="og:description" content="The commands listed in the previous sections always used all the required options. However, cset does have a shortcut facility that will execute cert…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using shortcuts | SLE RT 15 SP3"/>
+<meta name="twitter:description" content="The commands listed in the previous sections always used all the required options. However, cset does have a shortcut facility that will execute cert…"/>
+<link rel="prev" href="cha-shielding-cpuset.html" title="Chapter 3. Full-featured cpuset manipulation commands"/><link rel="next" href="cha-shieldingt-help.html" title="Chapter 5. What to do if there are problems"/>
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script><meta name="edit-url" content="https://github.com/SUSE/doc-slert/edit/main/xml/slert_usingshortcuts.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Shielding Linux Resources</a><span> / </span><a class="crumb" href="cha-shielding-shortcuts.html">Using shortcuts</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Shielding Linux Resources</div><ol><li><a href="cha-shielding-intro.html" class=" "><span class="title-number">1 </span><span class="title-name">Introduction</span></a></li><li><a href="cha-shielding-model.html" class=" "><span class="title-number">2 </span><span class="title-name">The basic shielding model</span></a></li><li><a href="cha-shielding-cpuset.html" class=" "><span class="title-number">3 </span><span class="title-name">Full-featured cpuset manipulation commands</span></a></li><li><a href="cha-shielding-shortcuts.html" class=" you-are-here"><span class="title-number">4 </span><span class="title-name">Using shortcuts</span></a></li><li><a href="cha-shieldingt-help.html" class=" "><span class="title-number">5 </span><span class="title-name">What to do if there are problems</span></a></li><li><a href="bk01apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="cha-shielding-shortcuts" data-id-title="Using shortcuts"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname">SUSE Linux Enterprise Real Time</span> <span class="productnumber">15 SP3</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">4 </span><span class="title-name">Using shortcuts</span></span> <a title="Permalink" class="permalink" href="cha-shielding-shortcuts.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_usingshortcuts.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  The commands listed in the previous sections always used all the required
+  options. However, <code class="command">cset</code> does have a shortcut facility
+  that will execute certain commands without specifying all options. An
+  effort has been made to do this with the <span class="quote">“<span class="quote">principle of least
+  surprise</span>”</span>. This means that if you do not specify options, but do
+  specify parameters, then the outcome of the command should be intuitive as
+  possible.
+ </p><p>
+  Using shortcuts is not necessary. In fact, you can use either shortcuts or
+  long options. However, using long options instead of shortcuts does have a
+  use case: when you write a script intended to be self-documenting, or
+  perhaps when you generate <code class="command">cset</code> documentation.
+ </p><p>
+  To begin, the subcommands <code class="command">shield</code>,
+  <code class="command">set</code> and <code class="command">proc</code> can themselves be
+  shortened to the fewest number of characters that are unambiguous. For
+  example, the following commands are identical:
+ </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col style="width: 50%; " class="c1"/><col style="width: 50%; " class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+      <p>
+       Long method
+      </p>
+     </th><th style="border-bottom: 1px solid ; ">
+      <p>
+       Short method
+      </p>
+     </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -s -p 1234</pre></div>
+     </td><td style="border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> sh -s -p 1234</pre></div>
+     </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> set -c 1,3 -s newset</pre></div>
+     </td><td style="border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> se -c 1,3 -s newset</pre></div>
+     </td></tr><tr><td style="border-right: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> proc -s newset -e bash</pre></div>
+     </td><td>
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> p -s newset -e bash</pre></div>
+     </td></tr></tbody></table></div><p>
+  The <code class="command">proc</code> command can be shortened to
+  <code class="command">p</code>, while <code class="command">shield</code> and
+  <code class="command">set</code> need two letters to disambiguate.
+ </p><section class="sect1" id="sec-shielding-shortcuts-shield" data-id-title="shield subcommand shortcuts"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.1 </span><span class="title-name"><code class="command">shield</code> subcommand shortcuts</span></span> <a title="Permalink" class="permalink" href="cha-shielding-shortcuts.html#sec-shielding-shortcuts-shield">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_usingshortcuts.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   The <code class="command">shield</code> subcommand supports two areas with
+   shortcuts: the short method (when there are no options given and where to
+   shield is the common use case), and the long method (which makes
+   <code class="option">-p/--pid</code> optional for the <code class="option">-s/--shield</code>
+   and <code class="option">-u/--unshield</code> options).
+  </p><p>
+   For the common use case of actually shielding either a PIDSPEC or executing
+   a command into the shield, the following <code class="command">cset</code> commands
+   are equivalent.
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col style="width: 50%; " class="c1"/><col style="width: 50%; " class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Long method</p></th><th style="border-bottom: 1px solid ; "><p>Short method</p></th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -s -p 1234,500-649</pre></div>
+      </td><td style="border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> sh 1234,500-649</pre></div>
+      </td></tr><tr><td style="border-right: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -s -e bash</pre></div>
+      </td><td>
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> sh bash</pre></div>
+      </td></tr></tbody></table></div><p>
+   When using the <code class="option">-s</code> or <code class="option">-u</code> shield/unshield
+   options, it is optional to use the <code class="option">-p</code> option to specify
+   a PIDSPEC. For example:
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col style="width: 50%; " class="c1"/><col style="width: 50%; " class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>
+        Long method
+       </p>
+      </th><th style="border-bottom: 1px solid ; ">
+       <p>
+        Short method
+       </p>
+      </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -s -p 1234</pre></div>
+      </td><td style="border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> sh -s 1234</pre></div>
+      </td></tr><tr><td style="border-right: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -u -p 1234</pre></div>
+      </td><td>
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> sh -u 1234</pre></div>
+      </td></tr></tbody></table></div></section><section class="sect1" id="sec-shielding-shortcuts-set" data-id-title="set subcommand shortcuts"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.2 </span><span class="title-name"><code class="command">set</code> subcommand shortcuts</span></span> <a title="Permalink" class="permalink" href="cha-shielding-shortcuts.html#sec-shielding-shortcuts-set">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_usingshortcuts.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   The <code class="command">set</code> subcommand has a limited number of shortcuts.
+   The option <code class="option">--set</code> is optional usually
+   and the <code class="option">--list</code> option is also optional to
+   list sets. For example, these commands are equivalent:
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col style="width: 50%; " class="c1"/><col style="width: 50%; " class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>
+        Long method
+       </p>
+      </th><th style="border-bottom: 1px solid ; ">
+       <p>
+        Short method
+       </p>
+      </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> set -l -s myset</pre></div>
+      </td><td style="border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> se -l myset</pre></div>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> se -l myset</pre></div>
+      </td><td style="border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> se myset</pre></div>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> set -c 1,2,3 -s newset</pre></div>
+      </td><td style="border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> se -c 1,2,3 newset</pre></div>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> set -d -s newset</pre></div>
+      </td><td style="border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> se -d newset</pre></div>
+      </td></tr><tr><td style="border-right: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> set -n newname -s oldname</pre></div>
+      </td><td>
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> se -n newname oldname</pre></div>
+      </td></tr></tbody></table></div><p>
+   In fact, if you want to apply either the list or the destroy options to
+   multiple <code class="systemitem">cpuset</code>s with one <code class="command">cset</code> command, you will not
+   need to use the <code class="option">-s</code> option. For example:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> se -d myset yourset ourset
+--&gt; destroys cpusets: myset, yourset and ourset
+
+
+<code class="command">cset</code> se -l prio_high prio_med prio_low
+--&gt; lists only cpusets prio_high, prio_med and prio_low
+--&gt; the -l is optional in this case since list is default</pre></div></section><section class="sect1" id="sec-shielding-shortcuts-proc" data-id-title="proc subcommand shortcuts"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.3 </span><span class="title-name"><code class="command">proc</code> subcommand shortcuts</span></span> <a title="Permalink" class="permalink" href="cha-shielding-shortcuts.html#sec-shielding-shortcuts-proc">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_usingshortcuts.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   For the <code class="command">proc</code> subcommand, the <code class="option">-s</code>, <code class="option">-t</code> and
+   <code class="option">-f</code> options to specify the <code class="systemitem">cpuset</code>, the origination <code class="systemitem">cpuset</code>
+   and the destination <code class="systemitem">cpuset</code> can sometimes be optional. For example, the
+   following commands are equivalent. To list tasks in <code class="systemitem">cpuset</code>s:
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col style="width: 50%; " class="c1"/><col style="width: 50%; " class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>
+        Long method
+       </p>
+      </th><th style="border-bottom: 1px solid ; ">
+       <p>
+        Short method
+       </p>
+      </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> proc -l -s myset</pre></div>
+       <p>
+        or
+       </p>
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> proc -l -f myset</pre></div>
+       <p>
+        or
+       </p>
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> proc -l -t myset</pre></div>
+      </td><td style="border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> p -l myset</pre></div>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> p -l myset</pre></div>
+      </td><td style="border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> p myset</pre></div>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> proc -l -s one two</pre></div>
+      </td><td style="border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> p -l one two</pre></div>
+      </td></tr><tr><td style="border-right: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> p -l one two</pre></div>
+      </td><td>
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> p one two</pre></div>
+      </td></tr></tbody></table></div><p>
+   To execute a process into a <code class="systemitem">cpuset</code>:
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col style="width: 50%; " class="c1"/><col style="width: 50%; " class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>
+        Long method
+       </p>
+      </th><th style="border-bottom: 1px solid ; ">
+       <p>
+        Short method
+       </p>
+      </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> proc -s myset -e bash</pre></div>
+      </td><td>
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> p myset -e bash</pre></div>
+      </td></tr></tbody></table></div><p>
+   Moving tasks into and out of <code class="systemitem">cpuset</code>s have the following shortcuts.
+   To move a PIDSPEC into a <code class="systemitem">cpuset</code>:
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col style="width: 50%; " class="c1"/><col style="width: 50%; " class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>
+        Long method
+       </p>
+      </th><th style="border-bottom: 1px solid ; ">
+       <p>
+        Short method
+       </p>
+      </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> proc -m -p 4242,4243 -s myset</pre></div>
+      </td><td style="border-bottom: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> p -m 4242,4243 myset</pre></div>
+      </td></tr><tr><td style="border-right: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> proc -m -p 12 -t myset</pre></div>
+      </td><td>
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> p -m 12 myset</pre></div>
+      </td></tr></tbody></table></div><p>
+   To move all tasks from one <code class="systemitem">cpuset</code> to another:
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col style="width: 50%; " class="c1"/><col style="width: 50%; " class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>
+        Long method
+       </p>
+      </th><th style="border-bottom: 1px solid ; ">
+       <p>
+        Short method
+       </p>
+      </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; ">
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> proc -m -f set1 -t set2</pre></div>
+       <p>
+        or
+       </p>
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> proc -m -s set1 -t set2</pre></div>
+       <p>
+        or
+       </p>
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> proc -m -f set1 -s set2</pre></div>
+      </td><td>
+<div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> p -m set1 set2</pre></div>
+      </td></tr></tbody></table></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-shielding-cpuset.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 3 </span>Full-featured cpuset manipulation commands</span></a> </div><div><a class="pagination-link next" href="cha-shieldingt-help.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 5 </span>What to do if there are problems</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-shielding-shortcuts.html#sec-shielding-shortcuts-shield"><span class="title-number">4.1 </span><span class="title-name"><code class="command">shield</code> subcommand shortcuts</span></a></span></li><li><span class="sect1"><a href="cha-shielding-shortcuts.html#sec-shielding-shortcuts-set"><span class="title-number">4.2 </span><span class="title-name"><code class="command">set</code> subcommand shortcuts</span></a></span></li><li><span class="sect1"><a href="cha-shielding-shortcuts.html#sec-shielding-shortcuts-proc"><span class="title-number">4.3 </span><span class="title-name"><code class="command">proc</code> subcommand shortcuts</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>
