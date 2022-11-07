@@ -2042,7 +2042,6 @@ body.disable-language-switcher #_utilitynav #_utilitynav-language {
 .big-version-info {
   background-color: #c7f1e3;
   color: #0c322c;
-  float: left;
   font-size: 24px;
   line-height: 100%;
   margin: 75px 0 0;
@@ -2228,7 +2227,7 @@ article .legalnotice td {
   margin-top: -33px;
   width: 1px; }
 
-.admonition:target > h6,
+.admonition:target > .admon-title,
 *:target > .titlepage:nth-child(1) h1 > span,
 *:target > .titlepage:nth-child(1) h2 > span,
 *:target > .titlepage:nth-child(1) h3 > span,
@@ -2248,6 +2247,9 @@ h5,
 h6 {
   color: #0c322c; }
 
+h1:has(.title-container) {
+  padding: 80px 0 80px; }
+
 .article .title,
 .book .title,
 .set .title {
@@ -2255,7 +2257,6 @@ h6 {
   font-size: 48px;
   font-weight: 600;
   line-height: 120%;
-  padding: 70px 0 50px;
   width: auto; }
   .article .title .citetitle,
   .book .title .citetitle,
@@ -2269,7 +2270,8 @@ h6 {
   font-size: 28px;
   font-weight: normal;
   line-height: 120%;
-  margin: -40px 0 50px;
+  margin-top: 1.25rem;
+  margin-bottom: 2.5rem;
   width: 100%; }
 
 .appendix .title,
@@ -2381,6 +2383,43 @@ h2 {
 .title em {
   font-style: normal; }
 
+.title-container {
+  display: flex;
+  flex-flow: row wrap;
+  clear: both; }
+
+.title-container .title,
+.title-container .table-title-wrap,
+.title-container .figure-title-wrap,
+.title-container .procedure-title-wrap,
+.title-container .itemizedlist-title-wrap,
+.title-container .orderedlist-title-wrap {
+  flex: 8; }
+
+.title-container .icons {
+  flex: 1;
+  margin-top: auto;
+  text-align: right; }
+
+.icon-reportbug {
+  margin-right: 1rem; }
+
+.icon-editsource,
+.icon-reportbug {
+  width: 23.07px;
+  height: 26.21px;
+  display: inline-block; }
+
+.icon-editsource {
+  background: url("../images/edit-source-green.svg") no-repeat; }
+  .icon-editsource:hover {
+    background: url("../images/edit-source-dark.svg") no-repeat; }
+
+.icon-reportbug {
+  background: url("../images/report-bug-green.svg") no-repeat; }
+  .icon-reportbug:hover {
+    background: url("../images/report-bug-dark.svg") no-repeat; }
+
 .informaltable,
 .table-contents {
   overflow: auto; }
@@ -2469,7 +2508,7 @@ h2 {
     height: 36px;
     margin: 0 10px 0 0;
     width: 36px; }
-  .admonition > h6 {
+  .admonition > .admon-title {
     font-weight: 600;
     color: #0c322c; }
   .admonition p {
@@ -2478,7 +2517,7 @@ h2 {
     border-style: solid;
     border-width: .2rem;
     padding: 10px; }
-    .admonition.normal > h6 {
+    .admonition.normal > .admon-title {
       display: table-cell;
       height: 36px;
       vertical-align: middle; }
@@ -2504,7 +2543,7 @@ h2 {
     height: 24px;
     margin-left: 0;
     width: 24px; }
-  .admonition.compact > h6 {
+  .admonition.compact > .admon-title {
     height: unset;
     color: #0c322c; }
   .admonition.compact > p:nth-child(1) {
@@ -3050,10 +3089,10 @@ code * {
   display: inline;
   padding: 0 !important; }
 
-.admonition h6 .literal,
-.admonition h6 .package,
-.admonition h6 .replaceable,
-.admonition h6 code,
+.admonition .admon-title .literal,
+.admonition .admon-title .package,
+.admonition .admon-title .replaceable,
+.admonition .admon-title code,
 .name .literal,
 .name .package,
 .name .replaceable,
@@ -3064,8 +3103,8 @@ a .replaceable,
 a code {
   color: inherit; }
 
-.admonition h6 .replaceable,
-.admonition h6 code {
+.admonition .admon-title .replaceable,
+.admonition .admon-title code {
   border-color: #dedfe0; }
 
 .literal,

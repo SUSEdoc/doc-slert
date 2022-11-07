@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>Setup Guide | SUSE Linux Enterprise Real Time 15 SP4</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
-<meta name="title" content="Setup Guide | SUSE Linux Enterprise Real Time 15 SP4"/>
-<meta name="description" content="SUSE Linux Enterprise Real Time is part of SUSE® Linux Enterprise family. It allows you to run tasks which require deterministic real-time processing in a SUSE…"/>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE Linux Enterprise RT 15 SP4 | Setup Guide</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Setup Guide | SUSE Linux Enterprise RT 15 SP4"/>
+<meta name="description" content="SUSE Linux Enterprise Real Time is part of SUSE® Linux Enterprise family. It allows you to run tasks which require deterministic real-time processing…"/>
 <meta name="product-name" content="SUSE Linux Enterprise Real Time"/>
 <meta name="product-number" content="15 SP4"/>
 <meta name="book-title" content="Setup Guide"/>
 <meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
 <meta name="tracker-type" content="bsc"/>
 <meta name="tracker-bsc-assignee" content="thomas.schraitle@suse.com"/>
-<meta name="tracker-bsc-component" content="Other"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
 <meta name="tracker-bsc-product" content="SUSE Linux Enterprise Real Time 15 SP4"/>
-<meta property="og:title" content="Setup Guide | SUSE Linux Enterprise Real Time 15 SP4"/>
-<meta property="og:description" content="SUSE Linux Enterprise Real Time is part of SUSE® Linux Enterprise family. It allows you to run tasks which require deterministic real-time processing in a SUSE…"/>
+<meta property="og:title" content="Setup Guide | SUSE Linux Enterprise RT 15 SP4"/>
+<meta property="og:description" content="SUSE Linux Enterprise Real Time is part of SUSE® Linux Enterprise family. It allows you to run tasks which require deterministic real-time processing…"/>
 <meta property="og:type" content="article"/>
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Setup Guide | SUSE Linux Enterprise Real Time 15 SP4"/>
-<meta name="twitter:description" content="SUSE Linux Enterprise Real Time is part of SUSE® Linux Enterprise family. It allows you to run tasks which require deterministic real-time processing in a SUSE…"/>
+<meta name="twitter:title" content="Setup Guide | SUSE Linux Enterprise RT 15 SP4"/>
+<meta name="twitter:description" content="SUSE Linux Enterprise Real Time is part of SUSE® Linux Enterprise family. It allows you to run tasks which require deterministic real-time processing…"/>
 <link rel="prev" href="book-slert-qs.html" title="Quick Start Guides"/><link rel="next" href="bk02ar01apa.html" title="A. GNU Licenses"/>
 <script type="text/javascript">
 
@@ -23,7 +23,7 @@ if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,14 +34,14 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Setup Guide</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Setup Guide</div> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section xml:lang="en" class="article" id="article-setup" data-id-title="Setup Guide"><div class="titlepage"><div><div class="big-version-info"><span class="productname">SUSE Linux Enterprise Real Time</span> <span class="productnumber">15 SP4</span></div><div><h1 class="title">Setup Guide <a title="Permalink" class="permalink" href="article-setup.html#">#</a></h1></div><div class="abstract"><p>
+</script><meta name="edit-url" content="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Setup Guide</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Setup Guide</div> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section xml:lang="en" class="article" id="article-setup" data-id-title="Setup Guide"><div class="titlepage"><div><div class="big-version-info"><span class="productname">SUSE Linux Enterprise Real Time</span> <span class="productnumber">15 SP4</span></div><div><div class="title-container"><h1 class="title">Setup Guide <a title="Permalink" class="permalink" href="article-setup.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div><div class="abstract"><p>
     SUSE Linux Enterprise Real Time is part of SUSE® Linux Enterprise family. It allows you to run tasks which
     require deterministic real-time processing in a SUSE Linux Enterprise environment.
    </p><p>
     To meet this requirement, SUSE Linux Enterprise Real Time offers several options for CPU and I/O
     scheduling, CPU shielding, and for setting CPU affinities of processes.
    </p></div><div class="date"><span class="imprint-label">Publication Date: </span>
-07/20/2022
+11/07/2022
 </div></div></div><div><div class="legalnotice" id="id-1.4.2.2.3"><p>
   Copyright © 2006–2022
 
@@ -63,14 +63,14 @@ hljs.configure({
   to detail. However, this does not guarantee complete accuracy. Neither
   SUSE LLC, its affiliates, the authors nor the translators shall be held
   liable for possible errors or the consequences thereof.
- </p></div></div><section class="sect1" id="sec-slert-quick-overview" data-id-title="Product overview"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">1 </span><span class="title-name">Product overview</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-overview">#</a></h2></div></div></div><p>
+ </p></div></div><section class="sect1" id="sec-slert-quick-overview" data-id-title="Product overview"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">1 </span><span class="title-name">Product overview</span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-overview">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    If your business can respond more quickly to new information and changing
    market conditions, you have a distinct advantage over those that cannot.
    Running your time-sensitive mission-critical applications using SUSE Linux Enterprise Real Time
    reduces process dispatch latencies and gives you the time advantage you need
    to increase profits, or avoid further financial losses, ahead of your
    competitors.
-  </p><section class="sect2" id="sec-slert-quick-key-features" data-id-title="Key features"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">1.1 </span><span class="title-name">Key features</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-key-features">#</a></h3></div></div></div><p>
+  </p><section class="sect2" id="sec-slert-quick-key-features" data-id-title="Key features"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">1.1 </span><span class="title-name">Key features</span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-key-features">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     Some of the key features for SUSE Linux Enterprise Real Time are:
    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
       Pre-emptible real-time kernel.
@@ -90,11 +90,11 @@ hljs.configure({
      </p></li><li class="listitem"><p>
       Tracing and debugging tools that help you analyze and identify
       bottlenecks in mission-critical applications.
-     </p></li></ul></div></section><section class="sect2" id="sec-slert-quick-scenarios" data-id-title="Specific scenario"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">1.2 </span><span class="title-name">Specific scenario</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-scenarios">#</a></h3></div></div></div><p>
+     </p></li></ul></div></section><section class="sect2" id="sec-slert-quick-scenarios" data-id-title="Specific scenario"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">1.2 </span><span class="title-name">Specific scenario</span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-scenarios">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     SUSE Linux Enterprise Real Time 15 SP4 supports virtualization and Docker usage as a
     Technology Preview (best-effort support). For reference, see
     <span class="intraxref">Article “Virtualization Guide”</span>.
-   </p></section></section><section class="sect1" id="sec-slert-quick-install" data-id-title="Installing SUSE Linux Enterprise Real Time"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">2 </span><span class="title-name">Installing SUSE Linux Enterprise Real Time</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-install">#</a></h2></div></div></div><p>
+   </p></section></section><section class="sect1" id="sec-slert-quick-install" data-id-title="Installing SUSE Linux Enterprise Real Time"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2 </span><span class="title-name">Installing SUSE Linux Enterprise Real Time</span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-install">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    To install SUSE Linux Enterprise Real Time 15 SP4, keep the following points in mind:
   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Boot from the quarterly update medium. SUSE Linux Enterprise Real Time is only
@@ -111,14 +111,14 @@ hljs.configure({
     </p></li></ul></div><p>
    The following sections provide a brief introduction to the tools and
    possibilities of SUSE Linux Enterprise Real Time.
-  </p></section><section class="sect1" id="sec-slert-quick-cset" data-id-title="Managing CPU sets with cset"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">3 </span><span class="title-name">Managing CPU sets with <code class="command">cset</code></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-cset">#</a></h2></div></div></div><p>
+  </p></section><section class="sect1" id="sec-slert-quick-cset" data-id-title="Managing CPU sets with cset"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3 </span><span class="title-name">Managing CPU sets with <code class="command">cset</code></span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-cset">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    In some circumstances, it is beneficial to be able to run specific tasks
    only on defined CPUs. For this reason, the Linux kernel provides a
    feature called <span class="emphasis"><em>cpuset</em></span>. The <code class="systemitem">cpuset</code> feature provides the
    means to do so-called <span class="quote">“<span class="quote">soft partitioning</span>”</span> of the system. This
    enables you to dedicate CPUs, together with some predefined memory,
    to work on particular tasks.
-  </p><div id="id-1.4.2.5.3" data-id-title="CPUs, processors, and cores" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><h6>Note: CPUs, processors, and cores</h6><p>
+  </p><div id="id-1.4.2.5.3" data-id-title="CPUs, processors, and cores" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: CPUs, processors, and cores</div><p>
     Modern servers are typically built around multi-core CPUs, which means that
     a single processor socket typically contains many separate processor units.
     For example, a low-end processor might have four cores, while a high-end one
@@ -141,14 +141,14 @@ hljs.configure({
   </p><p>
    For more information about the options and parameters of the
    <code class="command">shield</code> subcommand, view its help by running:
-  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> help shield</pre></div><section class="sect2" id="sec-slert-quick-settingup-cpushield-single" data-id-title="Setting up a CPU shield for a single CPU"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.1 </span><span class="title-name">Setting up a CPU shield for a single CPU</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-settingup-cpushield-single">#</a></h3></div></div></div><p>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> help shield</pre></div><section class="sect2" id="sec-slert-quick-settingup-cpushield-single" data-id-title="Setting up a CPU shield for a single CPU"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.1 </span><span class="title-name">Setting up a CPU shield for a single CPU</span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-settingup-cpushield-single">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     The command <code class="command">cset</code> provides the high level functionality
     to set up and manipulate CPU Sets. An example for setting up a CPU shield
     is:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --cpu=3</pre></div><p>
     On a machine with four CPUs, this will shield CPU #3. CPUs #0-2 are
     unshielded.
-   </p></section><section class="sect2" id="sec-slert-quick-settingup-cpushield-multi" data-id-title="Setting up CPU shields for multiple CPUs"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.2 </span><span class="title-name">Setting up CPU shields for multiple CPUs</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-settingup-cpushield-multi">#</a></h3></div></div></div><p>
+   </p></section><section class="sect2" id="sec-slert-quick-settingup-cpushield-multi" data-id-title="Setting up CPU shields for multiple CPUs"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.2 </span><span class="title-name">Setting up CPU shields for multiple CPUs</span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-settingup-cpushield-multi">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     If you need to shield more than one CPU, the argument of the
     <code class="option">--cpu</code> option accepts comma-separated lists of CPUs,
     including range specifications:
@@ -167,7 +167,7 @@ hljs.configure({
     following command:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --cpu=3-7</pre></div><p>
     Now only CPUs #3-7 are shielded. CPUs #0-2 are available for system usage.
-   </p></section><section class="sect2" id="sec-slert-quick-showing-cpu-shields" data-id-title="Showing CPU shields"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.3 </span><span class="title-name">Showing CPU shields</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-showing-cpu-shields">#</a></h3></div></div></div><p>
+   </p></section><section class="sect2" id="sec-slert-quick-showing-cpu-shields" data-id-title="Showing CPU shields"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.3 </span><span class="title-name">Showing CPU shields</span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-showing-cpu-shields">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     After the CPU shielding is set up you can display the current configuration
     by running <code class="command">cset shield</code> without additional options:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield
@@ -184,7 +184,7 @@ cset: "user" cpuset of:  3-7 cpu,  with: 0</pre></div><p>
      </p></li><li class="listitem"><p>
       <code class="systemitem">user</code> is the <code class="systemitem">cpuset</code> of
       shielded CPUs
-     </p></li></ul></div></section><section class="sect2" id="sec-slert-quick-shielding-processes" data-id-title="Shielding processes"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.4 </span><span class="title-name">Shielding processes</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-shielding-processes">#</a></h3></div></div></div><p>
+     </p></li></ul></div></section><section class="sect2" id="sec-slert-quick-shielding-processes" data-id-title="Shielding processes"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.4 </span><span class="title-name">Shielding processes</span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-shielding-processes">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     After a shielded CPU set is created, certain processes or groups of
     processes can be assigned to the shielded <code class="systemitem">cpuset</code>. To start a new process
     in the shielded CPU set, use the <code class="option">--exec</code> option:
@@ -199,14 +199,14 @@ cset: "user" cpuset of:  3-7 cpu,  with: 0</pre></div><p>
     available process will be moved to the shield without warning.
     The <code class="command">cset</code> command handles threads like processes and will
     also interpret TIDs and assign them to the required CPU set.
-   </p><div id="id-1.4.2.5.10.7" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><h6>Warning</h6><p>
+   </p><div id="id-1.4.2.5.10.7" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>
      The <code class="option">--shield</code> option does not check the processes you
      request to move into the shield. This means that the command will move
      <span class="emphasis"><em>any</em></span> processes that are bound to specific
      CPUs—even kernel threads. You can cause a complete system lockup by
      indiscriminately specifying arbitrary PIDs to the
      <code class="option">--shield</code> command.
-    </p></div></section><section class="sect2" id="sec-slert-quick-showing-shielded-processes" data-id-title="Showing shielded processes"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.5 </span><span class="title-name">Showing shielded processes</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-showing-shielded-processes">#</a></h3></div></div></div><p>
+    </p></div></section><section class="sect2" id="sec-slert-quick-showing-shielded-processes" data-id-title="Showing shielded processes"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.5 </span><span class="title-name">Showing shielded processes</span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-showing-shielded-processes">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     Use the <code class="command">cset shield</code> command to show the number of
     currently shielded processes. (The same command can be used to show the
     current CPU shield setup.) To list shielded and unshielded processes, add
@@ -222,7 +222,7 @@ cset: "system" cpuset of: 0-2,4-15 cpu, with:
 cset: "user" cpuset of:    3 cpu, with: 1
    USER       PID  PPID S TASK NAME
       -------- ----- ----- - ---------
-         root     10202 10170 S application</pre></div></section><section class="sect2" id="sec-slert-quick-unshielding-processes" data-id-title="Unshielding processes"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.6 </span><span class="title-name">Unshielding processes</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-unshielding-processes">#</a></h3></div></div></div><p>
+         root     10202 10170 S application</pre></div></section><section class="sect2" id="sec-slert-quick-unshielding-processes" data-id-title="Unshielding processes"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.6 </span><span class="title-name">Unshielding processes</span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-unshielding-processes">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     To remove a process (or group of processes) from the CPU shield, use the
     <code class="option">--unshield</code> option. The argument for
     <code class="option">--unshield</code> is similar to the <code class="option">--shield</code>
@@ -231,11 +231,11 @@ cset: "user" cpuset of:    3 cpu, with: 1
    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --unshield --pid=2,650-655</pre></div><p>
     This command will unshield the process with the PID <code class="literal">2</code> and
     the processes in the range between 650 and 655.
-   </p></section><section class="sect2" id="sec-slert-quick-resetting-cpusets" data-id-title="Resetting CPU sets"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.7 </span><span class="title-name">Resetting CPU sets</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-resetting-cpusets">#</a></h3></div></div></div><p>
+   </p></section><section class="sect2" id="sec-slert-quick-resetting-cpusets" data-id-title="Resetting CPU sets"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.7 </span><span class="title-name">Resetting CPU sets</span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-quick-resetting-cpusets">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     To delete CPU sets, use the <code class="command">cset</code> option
     <code class="option">--reset</code>. This will unshield all CPUs and migrate dedicated
     processes to all available CPUs again.
-   </p></section></section><section class="sect1" id="sec-slert-csets-tree" data-id-title="Managing tree-like structures with cset"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">4 </span><span class="title-name">Managing tree-like structures with <code class="command">cset</code></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-csets-tree">#</a></h2></div></div></div><p>
+   </p></section></section><section class="sect1" id="sec-slert-csets-tree" data-id-title="Managing tree-like structures with cset"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4 </span><span class="title-name">Managing tree-like structures with <code class="command">cset</code></span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-slert-csets-tree">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    More detailed configuration of cpusets can be done with the
    <code class="command">cset</code> commands <code class="option">set</code> and
    <code class="option">proc</code>.
@@ -311,7 +311,7 @@ cset: "user" cpuset of:    3 cpu, with: 1
    --toset new_set</pre></div><p>
    For more detailed information about options and parameters of the subcommand
    <code class="command">proc</code>, view the help:
-  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> help proc</pre></div></section><section class="sect1" id="sec-quick-chrt" data-id-title="Setting Real-time Attributes of a Process with chrt"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">5 </span><span class="title-name">Setting Real-time Attributes of a Process with <code class="command">chrt</code></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-chrt">#</a></h2></div></div></div><p>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> help proc</pre></div></section><section class="sect1" id="sec-quick-chrt" data-id-title="Setting Real-time Attributes of a Process with chrt"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5 </span><span class="title-name">Setting Real-time Attributes of a Process with <code class="command">chrt</code></span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-chrt">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Use the <code class="command">chrt</code> command to manipulate the real-time
    attributes of an already-running process (such as scheduling policy and
    priority), or to execute a new process with specified real-time attributes.
@@ -355,7 +355,7 @@ cset: "user" cpuset of:    3 cpu, with: 1
    <code class="literal">SCHED_OTHER</code>. The following example will change the
    scheduler policy to <code class="literal">SCHED_FIFO</code> with priority 42 for PID
    1437:
-  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">chrt</code> --fifo -p 42 1437</pre></div><div id="id-1.4.2.7.14" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><h6>Warning</h6><p>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">chrt</code> --fifo -p 42 1437</pre></div><div id="id-1.4.2.7.14" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>
     Handle the changing of real-time attributes of processes with care.
     Increasing the priority of certain processes can harm the entire system,
     depending on the behavior of the process. In some cases, this can lead to a
@@ -363,7 +363,7 @@ cset: "user" cpuset of:    3 cpu, with: 1
    </p></div><p>
    For more information about <code class="command">chrt</code>, see the
    <code class="command">chrt</code> man page with <code class="command">man 1 chrt</code>.
-  </p></section><section class="sect1" id="sec-quick-taskset" data-id-title="Specifying CPU affinity with taskset"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">6 </span><span class="title-name">Specifying CPU affinity with <code class="command">taskset</code></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-taskset">#</a></h2></div></div></div><p>
+  </p></section><section class="sect1" id="sec-quick-taskset" data-id-title="Specifying CPU affinity with taskset"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6 </span><span class="title-name">Specifying CPU affinity with <code class="command">taskset</code></span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-taskset">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The default behavior of the kernel is to keep a process running on the same
    CPU if the system load is balanced over the available CPUs. Otherwise, the
    kernel tries to improve the load balancing by moving processes to an idling
@@ -400,7 +400,7 @@ cset: "user" cpuset of:    3 cpu, with: 1
   </p><p>
    The command <code class="command">taskset</code> starts a new process with a given CPU
    affinity, or to redefine the CPU affinity of an already running process.
-  </p><div class="variablelist"><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="title-name">Examples </span><a title="Permalink" class="permalink" href="article-setup.html#id-1.4.2.8.8">#</a></h6></div><dl class="variablelist"><dt id="id-1.4.2.8.8.2"><span class="term"><code class="option">taskset -p <em class="replaceable">PID</em></code></span></dt><dd><p>
+  </p><div class="variablelist"><div class="title-container"><div class="variablelist-title-wrap"><div class="variablelist-title"><span class="title-number-name"><span class="title-name">Examples </span></span><a title="Permalink" class="permalink" href="article-setup.html#id-1.4.2.8.8">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div><dl class="variablelist"><dt id="id-1.4.2.8.8.2"><span class="term"><code class="option">taskset -p <em class="replaceable">PID</em></code></span></dt><dd><p>
       Retrieves the current CPU affinity of the process with PID
       <em class="replaceable">pid</em>.
      </p></dd><dt id="id-1.4.2.8.8.3"><span class="term"><code class="option">taskset -p <em class="replaceable">mask</em><em class="replaceable">PID</em></code></span></dt><dd><p>
@@ -412,7 +412,7 @@ cset: "user" cpuset of:    3 cpu, with: 1
      </p></dd></dl></div><p>
    For more detailed information about <code class="command">taskset</code>, see the man
    page <code class="command">man 1 taskset</code>.
-  </p></section><section class="sect1" id="sec-quick-ionice" data-id-title="Changing I/O priorities with ionice"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">7 </span><span class="title-name">Changing I/O priorities with <code class="command">ionice</code></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-ionice">#</a></h2></div></div></div><p>
+  </p></section><section class="sect1" id="sec-quick-ionice" data-id-title="Changing I/O priorities with ionice"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7 </span><span class="title-name">Changing I/O priorities with <code class="command">ionice</code></span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-ionice">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Handling I/O is one of the critical issues for all high-performance systems.
    If a task has lots of CPU power available, but must wait for the disk, it
    will not work as efficiently as it could. The Linux kernel provides three
@@ -454,7 +454,7 @@ cset: "user" cpuset of:    3 cpu, with: 1
    <code class="command">ionice</code> command. This provides a means to tune the
    scheduler of already-running processes, or to start new processes with
    specific I/O settings.
-  </p><div class="variablelist"><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="title-name">Examples </span><a title="Permalink" class="permalink" href="article-setup.html#id-1.4.2.9.5">#</a></h6></div><dl class="variablelist"><dt id="id-1.4.2.9.5.2"><span class="term"><code class="command">ionice -c3 -p$$</code></span></dt><dd><p>
+  </p><div class="variablelist"><div class="title-container"><div class="variablelist-title-wrap"><div class="variablelist-title"><span class="title-number-name"><span class="title-name">Examples </span></span><a title="Permalink" class="permalink" href="article-setup.html#id-1.4.2.9.5">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div><dl class="variablelist"><dt id="id-1.4.2.9.5.2"><span class="term"><code class="command">ionice -c3 -p$$</code></span></dt><dd><p>
       Sets the scheduler of the current shell to <code class="literal">Idle</code>.
      </p></dd><dt id="id-1.4.2.9.5.3"><span class="term"><code class="command">ionice</code></span></dt><dd><p>
       Without additional parameters, this prints the I/O scheduler settings of
@@ -468,14 +468,14 @@ cset: "user" cpuset of:    3 cpu, with: 1
      </p></dd></dl></div><p>
    For more detailed information about <code class="command">ionice</code>, see the
    <code class="command">ionice</code> man page with <code class="command">man 1 ionice</code>
-  </p></section><section class="sect1" id="sec-quick-io-block-change" data-id-title="Changing the I/O scheduler for block devices"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">8 </span><span class="title-name">Changing the I/O scheduler for block devices</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-io-block-change">#</a></h2></div></div></div><p>
+  </p></section><section class="sect1" id="sec-quick-io-block-change" data-id-title="Changing the I/O scheduler for block devices"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8 </span><span class="title-name">Changing the I/O scheduler for block devices</span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-io-block-change">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The Linux kernel provides several block device schedulers that can be
    selected individually for each block device. All but the
    <code class="literal">noop</code> scheduler perform a kind of ordering of requested
    blocks to reduce head movements on the hard disk. If you use an external
    storage system that has its own scheduler, you should disable the Linux
    internal reordering by selecting the <code class="literal">noop</code> scheduler.
-  </p><div class="variablelist"><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="title-name">The Linux I/O schedulers </span><a title="Permalink" class="permalink" href="article-setup.html#id-1.4.2.10.3">#</a></h6></div><dl class="variablelist"><dt id="id-1.4.2.10.3.2"><span class="term">noop</span></dt><dd><p>
+  </p><div class="variablelist"><div class="title-container"><div class="variablelist-title-wrap"><div class="variablelist-title"><span class="title-number-name"><span class="title-name">The Linux I/O schedulers </span></span><a title="Permalink" class="permalink" href="article-setup.html#id-1.4.2.10.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div><dl class="variablelist"><dt id="id-1.4.2.10.3.2"><span class="term">noop</span></dt><dd><p>
       The <span class="emphasis"><em>noop</em></span> scheduler is a very simple scheduler that
       performs basic merging and sorting on I/O requests. This scheduler is
       mainly used for specialized environments that run their own schedulers
@@ -521,7 +521,7 @@ noop deadline [cfq]</pre></div><p>
   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">echo</code> "noop" &gt; /sys/block/sda/queue/scheduler</pre></div><p>
    To set other variables in the <code class="filename">/sys</code> file system, use a
    similar approach.
-  </p></section><section class="sect1" id="sec-quick-io-block-tune" data-id-title="Tuning the block device I/O scheduler"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">9 </span><span class="title-name">Tuning the block device I/O scheduler</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-io-block-tune">#</a></h2></div></div></div><p>
+  </p></section><section class="sect1" id="sec-quick-io-block-tune" data-id-title="Tuning the block device I/O scheduler"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">9 </span><span class="title-name">Tuning the block device I/O scheduler</span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-io-block-tune">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    All schedulers, except for the <span class="emphasis"><em>noop</em></span> scheduler, have
    several common parameters that may be tuned for each block device. You can
    access these parameters with <code class="filename">sysfs</code> in the
@@ -592,7 +592,7 @@ noop deadline [cfq]</pre></div><p>
    parameter <code class="literal">elevator=</code>. For example,
    <code class="literal">elevator=deadline</code> changes the I/O Scheduler to
    <code class="literal">deadline</code>.
-  </p></section><section class="sect1" id="sec-quick-more" data-id-title="More information"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">10 </span><span class="title-name">More information</span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-more">#</a></h2></div></div></div><p>
+  </p></section><section class="sect1" id="sec-quick-more" data-id-title="More information"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">10 </span><span class="title-name">More information</span></span> <a title="Permalink" class="permalink" href="article-setup.html#sec-quick-more">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    A lot of information about real-time implementations and administration can
    be found on the Internet. The following list contains several selected
    links:

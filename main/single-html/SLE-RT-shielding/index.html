@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>Shielding Linux Resources | SUSE Linux Enterprise Real Time 15 SP4</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SLE RT 15 SP4 | Shielding Linux Resources</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
 <meta name="title" content="Shielding Linux Resources | SLE RT 15 SP4"/>
-<meta name="description" content="In the Linux kernel, the cpuset facility provides a mechanism for creating logical entities called “cpusets” that encompass definitions of CPUs and NUMA Memory…"/>
+<meta name="description" content="In the Linux kernel, the cpuset facility provides a mechanism for creating logical entities called “cpusets” that encompass definitions of CPUs and N…"/>
 <meta name="product-name" content="SUSE Linux Enterprise Real Time"/>
 <meta name="product-number" content="15 SP4"/>
 <meta name="book-title" content="Shielding Linux Resources"/>
 <meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
 <meta name="tracker-type" content="bsc"/>
 <meta name="tracker-bsc-assignee" content="thomas.schraitle@suse.com"/>
-<meta name="tracker-bsc-component" content="Other"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
 <meta name="tracker-bsc-product" content="SUSE Linux Enterprise Real Time 15 SP4"/>
 <meta property="og:title" content="Shielding Linux Resources | SLE RT 15 SP4"/>
-<meta property="og:description" content="In the Linux kernel, the cpuset facility provides a mechanism for creating logical entities called “cpusets” that encompass definitions of CPUs and NUMA Memory…"/>
+<meta property="og:description" content="In the Linux kernel, the cpuset facility provides a mechanism for creating logical entities called “cpusets” that encompass definitions of CPUs and N…"/>
 <meta property="og:type" content="article"/>
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Shielding Linux Resources | SLE RT 15 SP4"/>
-<meta name="twitter:description" content="In the Linux kernel, the cpuset facility provides a mechanism for creating logical entities called “cpusets” that encompass definitions of CPUs and NUMA Memory…"/>
+<meta name="twitter:description" content="In the Linux kernel, the cpuset facility provides a mechanism for creating logical entities called “cpusets” that encompass definitions of CPUs and N…"/>
 
 <script type="text/javascript">
 
@@ -23,7 +23,7 @@ if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,7 +34,7 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft single normal offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="#book-shielding">Shielding Linux Resources</a></div></div><main id="_content"><nav class="side-toc placebo" id="_side-toc-overall"> </nav><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section xml:lang="en" class="book" id="book-shielding" data-id-title="Shielding Linux Resources"><div class="titlepage"><div><div class="big-version-info"><span class="productname">SUSE Linux Enterprise Real Time</span> <span class="productnumber">15 SP4</span></div><div><h1 class="title">Shielding Linux Resources <a title="Permalink" class="permalink" href="#book-shielding">#</a></h1></div><div class="authorgroup"><div><span class="imprint-label">Author: </span><span class="firstname">Alex</span> <span class="surname">Tsariounov</span></div></div><div class="date"><span class="imprint-label">Publication Date: </span>July 20, 2022
+</script><meta name="edit-url" content="https://github.com/SUSE/doc-slert/edit/main/xml/book_slert_shielding.xml"/></head><body class="draft single normal offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="#book-shielding">Shielding Linux Resources</a></div></div><main id="_content"><nav class="side-toc placebo" id="_side-toc-overall"> </nav><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section xml:lang="en" class="book" id="book-shielding" data-id-title="Shielding Linux Resources"><div class="titlepage"><div><div class="big-version-info"><span class="productname">SUSE Linux Enterprise Real Time</span> <span class="productnumber">15 SP4</span></div><div class="title-container"><div class="title-container"><h1 class="title">Shielding Linux Resources <a title="Permalink" class="permalink" href="#book-shielding">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/book_slert_shielding.xml" title="Edit source document"> </a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/book_slert_shielding.xml" title="Edit source document"> </a></div></div><div class="authorgroup"><div><span class="imprint-label">Author: </span><span class="firstname">Alex</span> <span class="surname">Tsariounov</span></div></div><div class="date"><span class="imprint-label">Publication Date: </span>November 07, 2022
 </div></div></div><div class="toc"><ul><li><span class="chapter"><a href="#cha-shielding-intro"><span class="title-number">1 </span><span class="title-name">Introduction</span></a></span></li><li><span class="chapter"><a href="#cha-shielding-model"><span class="title-number">2 </span><span class="title-name">The basic shielding model</span></a></span><ul><li><span class="sect1"><a href="#sec-shielding-model-ex"><span class="title-number">2.1 </span><span class="title-name">A simple shielding example</span></a></span></li><li><span class="sect1"><a href="#sec-shielding-model-ex-setup-teardown"><span class="title-number">2.2 </span><span class="title-name">Setup and teardown of the shield</span></a></span></li><li><span class="sect1"><a href="#sec-shielding-model-ex-move"><span class="title-number">2.3 </span><span class="title-name">Moving interesting tasks into and out of the shield</span></a></span></li></ul></li><li><span class="chapter"><a href="#cha-shielding-cpuset"><span class="title-number">3 </span><span class="title-name">Full-featured cpuset manipulation commands</span></a></span><ul><li><span class="sect1"><a href="#sec-shielding-cpuset-set"><span class="title-number">3.1 </span><span class="title-name">The set subcommand</span></a></span></li><li><span class="sect1"><a href="#sec-shielding-cpuset-proc"><span class="title-number">3.2 </span><span class="title-name">The <code class="command">proc</code> subcommand</span></a></span></li><li><span class="sect1"><a href="#sec-shielding-cpuset-shielding-set-proc"><span class="title-number">3.3 </span><span class="title-name">Implementing shielding with <code class="command">set</code> and <code class="command">proc</code></span></a></span></li><li><span class="sect1"><a href="#sec-shielding-cpuset-hierarchy-set-proc"><span class="title-number">3.4 </span><span class="title-name">Implementing hierarchy with set and proc</span></a></span></li></ul></li><li><span class="chapter"><a href="#cha-shielding-shortcuts"><span class="title-number">4 </span><span class="title-name">Using shortcuts</span></a></span><ul><li><span class="sect1"><a href="#sec-shielding-shortcuts-shield"><span class="title-number">4.1 </span><span class="title-name"><code class="command">shield</code> subcommand shortcuts</span></a></span></li><li><span class="sect1"><a href="#sec-shielding-shortcuts-set"><span class="title-number">4.2 </span><span class="title-name"><code class="command">set</code> subcommand shortcuts</span></a></span></li><li><span class="sect1"><a href="#sec-shielding-shortcuts-proc"><span class="title-number">4.3 </span><span class="title-name"><code class="command">proc</code> subcommand shortcuts</span></a></span></li></ul></li><li><span class="chapter"><a href="#cha-shieldingt-help"><span class="title-number">5 </span><span class="title-name">What to do if there are problems</span></a></span></li><li><span class="appendix"><a href="#id-1.3.8"><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></span><ul><li><span class="sect1"><a href="#id-1.3.8.4"><span class="title-number">A.1 </span><span class="title-name">GNU Free Documentation License</span></a></span></li></ul></li></ul></div><div><div class="legalnotice" id="id-1.3.2.5"><p>
   Copyright © 2006–2022
 
@@ -56,7 +56,7 @@ hljs.configure({
   to detail. However, this does not guarantee complete accuracy. Neither
   SUSE LLC, its affiliates, the authors nor the translators shall be held
   liable for possible errors or the consequences thereof.
- </p></div></div><section class="chapter" id="cha-shielding-intro" data-id-title="Introduction"><div class="titlepage"><div><div><h1 class="title"><span class="title-number">1 </span><span class="title-name">Introduction</span> <a title="Permalink" class="permalink" href="#cha-shielding-intro">#</a></h1></div></div></div><p>
+ </p></div></div><section class="chapter" id="cha-shielding-intro" data-id-title="Introduction"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">1 </span><span class="title-name">Introduction</span></span> <a title="Permalink" class="permalink" href="#cha-shielding-intro">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_intro.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   In the Linux kernel, the cpuset facility provides a mechanism for creating
   logical entities called <span class="quote">“<span class="quote">cpusets</span>”</span> that encompass definitions
   of CPUs and NUMA Memory Nodes (if NUMA is available). Cpusets constrain
@@ -93,7 +93,7 @@ hljs.configure({
   exclusively. It is straightforward to implement what
   <code class="command">shield</code> does with a few extra <code class="command">set</code> and
   <code class="command">proc</code> subcommands.
- </p><div class="variablelist"><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="title-name">Obtaining online help </span><a title="Permalink" class="permalink" href="#id-1.3.3.6">#</a></h6></div><dl class="variablelist"><dt id="id-1.3.3.6.2"><span class="term">For a full list of cset subcommands</span></dt><dd><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> <code class="option">help</code></pre></div></dd><dt id="id-1.3.3.6.3"><span class="term">For in-depth help on individual subcommands</span></dt><dd><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> <code class="option">help</code> <em class="replaceable">&lt;subcommand&gt;</em></pre></div></dd><dt id="id-1.3.3.6.4"><span class="term">For options on individual subcommands</span></dt><dd><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> <em class="replaceable">&lt;subcommand&gt;</em> <code class="option">(-h | --help)</code></pre></div></dd></dl></div></section><section class="chapter" id="cha-shielding-model" data-id-title="The basic shielding model"><div class="titlepage"><div><div><h1 class="title"><span class="title-number">2 </span><span class="title-name">The basic shielding model</span> <a title="Permalink" class="permalink" href="#cha-shielding-model">#</a></h1></div></div></div><p>
+ </p><div class="variablelist"><div class="title-container"><div class="variablelist-title-wrap"><div class="variablelist-title"><span class="title-number-name"><span class="title-name">Obtaining online help </span></span><a title="Permalink" class="permalink" href="#id-1.3.3.6">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_intro.xml" title="Edit source document"> </a></div></div><dl class="variablelist"><dt id="id-1.3.3.6.2"><span class="term">For a full list of cset subcommands</span></dt><dd><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> <code class="option">help</code></pre></div></dd><dt id="id-1.3.3.6.3"><span class="term">For in-depth help on individual subcommands</span></dt><dd><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> <code class="option">help</code> <em class="replaceable">&lt;subcommand&gt;</em></pre></div></dd><dt id="id-1.3.3.6.4"><span class="term">For options on individual subcommands</span></dt><dd><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> <em class="replaceable">&lt;subcommand&gt;</em> <code class="option">(-h | --help)</code></pre></div></dd></dl></div></section><section class="chapter" id="cha-shielding-model" data-id-title="The basic shielding model"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">2 </span><span class="title-name">The basic shielding model</span></span> <a title="Permalink" class="permalink" href="#cha-shielding-model">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_shielding_model.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Although any setup of <code class="systemitem">cpuset</code>s can really be described as
   <span class="emphasis"><em>shielding</em></span>, there is one prevalent shielding model in
   use that is so common that cset has a subcommand that is dedicated to its
@@ -130,7 +130,7 @@ hljs.configure({
   case, you should transition to using the <code class="command">set</code> and
   <code class="command">proc</code> subcommands described in
   <a class="xref" href="#cha-shielding-cpuset" title="Chapter 3. Full-featured cpuset manipulation commands">Chapter 3, <em>Full-featured cpuset manipulation commands</em></a>.
- </p><section class="sect1" id="sec-shielding-model-ex" data-id-title="A simple shielding example"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">2.1 </span><span class="title-name">A simple shielding example</span> <a title="Permalink" class="permalink" href="#sec-shielding-model-ex">#</a></h2></div></div></div><p>
+ </p><section class="sect1" id="sec-shielding-model-ex" data-id-title="A simple shielding example"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.1 </span><span class="title-name">A simple shielding example</span></span> <a title="Permalink" class="permalink" href="#sec-shielding-model-ex">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_shielding_model.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Assume a four-core machine that has uniform memory access.
    This means there are four CPUs at your disposal and there is only one memory node
    available. On such machines, there is no need to specify any memory node
@@ -142,10 +142,10 @@ hljs.configure({
    performance of the installation as a whole. These important tasks need
    as many resources available to them as possible, exclusive of other,
    unimportant tasks that are running on the system.
-  </p><div id="id-1.3.4.9.4" data-id-title="Definition of task" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><h6>Note: Definition of task</h6><p>
+  </p><div id="id-1.3.4.9.4" data-id-title="Definition of task" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: Definition of task</div><p>
     In this document <span class="emphasis"><em>task</em></span> is used to represent either a
     process or a thread that is running on the system.
-   </p></div></section><section class="sect1" id="sec-shielding-model-ex-setup-teardown" data-id-title="Setup and teardown of the shield"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">2.2 </span><span class="title-name">Setup and teardown of the shield</span> <a title="Permalink" class="permalink" href="#sec-shielding-model-ex-setup-teardown">#</a></h2></div></div></div><p>
+   </p></div></section><section class="sect1" id="sec-shielding-model-ex-setup-teardown" data-id-title="Setup and teardown of the shield"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.2 </span><span class="title-name">Setup and teardown of the shield</span></span> <a title="Permalink" class="permalink" href="#sec-shielding-model-ex-setup-teardown">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_shielding_model.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     To set up a shield of three CPUs with one CPU left for low priority system
     processing, issue the following command.
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -c 1-3
@@ -262,7 +262,7 @@ cset: moving 0 tasks from "/user" user set to root set...
 cset: moving 250 tasks from "/system" system set to root set...
 [==================================================]%
 cset: deleting "/user" and "/system" sets
-cset: done</pre></div></section><section class="sect1" id="sec-shielding-model-ex-move" data-id-title="Moving interesting tasks into and out of the shield"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">2.3 </span><span class="title-name">Moving interesting tasks into and out of the shield</span> <a title="Permalink" class="permalink" href="#sec-shielding-model-ex-move">#</a></h2></div></div></div><p>
+cset: done</pre></div></section><section class="sect1" id="sec-shielding-model-ex-move" data-id-title="Moving interesting tasks into and out of the shield"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.3 </span><span class="title-name">Moving interesting tasks into and out of the shield</span></span> <a title="Permalink" class="permalink" href="#sec-shielding-model-ex-move">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_shielding_model.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     Now that a shield is running, the objective is to run processes that
     you have categorized as important in that shield. These processes can
     be anything, but usually they are directly related to the purpose of the
@@ -271,7 +271,7 @@ cset: done</pre></div></section><section class="sect1" id="sec-shielding-model-e
       Execute a process into the shield
      </p></li><li class="listitem"><p>
       Move an already running task into the shield
-     </p></li></ul></div><section class="sect2" id="sec-shielding-model-ex-move-exec" data-id-title="Executing a process into the shield"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">2.3.1 </span><span class="title-name">Executing a process into the shield</span> <a title="Permalink" class="permalink" href="#sec-shielding-model-ex-move-exec">#</a></h3></div></div></div><p>
+     </p></li></ul></div><section class="sect2" id="sec-shielding-model-ex-move-exec" data-id-title="Executing a process into the shield"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3.1 </span><span class="title-name">Executing a process into the shield</span></span> <a title="Permalink" class="permalink" href="#sec-shielding-model-ex-move-exec">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_shielding_model.xml" title="Edit source document"> </a></div></div></div></div></div><p>
      Running a new process in the shield can be done with the
      <code class="option">-e</code>/<code class="option">--exec</code> option to the <code class="command">shield</code>
      subcommand. This is the simplest way to get a task to run in the
@@ -307,7 +307,7 @@ cset: done</pre></div><p>
      The second command executes the Bash shell into the shield with the
      <code class="option">-e</code> option. The last message of <code class="command">cset</code>
      lists the PID of the new process.
-    </p><div id="id-1.3.4.11.4.6" data-id-title="Separating the tool options from the cset command" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><h6>Note: Separating the tool options from the <code class="command">cset</code> command</h6><p>
+    </p><div id="id-1.3.4.11.4.6" data-id-title="Separating the tool options from the cset command" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: Separating the tool options from the <code class="command">cset</code> command</div><p>
       <code class="command">cset</code> follows the tradition of separating the tool
       options from the command to be executed options with a double hyphen
       (<code class="literal">--</code>). This is not shown in this simple example, but
@@ -321,7 +321,7 @@ cset: done</pre></div><p>
      itself. Remember that the <code class="systemitem">cpuset</code> property of a task is inherited by its
      children. Since running the new shell in the shield, its child, which is
      the status command, also ran in the shield.
-    </p><div id="id-1.3.4.11.4.8" data-id-title="Executing a shell into a shield" class="admonition tip normal"><img class="symbol" alt="Tip" title="Tip" src="static/images/icon-tip.svg"/><h6>Tip: Executing a shell into a shield</h6><p>
+    </p><div id="id-1.3.4.11.4.8" data-id-title="Executing a shell into a shield" class="admonition tip normal"><img class="symbol" alt="Tip" title="Tip" src="static/images/icon-tip.svg"/><div class="admon-title">Tip: Executing a shell into a shield</div><p>
       Executing a shell into a shield is a useful way to experiment with
       running tasks in the shield since all children of the shell will also
       run in the shield.
@@ -344,7 +344,7 @@ cset: "user" cpuset of CPUSPEC(1-3) with 2 tasks running
 USER     PID   PPID  SPPr TASK NAME
 -------- ----- ----- ---- ---------
 tux      14212 8583  Soth bash
-tux      14241 14212 Roth python ./cset shield -s -v</pre></div></section><section class="sect2" id="sec-shielding-model-ex-move-shield-unshield" data-id-title="Moving a running task into and out of the shield"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">2.3.2 </span><span class="title-name">Moving a running task into and out of the shield</span> <a title="Permalink" class="permalink" href="#sec-shielding-model-ex-move-shield-unshield">#</a></h3></div></div></div><p>
+tux      14241 14212 Roth python ./cset shield -s -v</pre></div></section><section class="sect2" id="sec-shielding-model-ex-move-shield-unshield" data-id-title="Moving a running task into and out of the shield"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3.2 </span><span class="title-name">Moving a running task into and out of the shield</span></span> <a title="Permalink" class="permalink" href="#sec-shielding-model-ex-move-shield-unshield">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_shielding_model.xml" title="Edit source document"> </a></div></div></div></div></div><p>
      While executing a process into the shield is undoubtedly useful, most of
      the time, you will want to move already running tasks into and out of
      the shield. The <code class="command">cset</code> shield subcommand includes two
@@ -367,7 +367,7 @@ tux      14241 14212 Roth python ./cset shield -s -v</pre></div></section><secti
         (moved out of the shield) along with any existing PID that is in the
         range <code class="literal">6010</code> through <code class="literal">7000</code>
         inclusive.
-       </p></dd></dl></div><div id="id-1.3.4.11.5.4" data-id-title="Information about the range in a PIDSPEC" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><h6>Note: Information about the range in a PIDSPEC</h6><p>
+       </p></dd></dl></div><div id="id-1.3.4.11.5.4" data-id-title="Information about the range in a PIDSPEC" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: Information about the range in a PIDSPEC</div><p>
       A range in a PIDSPEC does not need to have tasks running for every
       number in that range. In fact, it is not even an error if there are no
       tasks running in that range: none will be moved in that case. The
@@ -414,18 +414,18 @@ cset: done
 
 <code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -s
 cset: "user" cpuset of CPUSPEC(1-3) with 0 tasks running
-cset: done</pre></div></section></section></section><section class="chapter" id="cha-shielding-cpuset" data-id-title="Full-featured cpuset manipulation commands"><div class="titlepage"><div><div><h1 class="title"><span class="title-number">3 </span><span class="title-name">Full-featured cpuset manipulation commands</span> <a title="Permalink" class="permalink" href="#cha-shielding-cpuset">#</a></h1></div></div></div><p>
+cset: done</pre></div></section></section></section><section class="chapter" id="cha-shielding-cpuset" data-id-title="Full-featured cpuset manipulation commands"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">3 </span><span class="title-name">Full-featured cpuset manipulation commands</span></span> <a title="Permalink" class="permalink" href="#cha-shielding-cpuset">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_cpuset_manipulation.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   While basic shielding as described above is useful and a common use model
   for <code class="command">cset</code>, there comes a time when more functionality
   will be desired to implement your strategy. To implement this,
   <code class="command">cset</code> provides two subcommands: <code class="command">set</code>,
   which allows you to manipulate cpusets; and <code class="command">proc</code>, which
   allows you to manipulate processes within those cpusets.
- </p><section class="sect1" id="sec-shielding-cpuset-set" data-id-title="The set subcommand"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">3.1 </span><span class="title-name">The set subcommand</span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-set">#</a></h2></div></div></div><p>
+ </p><section class="sect1" id="sec-shielding-cpuset-set" data-id-title="The set subcommand"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3.1 </span><span class="title-name">The set subcommand</span></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-set">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_cpuset_manipulation.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    To do anything with cpusets, you must be able to create, adjust,
    rename, move, and destroy them. The <code class="command">set</code> subcommand
    allows the management of cpusets in such a manner.
-  </p><section class="sect2" id="sec-shielding-cpuset-set-create-destroy" data-id-title="Creating and destroying cpusets with set"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.1.1 </span><span class="title-name">Creating and destroying cpusets with <code class="command">set</code></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-set-create-destroy">#</a></h3></div></div></div><p>
+  </p><section class="sect2" id="sec-shielding-cpuset-set-create-destroy" data-id-title="Creating and destroying cpusets with set"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.1.1 </span><span class="title-name">Creating and destroying cpusets with <code class="command">set</code></span></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-set-create-destroy">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_cpuset_manipulation.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     The basic syntax of <code class="command">set</code> for cpuset creation is:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> set -c 1-3 -s my_cpuset1
 cset: --&gt; created cpuset "my_cpuset1"</pre></div><p>
@@ -467,7 +467,7 @@ cset: done</pre></div><p>
     always exists and always contains all CPUs, cannot be destroyed. You may
     also give the <code class="option">--destroy</code> option a list of cpusets to
     destroy.
-   </p><div id="id-1.3.5.3.3.14" data-id-title="Information about the mounted cpuset file system" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><h6>Note: Information about the mounted cpuset file system</h6><p>
+   </p><div id="id-1.3.5.3.3.14" data-id-title="Information about the mounted cpuset file system" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: Information about the mounted cpuset file system</div><p>
      The <code class="command">cset</code> subcommand creates the cpusets based on a
      mounted cpuset file system. You do not need to know where that file
      system is mounted, although it is easy to figure out (by default it is
@@ -506,7 +506,7 @@ cset: --&gt; modified cpuset "sub_set</pre></div><p>
    </p><p>
     Moving a cpuset from under a certain cpuset to a different location is
     not implemented.
-   </p></section><section class="sect2" id="sec-shielding-cpuset-set-list" data-id-title="Listing cpusets with set"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.1.2 </span><span class="title-name">Listing cpusets with set</span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-set-list">#</a></h3></div></div></div><p>
+   </p></section><section class="sect2" id="sec-shielding-cpuset-set-list" data-id-title="Listing cpusets with set"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.1.2 </span><span class="title-name">Listing cpusets with set</span></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-set-list">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_cpuset_manipulation.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     To list cpusets, use the <code class="command">set</code> subcommand with the
     <code class="option">-l/--list</code> option. For example:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> set -l
@@ -549,7 +549,7 @@ three        3 n          0 n       0     0    /one/two/three</pre></div><p>
     cpuset you can use either <code class="filename">root</code> or
     <code class="filename">/</code> to specify it explicitly—just remember that the
     <code class="literal">root</code> cpuset cannot be deleted or modified.
-   </p></section></section><section class="sect1" id="sec-shielding-cpuset-proc" data-id-title="The proc subcommand"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">3.2 </span><span class="title-name">The <code class="command">proc</code> subcommand</span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-proc">#</a></h2></div></div></div><p>
+   </p></section></section><section class="sect1" id="sec-shielding-cpuset-proc" data-id-title="The proc subcommand"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3.2 </span><span class="title-name">The <code class="command">proc</code> subcommand</span></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-proc">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_cpuset_manipulation.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Now that you know how to create, rename and destroy cpusets with the
    <code class="command">set</code> subcommand, the next step is to manage threads and
    processes in those cpusets. The subcommand to do this is called
@@ -563,7 +563,7 @@ Name         CPUs-X       MEMs-X    Tasks Subs Path
 ------------ ---------- - ------- - ----- ---- ----------
 root         0-3 y        0 y       309   2    /
 two          2 n          0 n       3     0    /two
-three        3 n          0 n       10    0    /three</pre></div><section class="sect2" id="sec-shielding-cpuset-proc-list" data-id-title="Listing tasks with proc"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.2.1 </span><span class="title-name">Listing tasks with <code class="command">proc</code></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-proc-list">#</a></h3></div></div></div><p>
+three        3 n          0 n       10    0    /three</pre></div><section class="sect2" id="sec-shielding-cpuset-proc-list" data-id-title="Listing tasks with proc"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.2.1 </span><span class="title-name">Listing tasks with <code class="command">proc</code></span></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-proc-list">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_cpuset_manipulation.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     Operation of the <code class="command">proc</code> subcommand follows the same
     model as the <code class="command">set</code> subcommand. For example, to list
     tasks in a cpuset, you need to use the <code class="option">-l/--list</code> option
@@ -641,7 +641,7 @@ tux      17265     1 Soth beagled /usr/lib64/beagle/BeagleDaemon.exe --bg -...</
 cset: "three" cpuset of CPUSPEC(3) with 10 tasks running
 USER     PID   PPID  SPPr TASK NAME
 -------- ----- ----- ---- ---------
-tux      16165     1 Soth beagled /usr/lib64/beagle/BeagleDaemon.exe --bg --autostarted --indexing-delay 300</pre></div></section><section class="sect2" id="sec-shielding-cpuset-proc-exec" data-id-title="Execing tasks with proc"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.2.2 </span><span class="title-name">Execing tasks with <code class="literal">proc</code></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-proc-exec">#</a></h3></div></div></div><p>
+tux      16165     1 Soth beagled /usr/lib64/beagle/BeagleDaemon.exe --bg --autostarted --indexing-delay 300</pre></div></section><section class="sect2" id="sec-shielding-cpuset-proc-exec" data-id-title="Execing tasks with proc"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.2.2 </span><span class="title-name">Execing tasks with <code class="literal">proc</code></span></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-proc-exec">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_cpuset_manipulation.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     To execute a task into a cpuset, the <code class="command">proc</code> subcommand
     needs to be employed with the <code class="option">-e/--exec</code> option. Let us
     execute a shell into the cpuset named <code class="literal">two</code> in our set.
@@ -681,7 +681,7 @@ root     21147 21118 Roth python ./cset proc -l two</pre></div><p>
     Here again, you can see that the second shell, PID <code class="literal">21118</code>,
     has a parent PID of <code class="literal">20955</code> which is the first shell.
     Both shells, and the listing command, are running in the two cpuset.
-   </p><div id="id-1.3.5.4.5.7" data-id-title="Separating the Tool Options From the cset Command" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><h6>Note: Separating the Tool Options From the cset Command</h6><p>
+   </p><div id="id-1.3.5.4.5.7" data-id-title="Separating the Tool Options From the cset Command" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: Separating the Tool Options From the cset Command</div><p>
      <code class="command">cset</code> follows the tradition of separating the tool
      options from the command to be executed options with a double hyphen
      (<code class="literal">--</code>). This is not shown in this simple example, but
@@ -690,7 +690,7 @@ root     21147 21118 Roth python ./cset proc -l two</pre></div><p>
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> proc -s myset -e mycommand -- -v</pre></div><p>
      The <code class="option">-v</code> will be passed to
      <em class="replaceable">mycommand</em>, and not to <code class="option">cset</code>.
-    </p></div><div id="id-1.3.5.4.5.8" data-id-title="Executing a shell into a cpuset" class="admonition tip normal"><img class="symbol" alt="Tip" title="Tip" src="static/images/icon-tip.svg"/><h6>Tip: Executing a shell into a cpuset</h6><p>
+    </p></div><div id="id-1.3.5.4.5.8" data-id-title="Executing a shell into a cpuset" class="admonition tip normal"><img class="symbol" alt="Tip" title="Tip" src="static/images/icon-tip.svg"/><div class="admon-title">Tip: Executing a shell into a cpuset</div><p>
      Executing a shell into a cpuset is a useful way to experiment with
      running tasks in that cpuset since all children of the shell will also
      run in the same cpuset.
@@ -704,7 +704,7 @@ cset: **&gt; [Errno 2] No such file or directory</pre></div><p>
     for the message is of course that the <code class="command">cset</code> process
     forked in preparation of the execution, but the command
     <code class="command">blah-blah</code> was not found to execute it.
-   </p></section><section class="sect2" id="sec-shielding-cpuset-proc-move" data-id-title="Moving tasks with proc"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.2.3 </span><span class="title-name">Moving tasks with <code class="command">proc</code></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-proc-move">#</a></h3></div></div></div><p>
+   </p></section><section class="sect2" id="sec-shielding-cpuset-proc-move" data-id-title="Moving tasks with proc"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.2.3 </span><span class="title-name">Moving tasks with <code class="command">proc</code></span></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-proc-move">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_cpuset_manipulation.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     Although the ability to execute a task into a cpuset is fundamental, you
     will most likely be moving tasks between cpusets more often. Moving
     tasks is accomplished with the <code class="option">-m/--move</code> and
@@ -729,7 +729,7 @@ cset: **&gt; [Errno 2] No such file or directory</pre></div><p>
        <code class="literal">5100</code> and <code class="literal">9232</code> will be moved along
        with any existing task with PID in the range <code class="literal">6010</code>
        through <code class="literal">7000</code> inclusive.
-      </p></dd></dl></div><div id="id-1.3.5.4.6.5" data-id-title="Information about the range in a PIDSPEC" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><h6>Note: Information about the range in a PIDSPEC</h6><p>
+      </p></dd></dl></div><div id="id-1.3.5.4.6.5" data-id-title="Information about the range in a PIDSPEC" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: Information about the range in a PIDSPEC</div><p>
      A range in a PIDSPEC does not need to have running tasks for every
      number in that range. In fact, it is not even an error if there are no
      tasks running in that range; none will be moved in that case. The range
@@ -818,7 +818,7 @@ cset:
 Name         CPUs-X       MEMs-X    Tasks Subs Path
 ------------ ---------- - ------- - ----- ---- ----------
 two          2 n          0 n       10    0    /two
-three        3 n          0 n       0     0    /three</pre></div><section class="sect3" id="sec-shielding-cpuset-proc-move-taskset" data-id-title="Moving all tasks from one cpuset to another"><div class="titlepage"><div><div><h4 class="title"><span class="title-number">3.2.3.1 </span><span class="title-name">Moving all tasks from one cpuset to another</span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-proc-move-taskset">#</a></h4></div></div></div><p>
+three        3 n          0 n       0     0    /three</pre></div><section class="sect3" id="sec-shielding-cpuset-proc-move-taskset" data-id-title="Moving all tasks from one cpuset to another"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">3.2.3.1 </span><span class="title-name">Moving all tasks from one cpuset to another</span></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-proc-move-taskset">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_cpuset_manipulation.xml" title="Edit source document"> </a></div></div></div></div></div><p>
      There is a special case for moving all tasks currently running in one
      cpuset to another. This can be a common use case, and when you need to
      do it, specifying a PIDSPEC with <code class="option">-p</code> is not necessary
@@ -856,7 +856,7 @@ cset:
 Name         CPUs-X       MEMs-X    Tasks Subs Path
 ------------ ---------- - ------- - ----- ---- ----------
 two          2 n          0 n       0     0    /two
-three        3 n          0 n       10    0    /three</pre></div></section><section class="sect3" id="sec-shielding-cpuset-proc-move-threads" data-id-title="Moving kernel threads with proc"><div class="titlepage"><div><div><h4 class="title"><span class="title-number">3.2.3.2 </span><span class="title-name">Moving kernel threads with <code class="command">proc</code></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-proc-move-threads">#</a></h4></div></div></div><p>
+three        3 n          0 n       10    0    /three</pre></div></section><section class="sect3" id="sec-shielding-cpuset-proc-move-threads" data-id-title="Moving kernel threads with proc"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">3.2.3.2 </span><span class="title-name">Moving kernel threads with <code class="command">proc</code></span></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-proc-move-threads">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_cpuset_manipulation.xml" title="Edit source document"> </a></div></div></div></div></div><p>
      Kernel threads are special and <code class="command">cset</code> detects tasks
      that are kernel threads and will refuse to move them unless you also
      add a <code class="option">-k/--kthread</code> option to your
@@ -873,7 +873,7 @@ three        3 n          0 n       10    0    /three</pre></div></section><sect
      <code class="command">cset</code> needs to give the knowledgeable user access to
      the keys), then you also need to use the <code class="option">--force</code>
      option.
-    </p><div id="id-1.3.5.4.6.11.4" data-id-title="Use --force with care" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><h6>Warning: Use <code class="option">--force</code> with care</h6><p>
+    </p><div id="id-1.3.5.4.6.11.4" data-id-title="Use --force with care" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning: Use <code class="option">--force</code> with care</div><p>
       Overriding a task move command with <code class="option">--force</code> can have
       dire consequences for the system. Be sure of the command before you
       force it.
@@ -938,14 +938,14 @@ two          2 n          0 n       70    0    /two</pre></div><p>
 cset: moving all kernel threads from /two to /
 cset: moving 70 kernel threads to: /
 [==================================================]%
-cset: done</pre></div></section></section><section class="sect2" id="sec-shielding-cpuset-proc-destroy" data-id-title="Destroying tasks"><div class="titlepage"><div><div><h3 class="title"><span class="title-number">3.2.4 </span><span class="title-name">Destroying tasks</span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-proc-destroy">#</a></h3></div></div></div><p>
+cset: done</pre></div></section></section><section class="sect2" id="sec-shielding-cpuset-proc-destroy" data-id-title="Destroying tasks"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.2.4 </span><span class="title-name">Destroying tasks</span></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-proc-destroy">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_cpuset_manipulation.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     There actually is no <code class="command">cset</code> subcommand or option to
     destroy tasks—it is not really needed. Tasks exist and are accessible
     on the system as normal, even if they happen to be running in one cpuset
     or another. To destroy tasks, use the usual
     <span class="keycap">Ctrl</span><span class="key-connector">–</span><span class="keycap">C</span>
     method or by using the <code class="command">kill(1)</code> command.
-   </p></section></section><section class="sect1" id="sec-shielding-cpuset-shielding-set-proc" data-id-title="Implementing shielding with set and proc"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">3.3 </span><span class="title-name">Implementing shielding with <code class="command">set</code> and <code class="command">proc</code></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-shielding-set-proc">#</a></h2></div></div></div><p>
+   </p></section></section><section class="sect1" id="sec-shielding-cpuset-shielding-set-proc" data-id-title="Implementing shielding with set and proc"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3.3 </span><span class="title-name">Implementing shielding with <code class="command">set</code> and <code class="command">proc</code></span></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-shielding-set-proc">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_cpuset_manipulation.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    With the preceding material on the <code class="command">set</code> and
    <code class="command">proc</code> subcommands, you now have the background to
    implement the basic shielding model, like the <code class="command">shield</code>
@@ -1035,7 +1035,7 @@ system       0 n          0 n       257   0    /system</pre></div><p>
    <code class="command">shield</code> subcommand provides. You can now add other
    cpuset definitions to expand your shielding strategy beyond that simple
    model.
-  </p></section><section class="sect1" id="sec-shielding-cpuset-hierarchy-set-proc" data-id-title="Implementing hierarchy with set and proc"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">3.4 </span><span class="title-name">Implementing hierarchy with set and proc</span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-hierarchy-set-proc">#</a></h2></div></div></div><p>
+  </p></section><section class="sect1" id="sec-shielding-cpuset-hierarchy-set-proc" data-id-title="Implementing hierarchy with set and proc"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3.4 </span><span class="title-name">Implementing hierarchy with set and proc</span></span> <a title="Permalink" class="permalink" href="#sec-shielding-cpuset-hierarchy-set-proc">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_cpuset_manipulation.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    One popular extended <span class="emphasis"><em>shielding</em></span> model is based on
    hierarchical cpusets, each with diminishing numbers of CPUs. This model
    is used to create <span class="emphasis"><em>priority cpusets</em></span> that allow
@@ -1057,7 +1057,7 @@ system       0 n          0 n       257   0    /system</pre></div><p>
    cpusets will be called <code class="literal">prio_low</code> with one CPU,
    <code class="literal">prio_med</code> with two CPUs, <code class="literal">prio_high</code>
    with three CPUs, and <code class="literal">prio_all</code> with all CPUs.
-  </p><div id="id-1.3.5.6.5" data-id-title="The sense behind creating a prio_all cpuset with all CPUs" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><h6>Note: The sense behind creating a prio_all cpuset with all CPUs</h6><p>
+  </p><div id="id-1.3.5.6.5" data-id-title="The sense behind creating a prio_all cpuset with all CPUs" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: The sense behind creating a prio_all cpuset with all CPUs</div><p>
     You may ask, why create a <code class="literal">prio_all</code> with all CPUs when
     that is substantially the definition of the <code class="literal">root</code>
     cpuset? The answer is that it is best to keep a separation between the
@@ -1114,7 +1114,7 @@ system       0 n          0 n       0     0    /system
 prio_all     0-3 n        0 n       0     1    /prio_all
 prio_high    1-3 n        0 n       0     1    /prio_all/prio_high
 prio_med     2-3 n        0 n       0     1    /prio_all/prio_high/prio_med
-prio_low     3 n          0 n       0     0    /prio_all/pr...rio_med/prio_low</pre></div><div id="id-1.3.5.6.10" data-id-title="Why -r/--recurse is needed in this case" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><h6>Note: Why <code class="option">-r/--recurse</code> is needed in this case</h6><p>
+prio_low     3 n          0 n       0     0    /prio_all/pr...rio_med/prio_low</pre></div><div id="id-1.3.5.6.10" data-id-title="Why -r/--recurse is needed in this case" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: Why <code class="option">-r/--recurse</code> is needed in this case</div><p>
     The option <code class="option">-r</code>/<code class="option">--recurse</code> lists all the
     sets in the last command above. If you execute that command without
     <code class="option">-r/--recurse</code>, <code class="literal">prio_med</code> and
@@ -1161,7 +1161,7 @@ system       0 n          0 n       268   0    /system
 prio_all     0-3 n        0 n       0     1    /prio_all
 prio_high    1-3 n        0 n       0     1    /prio_all/prio_high
 prio_med     2-3 n        0 n       0     1    /prio_all/prio_high/prio_med
-prio_low     3 n          0 n       0     0    /prio_all/prio_high/prio_med/prio_low</pre></div></section></section><section class="chapter" id="cha-shielding-shortcuts" data-id-title="Using shortcuts"><div class="titlepage"><div><div><h1 class="title"><span class="title-number">4 </span><span class="title-name">Using shortcuts</span> <a title="Permalink" class="permalink" href="#cha-shielding-shortcuts">#</a></h1></div></div></div><p>
+prio_low     3 n          0 n       0     0    /prio_all/prio_high/prio_med/prio_low</pre></div></section></section><section class="chapter" id="cha-shielding-shortcuts" data-id-title="Using shortcuts"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">4 </span><span class="title-name">Using shortcuts</span></span> <a title="Permalink" class="permalink" href="#cha-shielding-shortcuts">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_usingshortcuts.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The commands listed in the previous sections always used all the required
   options. However, <code class="command">cset</code> does have a shortcut facility
   that will execute certain commands without specifying all options. An
@@ -1203,7 +1203,7 @@ prio_low     3 n          0 n       0     0    /prio_all/prio_high/prio_med/prio
   The <code class="command">proc</code> command can be shortened to
   <code class="command">p</code>, while <code class="command">shield</code> and
   <code class="command">set</code> need two letters to disambiguate.
- </p><section class="sect1" id="sec-shielding-shortcuts-shield" data-id-title="shield subcommand shortcuts"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">4.1 </span><span class="title-name"><code class="command">shield</code> subcommand shortcuts</span> <a title="Permalink" class="permalink" href="#sec-shielding-shortcuts-shield">#</a></h2></div></div></div><p>
+ </p><section class="sect1" id="sec-shielding-shortcuts-shield" data-id-title="shield subcommand shortcuts"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.1 </span><span class="title-name"><code class="command">shield</code> subcommand shortcuts</span></span> <a title="Permalink" class="permalink" href="#sec-shielding-shortcuts-shield">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_usingshortcuts.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The <code class="command">shield</code> subcommand supports two areas with
    shortcuts: the short method (when there are no options given and where to
    shield is the common use case), and the long method (which makes
@@ -1241,7 +1241,7 @@ prio_low     3 n          0 n       0     0    /prio_all/prio_high/prio_med/prio
 <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -u -p 1234</pre></div>
       </td><td>
 <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> sh -u 1234</pre></div>
-      </td></tr></tbody></table></div></section><section class="sect1" id="sec-shielding-shortcuts-set" data-id-title="set subcommand shortcuts"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">4.2 </span><span class="title-name"><code class="command">set</code> subcommand shortcuts</span> <a title="Permalink" class="permalink" href="#sec-shielding-shortcuts-set">#</a></h2></div></div></div><p>
+      </td></tr></tbody></table></div></section><section class="sect1" id="sec-shielding-shortcuts-set" data-id-title="set subcommand shortcuts"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.2 </span><span class="title-name"><code class="command">set</code> subcommand shortcuts</span></span> <a title="Permalink" class="permalink" href="#sec-shielding-shortcuts-set">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_usingshortcuts.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The <code class="command">set</code> subcommand has a limited number of shortcuts.
    The option <code class="option">--set</code> is optional usually
    and the <code class="option">--list</code> option is also optional to
@@ -1284,7 +1284,7 @@ prio_low     3 n          0 n       0     0    /prio_all/prio_high/prio_med/prio
 
 <code class="command">cset</code> se -l prio_high prio_med prio_low
 --&gt; lists only cpusets prio_high, prio_med and prio_low
---&gt; the -l is optional in this case since list is default</pre></div></section><section class="sect1" id="sec-shielding-shortcuts-proc" data-id-title="proc subcommand shortcuts"><div class="titlepage"><div><div><h2 class="title"><span class="title-number">4.3 </span><span class="title-name"><code class="command">proc</code> subcommand shortcuts</span> <a title="Permalink" class="permalink" href="#sec-shielding-shortcuts-proc">#</a></h2></div></div></div><p>
+--&gt; the -l is optional in this case since list is default</pre></div></section><section class="sect1" id="sec-shielding-shortcuts-proc" data-id-title="proc subcommand shortcuts"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.3 </span><span class="title-name"><code class="command">proc</code> subcommand shortcuts</span></span> <a title="Permalink" class="permalink" href="#sec-shielding-shortcuts-proc">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_usingshortcuts.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    For the <code class="command">proc</code> subcommand, the <code class="option">-s</code>, <code class="option">-t</code> and
    <code class="option">-f</code> options to specify the <code class="systemitem">cpuset</code>, the origination <code class="systemitem">cpuset</code>
    and the destination <code class="systemitem">cpuset</code> can sometimes be optional. For example, the
@@ -1376,7 +1376,7 @@ prio_low     3 n          0 n       0     0    /prio_all/prio_high/prio_med/prio
 <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> proc -m -f set1 -s set2</pre></div>
       </td><td>
 <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> p -m set1 set2</pre></div>
-      </td></tr></tbody></table></div></section></section><section class="chapter" id="cha-shieldingt-help" data-id-title="What to do if there are problems"><div class="titlepage"><div><div><h1 class="title"><span class="title-number">5 </span><span class="title-name">What to do if there are problems</span> <a title="Permalink" class="permalink" href="#cha-shieldingt-help">#</a></h1></div></div></div><p>
+      </td></tr></tbody></table></div></section></section><section class="chapter" id="cha-shieldingt-help" data-id-title="What to do if there are problems"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">5 </span><span class="title-name">What to do if there are problems</span></span> <a title="Permalink" class="permalink" href="#cha-shieldingt-help">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_gettinghelp.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   If you encounter any issues with the <code class="command">cset</code> application,
   you can file a bug report here:
   <a class="link" href="https://github.com/lpechacek/cpuset/issues" target="_blank">https://github.com/lpechacek/cpuset/issues</a>
@@ -1396,9 +1396,9 @@ prio_low     3 n          0 n       0     0    /prio_all/prio_high/prio_med/prio
   If the issue persists and is reproducible, Including this report in your
   bug submission greatly reduces development time. This command saves
   debugging information within the file <code class="filename">logfile.txt</code>.
- </p></section><div class="legal-section"><section class="appendix" id="id-1.3.8" data-id-title="GNU Licenses"><div class="titlepage"><div><div><h1 class="title"><span class="title-number">A </span><span class="title-name">GNU Licenses</span> <a title="Permalink" class="permalink" href="#id-1.3.8">#</a></h1></div></div></div><p>
+ </p></section><div class="legal-section"><section class="appendix" id="id-1.3.8" data-id-title="GNU Licenses"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">A </span><span class="title-name">GNU Licenses</span></span> <a title="Permalink" class="permalink" href="#id-1.3.8">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/common_legal.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This appendix contains the GNU Free Documentation License version 1.2.
- </p><section class="sect1" id="id-1.3.8.4" data-id-title="GNU Free Documentation License"><div class="titlepage"><div><div><h2 class="title legal"><span class="title-name">GNU Free Documentation License</span> <a title="Permalink" class="permalink" href="#id-1.3.8.4">#</a></h2></div></div></div><p>
+ </p><section class="sect1" id="id-1.3.8.4" data-id-title="GNU Free Documentation License"><div class="titlepage"><div><div><div class="title-container"><h2 class="title legal"><span class="title-number-name"><span class="title-name">GNU Free Documentation License</span></span> <a title="Permalink" class="permalink" href="#id-1.3.8.4">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/common_gfdl1.2_i.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Copyright (C) 2000, 2001, 2002 Free Software Foundation, Inc. 51 Franklin
   St, Fifth Floor, Boston, MA 02110-1301 USA. Everyone is permitted to copy
   and distribute verbatim copies of this license document, but changing it
