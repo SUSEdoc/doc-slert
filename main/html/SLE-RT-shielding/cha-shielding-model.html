@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The basic shielding model | SLE RT 15 SP5"/>
 <meta name="twitter:description" content="Although any setup of cpusets can really be described as shielding, there is one prevalent shielding model in use that is so common that cset has a s…"/>
-<link rel="prev" href="cha-shielding-intro.html" title="Chapter 1. Introduction"/><link rel="next" href="cha-shielding-cpuset.html" title="Chapter 3. Full-featured cpuset manipulation commands"/>
+<link rel="prev" href="cha-shielding-intro.html" title="Chapter 1. Introduction"/><link rel="next" href="cha-shielding-with-systemd.html" title="Chapter 3. Shielding with systemd"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
@@ -35,7 +35,7 @@ hljs.configure({
   useBR: false
 });
 
-</script><meta name="edit-url" content="https://github.com/SUSE/doc-slert/edit/main/xml/slert_shielding_model.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Shielding Linux Resources</a><span> / </span><a class="crumb" href="cha-shielding-model.html">The basic shielding model</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Shielding Linux Resources</div><ol><li><a href="cha-shielding-intro.html" class=" "><span class="title-number">1 </span><span class="title-name">Introduction</span></a></li><li><a href="cha-shielding-model.html" class=" you-are-here"><span class="title-number">2 </span><span class="title-name">The basic shielding model</span></a></li><li><a href="cha-shielding-cpuset.html" class=" "><span class="title-number">3 </span><span class="title-name">Full-featured cpuset manipulation commands</span></a></li><li><a href="cha-shielding-shortcuts.html" class=" "><span class="title-number">4 </span><span class="title-name">Using shortcuts</span></a></li><li><a href="cha-shieldingt-help.html" class=" "><span class="title-number">5 </span><span class="title-name">What to do if there are problems</span></a></li><li><a href="bk01apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="cha-shielding-model" data-id-title="The basic shielding model"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname">SUSE Linux Enterprise Real Time</span> <span class="productnumber">15 SP5</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">2 </span><span class="title-name">The basic shielding model</span></span> <a title="Permalink" class="permalink" href="cha-shielding-model.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_shielding_model.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+</script><meta name="edit-url" content="https://github.com/SUSE/doc-slert/edit/main/xml/slert_shielding_model.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Shielding Linux Resources</a><span> / </span><a class="crumb" href="cha-shielding-model.html">The basic shielding model</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Shielding Linux Resources</div><ol><li><a href="cha-shielding-intro.html" class=" "><span class="title-number">1 </span><span class="title-name">Introduction</span></a></li><li><a href="cha-shielding-model.html" class=" you-are-here"><span class="title-number">2 </span><span class="title-name">The basic shielding model</span></a></li><li><a href="cha-shielding-with-systemd.html" class=" "><span class="title-number">3 </span><span class="title-name">Shielding with systemd</span></a></li><li><a href="cha-shielding-cpuset.html" class=" "><span class="title-number">4 </span><span class="title-name">Full-featured cpuset manipulation commands</span></a></li><li><a href="cha-shielding-shortcuts.html" class=" "><span class="title-number">5 </span><span class="title-name">Using shortcuts</span></a></li><li><a href="cha-shieldingt-help.html" class=" "><span class="title-number">6 </span><span class="title-name">What to do if there are problems</span></a></li><li><a href="bk01apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="cha-shielding-model" data-id-title="The basic shielding model"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname">SUSE Linux Enterprise Real Time</span> <span class="productnumber">15 SP5</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">2 </span><span class="title-name">The basic shielding model</span></span> <a title="Permalink" class="permalink" href="cha-shielding-model.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_shielding_model.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Although any setup of <code class="systemitem">cpuset</code>s can really be described as
   <span class="emphasis"><em>shielding</em></span>, there is one prevalent shielding model in
   use that is so common that cset has a subcommand that is dedicated to its
@@ -55,10 +55,8 @@ hljs.configure({
   The subcommand automatically moves all movable tasks on the system into the
   <code class="literal">unshielded</code> <code class="systemitem">cpuset</code> on shield activation, and back into
   the <code class="systemitem">root</code> <code class="systemitem">cpuset</code> on shield tear down. The subcommand
-  lets you move tasks into and out of the shield. Additionally, you can move
-  special tasks (kernel threads) which normally run in the
-  <code class="systemitem">root</code> <code class="systemitem">cpuset</code> into the <code class="literal">unshielded</code>
-  set. This makes your shield have even less disturbance.
+  lets you move tasks into and out of the shield. Kernel threads are excluded
+  from these migrations.
  </p><p>
   The <code class="command">shield</code> subcommand abstracts the management of these <code class="systemitem">cpuset</code>s away from
   you. It provides options that drive how the shield is set up, which tasks
@@ -71,7 +69,7 @@ hljs.configure({
   that this simple shielding is not rich enough for you. In this
   case, you should transition to using the <code class="command">set</code> and
   <code class="command">proc</code> subcommands described in
-  <a class="xref" href="cha-shielding-cpuset.html" title="Chapter 3. Full-featured cpuset manipulation commands">Chapter 3, <em>Full-featured cpuset manipulation commands</em></a>.
+  <a class="xref" href="cha-shielding-cpuset.html" title="Chapter 4. Full-featured cpuset manipulation commands">Chapter 4, <em>Full-featured cpuset manipulation commands</em></a>.
  </p><section class="sect1" id="sec-shielding-model-ex" data-id-title="A simple shielding example"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.1 </span><span class="title-name">A simple shielding example</span></span> <a title="Permalink" class="permalink" href="cha-shielding-model.html#sec-shielding-model-ex">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_shielding_model.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Assume a four-core machine that has uniform memory access.
    This means there are four CPUs at your disposal and there is only one memory node
@@ -111,8 +109,7 @@ cset: "user" cpuset of CPUSPEC(1-3) with 0 tasks running</pre></div><p>
     Note that the command did not move the kernel threads that are running
     in the <code class="literal">root</code> <code class="systemitem">cpuset</code> to the <code class="literal">system</code>
     <code class="systemitem">cpuset</code>. This is because you may want these kernel threads to use all
-    available CPUs. If you do not, then you can use the
-    <code class="option">-k</code>/<code class="option">--kthread</code> option as described below.
+    available CPUs.
    </p><p>
     The shield setup command above outputs the information of which <code class="systemitem">cpuset</code>s
     were created and how many tasks are running on each. To see
@@ -135,9 +132,8 @@ cset: "user" cpuset of CPUSPEC(1-3) with 0 tasks running</pre></div><p>
    </p><p><span class="formalpara-title">Note. </span>There is a minor chance that a task forks during move and its
     child remains in the root <code class="systemitem">cpuset</code>.
    </p><p>
-    Some kernel threads can be moved into the unshielded
-    <code class="literal">system</code> <code class="systemitem">cpuset</code> as well. These are the threads that are
-    not bound to specific CPUs. If a kernel thread is bound to a specific
+    Kernel threads can be both unbound or bound to specific CPUs.
+    If a kernel thread is bound to a specific
     CPU, then it is generally not a good idea to move that thread to the
     <code class="literal">system</code> set because at worst it may hang the system
     and at best it will slow the system down significantly. These threads
@@ -147,23 +143,9 @@ cset: "user" cpuset of CPUSPEC(1-3) with 0 tasks running</pre></div><p>
     <code class="literal">root</code> <code class="systemitem">cpuset</code>, then they will have access to all CPUs.
    </p><p>
     However, if your application demands an even <span class="quote">“<span class="quote">quieter</span>”</span>
-    shield, then you can move all movable kernel threads into the unshielded
-    <code class="literal">system</code> set with the following command.
-   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -k on
-cset: --&gt; activating kthread shielding
-cset: kthread shield activated, moving 70 tasks into system cpuset...
-[==================================================]%
-cset: done</pre></div><p>
-    You can see that this moved an additional 70 tasks to the unshielded
-    <code class="literal">system</code> <code class="systemitem">cpuset</code>. Note that the <code class="option">-k</code>/<code class="option">--kthread on</code> parameter can be given at the shield's
-    creation time. You do not need to perform these two steps separately if you know
-    you will want kernel thread shielding as well. Executing
-    <code class="command">cset shield</code> again shows us the current state of the
-    shield.
-   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cset</code> shield
-cset: --&gt; shielding system active with
-cset: "system" cpuset of CPUSPEC(0) with 246 tasks running
-cset: "user" cpuset of CPUSPEC(1-3) with 0 tasks running</pre></div><p>
+    shield, you should look at <code class="literal">isolcpus=</code> kernel command line
+    argument.
+   </p><p>
     You can get a detailed listing of what is running in the shield by
     adding either <code class="option">-s/--shield</code> or
     <code class="option">-u/--unshield</code> to the <code class="command">shield</code>
@@ -356,5 +338,5 @@ cset: done
 
 <code class="prompt user">tux &gt; </code><code class="command">cset</code> shield -s
 cset: "user" cpuset of CPUSPEC(1-3) with 0 tasks running
-cset: done</pre></div></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-shielding-intro.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 1 </span>Introduction</span></a> </div><div><a class="pagination-link next" href="cha-shielding-cpuset.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 3 </span>Full-featured cpuset manipulation commands</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-shielding-model.html#sec-shielding-model-ex"><span class="title-number">2.1 </span><span class="title-name">A simple shielding example</span></a></span></li><li><span class="sect1"><a href="cha-shielding-model.html#sec-shielding-model-ex-setup-teardown"><span class="title-number">2.2 </span><span class="title-name">Setup and teardown of the shield</span></a></span></li><li><span class="sect1"><a href="cha-shielding-model.html#sec-shielding-model-ex-move"><span class="title-number">2.3 </span><span class="title-name">Moving interesting tasks into and out of the shield</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+cset: done</pre></div></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-shielding-intro.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 1 </span>Introduction</span></a> </div><div><a class="pagination-link next" href="cha-shielding-with-systemd.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 3 </span>Shielding with systemd</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-shielding-model.html#sec-shielding-model-ex"><span class="title-number">2.1 </span><span class="title-name">A simple shielding example</span></a></span></li><li><span class="sect1"><a href="cha-shielding-model.html#sec-shielding-model-ex-setup-teardown"><span class="title-number">2.2 </span><span class="title-name">Setup and teardown of the shield</span></a></span></li><li><span class="sect1"><a href="cha-shielding-model.html#sec-shielding-model-ex-move"><span class="title-number">2.3 </span><span class="title-name">Moving interesting tasks into and out of the shield</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
                  2022</span></div></div></footer></body></html>
