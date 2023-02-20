@@ -41,9 +41,9 @@ hljs.configure({
     To meet this requirement, SUSE Linux Enterprise Real Time offers several options for CPU and I/O
     scheduling, CPU shielding, and for setting CPU affinities of processes.
    </p></div><div class="date"><span class="imprint-label">Publication Date: </span>
-11/07/2022
+02/20/2023
 </div></div></div><div><div class="legalnotice" id="id-1.4.2.2.3"><p>
-  Copyright © 2006–2022
+  Copyright © 2006–2023
 
   SUSE LLC and contributors. All rights reserved.
  </p><p>
@@ -95,7 +95,7 @@ hljs.configure({
     Technology Preview (best-effort support). For reference, see
     <span class="intraxref">Article “Virtualization Guide”</span>.
    </p></section></section><section class="sect1" id="sec-slert-quick-install" data-id-title="Installing SUSE Linux Enterprise Real Time"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2 </span><span class="title-name">Installing SUSE Linux Enterprise Real Time</span></span> <a title="Permalink" class="permalink" href="#sec-slert-quick-install">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
-   To install SUSE Linux Enterprise Real Time 15 SP3, keep the following points in mind:
+   Keep the following points in mind:
   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Boot from the quarterly update medium. SUSE Linux Enterprise Real Time is only
      available from the quarterly update medium as this product is released
@@ -108,7 +108,16 @@ hljs.configure({
     </p></li><li class="listitem"><p>
      In the <span class="guimenu">Language, keyboard, and product selection</span>, select
      the entry <span class="guimenu">SUSE Linux Enterprise Real Time</span>.
-    </p></li></ul></div><p>
+    </p></li></ul></div><p>To install SUSE Linux Enterprise Real Time 15 SP3, proceed as follows:</p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Start the normal SUSE Linux Enterprise 15 SP3.</p></li><li class="step"><p>On the boot command line, add <code class="literal">start_shell=1</code>.
+    </p></li><li class="step"><p>When the prompt shows up, open the file <code class="filename">control.xml</code> and add the
+    following lines:</p><div class="verbatim-wrap"><pre class="screen">&lt;base_product&gt;
+  &lt;display_name&gt;SUSE Linux Enterprise Real Time 15 SP3&lt;/display_name&gt;
+  &lt;name&gt;SLE_RT&lt;/name&gt;
+  &lt;version&gt;15.3&lt;/version&gt;
+  &lt;register_target&gt;sle-15-$arch&lt;/register_target&gt;
+  &lt;archs&gt;x86_64&lt;/archs&gt;
+&lt;/base_product&gt;</pre></div></li><li class="step"><p>Save the file, exit the editor, and restart YaST</p></li><li class="step"><p>Select <span class="guimenu">SUSE Linux Enterprise Real Time 15 SP3</span> from the product selection list.
+    </p></li><li class="step"><p>Continue with the normal installation. The rest is the same of the other product installation.</p></li><li class="step"><p>Reboot and select the real time kernel.</p></li></ol></div></div><p>
    The following sections provide a brief introduction to the tools and
    possibilities of SUSE Linux Enterprise Real Time.
   </p></section><section class="sect1" id="sec-slert-quick-cset" data-id-title="Managing CPU sets with cset"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3 </span><span class="title-name">Managing CPU sets with <code class="command">cset</code></span></span> <a title="Permalink" class="permalink" href="#sec-slert-quick-cset">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
@@ -999,4 +1008,4 @@ noop deadline [cfq]</pre></div><p>
   software license, such as the GNU General Public License, to permit their
   use in free software.
  </p></section></section></div></section></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="#sec-slert-quick-overview"><span class="title-number">1 </span><span class="title-name">Product overview</span></a></span></li><li><span class="sect1"><a href="#sec-slert-quick-install"><span class="title-number">2 </span><span class="title-name">Installing SUSE Linux Enterprise Real Time</span></a></span></li><li><span class="sect1"><a href="#sec-slert-quick-cset"><span class="title-number">3 </span><span class="title-name">Managing CPU sets with <code class="command">cset</code></span></a></span></li><li><span class="sect1"><a href="#sec-slert-csets-tree"><span class="title-number">4 </span><span class="title-name">Managing tree-like structures with <code class="command">cset</code></span></a></span></li><li><span class="sect1"><a href="#sec-quick-chrt"><span class="title-number">5 </span><span class="title-name">Setting Real-time Attributes of a Process with <code class="command">chrt</code></span></a></span></li><li><span class="sect1"><a href="#sec-quick-taskset"><span class="title-number">6 </span><span class="title-name">Specifying CPU affinity with <code class="command">taskset</code></span></a></span></li><li><span class="sect1"><a href="#sec-quick-ionice"><span class="title-number">7 </span><span class="title-name">Changing I/O priorities with <code class="command">ionice</code></span></a></span></li><li><span class="sect1"><a href="#sec-quick-io-block-change"><span class="title-number">8 </span><span class="title-name">Changing the I/O scheduler for block devices</span></a></span></li><li><span class="sect1"><a href="#sec-quick-io-block-tune"><span class="title-number">9 </span><span class="title-name">Tuning the block device I/O scheduler</span></a></span></li><li><span class="sect1"><a href="#sec-quick-more"><span class="title-number">10 </span><span class="title-name">More information</span></a></span></li><li><span class="appendix"><a href="#id-1.4.2.13"><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></span><ul><li><span class="sect1"><a href="#id-1.4.2.13.4"><span class="title-number">A.1 </span><span class="title-name">GNU Free Documentation License</span></a></span></li></ul></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
-                 2022</span></div></div></footer></body></html>
+                 2023</span></div></div></footer></body></html>
