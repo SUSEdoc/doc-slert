@@ -2421,7 +2421,8 @@ h2 {
     background: url("../images/report-bug-dark.svg") no-repeat; }
 
 .titlepage .authorgroup:nth-child(1) {
-  margin-top: 3rem; }
+  margin-top: 3rem;
+  text-align: left; }
 
 .titlepage .series-category {
   text-align: right;
@@ -2436,7 +2437,7 @@ h2 {
   justify-content: flex-start; }
   .cover .mediaobject {
     padding: 3pt;
-    width: 5rem; }
+    width: 10rem; }
 
 .platforms {
   margin-top: 2rem; }
@@ -2642,6 +2643,10 @@ p {
   color: #0c322c;
   margin: 10px 0 0;
   text-align: left; }
+
+.abstract .title {
+  font-weight: bold;
+  font-size: 12pt; }
 
 .abstract,
 .highlights {
