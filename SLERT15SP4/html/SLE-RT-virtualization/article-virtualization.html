@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>SUSE Linux Enterprise RT 15 SP4 | Virtualization Guide</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="Virtualization Guide | SUSE Linux Enterprise RT 15 SP4"/>
+<meta name="description" content="SUSE Linux Enterprise Real Time 15 SP4 supports virtua…"/>
+<meta name="product-name" content="SUSE Linux Enterprise Real Time"/>
+<meta name="product-number" content="15 SP4"/>
+<meta name="book-title" content="Virtualization Guide"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-assignee" content="thomas.schraitle@suse.com"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE Linux Enterprise Real Time 15 SP4"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="Virtualization Guide | SUSE Linux Enterprise RT 15 SP4"/>
+<meta property="og:description" content="SUSE Linux Enterprise Real Time 15 SP4 supports virtualization and Docker usage as a technology preview only (best-effort su…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Virtualization Guide | SUSE Linux Enterprise RT 15 SP4"/>
+<meta name="twitter:description" content="SUSE Linux Enterprise Real Time 15 SP4 supports virtualization and Docker usage as a technology preview only (best-effort su…"/>
+<link rel="prev" href="article-hardware-testing.html" title="SLE RT Hardware Testing"/><link rel="next" href="bk02ar03apb.html" title="A. GNU Licenses"/><script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script><meta name="edit-url" content="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Virtualization Guide</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Virtualization Guide</div> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section xml:lang="en" class="article" id="article-virtualization" data-id-title="Virtualization Guide"><div class="titlepage"><div><div class="big-version-info"><span class="productname">SUSE Linux Enterprise Real Time</span> <span class="productnumber">15 SP4</span></div><div><div class="title-container"><h1 class="title">Virtualization Guide <a title="Permalink" class="permalink" href="article-virtualization.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div></div><div class="date"><span class="imprint-label">Publication Date: </span>12/22/2023
+</div><div><div class="abstract"><p>
+    SUSE Linux Enterprise Real Time 15 SP4 supports virtualization and Docker usage as a
+    technology preview only (best-effort support).
+   </p><p>
+    To see the degree of interference from running within a particular KVM
+    configuration versus running on a bare-metal configuration, each RT
+    application has to be assessed individually. We do not give any specific
+    guarantees on performance or deadlines being missed.
+   </p><p>
+    Virtualization inevitably introduces overhead, but there is currently no
+    rule of thumb for the performance penalty incurred. It is up to each RT
+    application developer to set performance and deadline requirements and
+    evaluate if those requirements are met.
+   </p><p>
+    This guide provides the following three examples for user reference only.
+   </p></div></div></div></div><section class="sect1" id="sec-virtguide-rtapp" data-id-title="Running RT applications with non-RT KVM guests"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">1 </span><span class="title-name">Running RT applications with non-RT KVM guests</span></span> <a title="Permalink" class="permalink" href="article-virtualization.html#sec-virtguide-rtapp">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   It is possible to achieve isolation of real-time workloads running alongside
+   KVM by using standard methods—for example, cpusets and routing IRQs
+   to dedicated CPUs. These can be done using the <code class="command">cset</code>
+   utility. Both libvirtd and KVM work fine in such configurations. System
+   configurations that share CPUs between both RT and KVM workloads are not
+   supported; proper isolation of workloads is imperative for achieving RT
+   deadline constraints. None of the below observations and recommendations are
+   specific to virtualization. Nevertheless, they can be considered
+   <span class="quote">“<span class="quote">best-effort</span>”</span> for isolating RT and KVM workloads. The basic
+   steps are:
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+     <a class="xref" href="article-virtualization.html#sec-virtguide-setup" title="1.1. Setup">Section 1.1, “Setup”</a>
+    </p></li><li class="step"><p>
+     <a class="xref" href="article-virtualization.html#sec-virtguide-observations" title="1.2. Observations">Section 1.2, “Observations”</a>
+    </p></li><li class="step"><p>
+     <a class="xref" href="article-virtualization.html#sec-virtguide-rec" title="1.3. Recommendations">Section 1.3, “Recommendations”</a>
+    </p></li></ol></div></div><section class="sect2" id="sec-virtguide-setup" data-id-title="Setup"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">1.1 </span><span class="title-name">Setup</span></span> <a title="Permalink" class="permalink" href="article-virtualization.html#sec-virtguide-setup">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    All examples were carried out on a 48-core Xeon machine with two NUMA nodes
+    and 64 GB of RAM running SUSE Linux Enterprise Real Time. The virtual machine was installed
+    with <code class="command">vm-install</code>, running SUSE Linux Enterprise Server on four CPUs and 2 GB
+    of memory. The disk was a physical disk <code class="filename">/dev/sdb</code> as
+    recommended by the SUSE Linux Enterprise Server <em class="citetitle">Virtualization Guide</em>.
+   </p><p>
+    The <code class="command">cpuset</code> utility was used to shield the RT workload
+    from KVM as described in the <em class="citetitle">SLE RT Shielding
+    Guide</em> (see <span class="intraxref">Book “Shielding Linux Resources”</span>):
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --kthread=on -c 8-47</pre></div><p>
+    Affinity for the KVM vCPU tasks was modified via the <code class="command">virsh
+    vcpupin</code> command, with a 1-1 mapping. For example, vCPU 0
+    pinned to CPU 0, etc.
+   </p><p>
+    The CPUs were split into two groups. CPUs 0-7 were allocated to the
+    <code class="systemitem">system</code> cpuset, and CPUs 8-47 were allocated to the
+    <code class="systemitem">user</code> group. Having CPUs on the same socket in two
+    groups was done intentionally to monitor the effects on shared CPU
+    resources, such as last-level cache (LLC).
+   </p><p>
+    The RT workload used throughout is <code class="literal">cyclictest</code>, executed
+    as so:
+   </p><div class="verbatim-wrap"><pre class="screen">cset shield --exec cyclictest -- -a 8-47 -t 40 -n -m -p99 -d 0 -D 120 --quiet</pre></div></section><section class="sect2" id="sec-virtguide-observations" data-id-title="Observations"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">1.2 </span><span class="title-name">Observations</span></span> <a title="Permalink" class="permalink" href="article-virtualization.html#sec-virtguide-observations">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    The following observations were made:
+   </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
+      VM Heavy I/O
+     </p><p>
+      The test for this was to do the following in a VM:
+     </p><div class="verbatim-wrap"><pre class="screen">dd if=/dev/zero of=empty bs=4096 count=$(((80*1024*1024)/4096))</pre></div><p>
+      Doing large amounts of disk I/O in the VM guests has a noticeable impact
+      on the latency of RT tasks. This is because of the constant eviction of
+      LLC data, resulting in more cache misses.
+     </p><p>
+      The maximum latencies in for the real-time workload are seen on those
+      CPUs on the same socket as the CPUs available to the KVM workload. For
+      example, where the LLC is a shared resource between the
+      <code class="systemitem">system</code> and <code class="systemitem">user</code> cpuset.
+     </p></li><li class="listitem"><p>
+      cpufreq drivers incur timer latency
+     </p><p>
+      Drivers like <code class="systemitem">intel_pstate</code> will set up a timer on
+      each CPU to periodically sample and adjust the CPU's current P-state. If
+      this fires at an inopportune time it can add delays to the scheduling of
+      RT tasks, particularly because lots of the IRQ/timer code paths run with
+      interrupts disabled.
+     </p></li><li class="listitem"><p>
+      Interrupt handling introduces delays
+     </p><p>
+      The handling of interrupts can result in latencies that affect RT
+      workloads. Interrupts should be routed to <span class="quote">“<span class="quote">housekeeping</span>”</span>
+      CPUs that are not running RT applications.
+     </p></li><li class="listitem"><p>
+      Some kernel threads cannot be controlled with cpuset
+     </p><p>
+      Performing heavy I/O in the VM may cause kthreads to be scheduled on the
+      CPUs dedicated for RT. This can occur, for example, when a kthread is
+      flushing dirty pages to disk.
+     </p><p>
+      While it is impossible to move some kworker threads into the
+      <code class="systemitem">system</code> cpuset, the above issue can be mitigated
+      by setting the CPU affinity for those threads via:
+     </p><div class="verbatim-wrap"><pre class="screen">/sys/devices/virtual/workqueue/writeback/cpumask</pre></div></li></ol></div></section><section class="sect2" id="sec-virtguide-rec" data-id-title="Recommendations"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">1.3 </span><span class="title-name">Recommendations</span></span> <a title="Permalink" class="permalink" href="article-virtualization.html#sec-virtguide-rec">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    Suggestions for tuning machines running both RT and KVM workloads are as
+    follows:
+   </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
+      Use CPU affinity to schedule RT tasks to their own CPUs, and if possible,
+      to CPUs on their own dedicated socket. Using a dedicated socket avoids the
+      issue from <a class="xref" href="article-virtualization.html#sec-virtguide-observations" title="1.2. Observations">Section 1.2, “Observations”</a> above, where the
+      LLC occupancy is churned by VMs doing lots of I/O operations. If that is
+      not an option, some customers should look at Intel's Cache Allocation
+      Technology to further enforce cache-allocation policies.
+     </p></li><li class="listitem"><p>
+      Disable drivers that arm per-CPU timers such as cpufreq drivers, for
+      example, <code class="code">intel_pstate=disable</code>.
+     </p></li><li class="listitem"><p>
+      Set IRQ affinity to CPUs that are not running RT workloads and disable
+      irqbalance.
+     </p></li><li class="listitem"><p>
+      Set IRQ affinity to CPUs that are not running RT workloads. This can be
+      achieved by setting the <code class="envar">IRQBALANCE_BANNED_CPUS</code> environment
+      variable used by <code class="command">irqbalance</code>(1) with a bitmask of
+      banned CPUs. For the examples used throughout this document the following
+      setting was used:
+     </p><div class="verbatim-wrap"><pre class="screen">IRQBALANCE_BANNED_CPUS="ffff,ffffff00"</pre></div></li><li class="listitem"><p>
+      Search for cpumask control files in <code class="filename">/sys</code> and set
+      them appropriately for those cases that cannot be controlled via cpuset.
+      The following command will list those files:
+     </p><div class="verbatim-wrap"><pre class="screen">find /sys -name cpumask</pre></div></li></ol></div></section></section><section class="sect1" id="sec-virtguide-docker" data-id-title="Running real-time applications within Docker"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2 </span><span class="title-name">Running real-time applications within Docker</span></span> <a title="Permalink" class="permalink" href="article-virtualization.html#sec-virtguide-docker">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   It is important to note that real-time processes will be affected by
+   container activity as there is insufficient isolation to guarantee zero
+   cross-talk. There are no special settings, nor container-specific
+   interactions to consider as from a RT prespective, nothing changes due to
+   containers. Whether a noise source in a container is irrelevant.
+   Interference may be considerably higher if multiple RT applications are
+   executed in separate containers. Also bear in mind that while worst-case
+   latency may be better than SLE, it will not necessarily perform better
+   than NOPREEMPT due to the overhead required for RT.
+  </p><p>
+   Some shielding is possible but there is no tool-based support for it. There
+   is a generic shield script attached that can move Docker contents onto
+   shielded cores once running. Launching of either KVM or Docker directly
+   into a shielded home did not appear to be possible but the Docker or
+   virtualization team may be able to do better. The basic steps are:
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+     <a class="xref" href="article-virtualization.html#sec-virtguide-docker-rt-env" title="2.1. Running real-time applications in a virtualized environment">Section 2.1, “Running real-time applications in a virtualized environment”</a>
+    </p></li><li class="step"><p>
+     <a class="xref" href="article-virtualization.html#sec-virtguide-docker-shielding" title="2.2. Docker shielding">Section 2.2, “Docker shielding”</a>
+    </p></li><li class="step"><p>
+     <a class="xref" href="article-virtualization.html#sec-virtguide-docker-scripts" title="2.3. Scripts">Section 2.3, “Scripts”</a>
+    </p></li></ol></div></div><section class="sect2" id="sec-virtguide-docker-rt-env" data-id-title="Running real-time applications in a virtualized environment"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.1 </span><span class="title-name">Running real-time applications in a virtualized environment</span></span> <a title="Permalink" class="permalink" href="article-virtualization.html#sec-virtguide-docker-rt-env">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    If you intend to run compute-intensive applications with real-time priority,
+    you must make sure that kernel threads cannot starve. (This is general
+    advice that applies to other real-time scenarios as well.)
+   </p><p>
+    A simple precaution is to use the
+    <code class="option">rtkthread=<em class="replaceable">PRIORITY</em></code> and
+    <code class="option">rtworkqueues=<em class="replaceable">PRIORITY</em></code> kernel
+    boot parameters. Set the <em class="replaceable">PRIORITY</em> values higher
+    than the priority of any process that has the potential to dominate a CPU.
+    This is not strictly real-time capable, but it is safer overall.
+   </p><div class="itemizedlist"><div class="title-container"><div class="itemizedlist-title-wrap"><div class="itemizedlist-title"><span class="title-number-name"><span class="title-name">Docker prerequisites </span></span><a title="Permalink" class="permalink" href="article-virtualization.html#id-1.4.4.4.5.4">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div><ul class="itemizedlist"><li class="listitem"><p>
+      The kernel must be booted with <code class="option">nortsched</code> command-line
+      parameter
+     </p><p>
+      This is to hide cgroup scheduling from Docker. If cgroup scheduling is
+      required, then isolating Docker containers is very problematic.
+     </p></li><li class="listitem"><p>
+      The <code class="command">docker run</code> command must be passed
+      <code class="option">--privileged=true</code>.
+     </p><p>
+      This is required for using the RT classes.
+     </p></li><li class="listitem"><p>
+      Your container is equipped with the <code class="command">chrt</code> system tool.
+     </p></li></ul></div><p>
+    If no isolation is required for your use case, then it is ready. Start your
+    container with <code class="command">docker run</code>, using <code class="command">chrt</code>
+    to set the RT class/priority of the program you execute when starting of the
+    container. For example:
+   </p><div class="verbatim-wrap"><pre class="screen">docker run --privileged=true ... /usr/bin/chrt -f 1 /usr/sbin/sshd -D</pre></div><p>
+    The above (with additional arguments, of course) will start
+    <code class="systemitem">sshd</code> within the container as
+    a <code class="literal">SCHED_FIFO</code> task of priority 1. <code class="literal">ssh</code>
+    into it, and whatever you run in the container will inherit the scheduler's
+    RT class/priority.
+   </p></section><section class="sect2" id="sec-virtguide-docker-shielding" data-id-title="Docker shielding"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.2 </span><span class="title-name">Docker shielding</span></span> <a title="Permalink" class="permalink" href="article-virtualization.html#sec-virtguide-docker-shielding">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    There is currently no facility within Docker to launch a container
+    directly into an isolated cpuset. You must do this manually.
+   </p><div class="example" id="id-1.4.4.4.6.3" data-id-title="Pseudo script"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 1: </span><span class="title-name">Pseudo script </span></span><a title="Permalink" class="permalink" href="article-virtualization.html#id-1.4.4.4.6.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div><div class="example-contents"><div class="verbatim-wrap highlight bash"><pre class="screen"># note cpuset mount point
+cpuset_mnt=$(mount|grep cpuset|cut -d' ' -f3)
+
+# create an isolated cpuset for your container
+cset shield --userset=rtcpus --cpu=4-7 --kthread=on
+
+# note path and id of your container
+docker_path=$(docker run...)
+docker_id=$(docker ps -q)
+
+# move container content into the isolated cpuset
+for i in $(cat ${cpuset_mnt}/system/docker/${docker_path}/tasks);
+do
+  echo $i &gt; ${cpuset_mnt}/rtcpus/tasks;
+done
+
+# stop/destroy the container
+docker stop ${docker_id}
+docker rm ${docker_id}
+
+# remove dir docker abandons in the shield system directory
+rmdir ${cpuset_mnt}/system/docker
+
+# tear down the shield, and you're done
+cset shield --userset=rtcpus --cpu=4-7 --reset</pre></div></div></div></section><section class="sect2" id="sec-virtguide-docker-scripts" data-id-title="Scripts"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3 </span><span class="title-name">Scripts</span></span> <a title="Permalink" class="permalink" href="article-virtualization.html#sec-virtguide-docker-scripts">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div></div></div></div><div class="example" id="id-1.4.4.4.7.2" data-id-title="Sample shield script"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 2: </span><span class="title-name">Sample shield script </span></span><a title="Permalink" class="permalink" href="article-virtualization.html#id-1.4.4.4.7.2">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div><div class="example-contents"><div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/sh
+
+let START_CPU=4
+let END_CPU=63
+let ONLINE=1
+let SHIELD_UP=0
+GOVERNOR="performance"
+
+DEFAULT_MASK=ffffffff,ffffffff
+SHIELD_MASK=00000000,0000000f
+
+if [ -f /proc/sys/kernel/sched_rt_runtime_us ]; then
+  RT_RUNTIME=$(cat /proc/sys/kernel/sched_rt_runtime_us)
+fi
+if [ -f /proc/sys/kernel/nmi_watchdog ]; then
+  NMI_WATCHDOG=$(cat /proc/sys/kernel/nmi_watchdog)
+fi
+
+CPUSET_ROOT=$(grep cpuset /proc/mounts|cut -d ' ' -f2)
+if [ ! -z $CPUSET_ROOT ]; then
+  if [ -d ${CPUSET_ROOT}/rtcpus ]; then
+    let SHIELD_UP=1
+  fi
+  if [ -f ${CPUSET_ROOT}/cpuset.cpus ]; then
+    CPUSET_PREFIX=cpuset.
+  fi
+fi
+
+if [ $SHIELD_UP -eq 1 ]; then
+  # take it down
+  echo 1 &gt; ${CPUSET_ROOT}/${CPUSET_PREFIX}sched_load_balance
+  cset shield --userset=rtcpus --reset
+
+  # restore default irq affinity
+  echo ${DEFAULT_MASK} &gt; /proc/irq/default_smp_affinity
+  for irqlist in $(ls /proc/irq/*/smp_affinity); do
+    echo ${DEFAULT_MASK} &gt; $irqlist 2&gt;/dev/null
+  done
+
+  if [ -f /proc/sys/kernel/timer_migration ]; then
+    echo 1 &gt; /proc/sys/kernel/timer_migration
+  fi
+  if [ -f /proc/sys/kernel/sched_rt_runtime_us ]; then
+    echo ${RT_RUNTIME} &gt; /proc/sys/kernel/sched_rt_runtime_us
+  fi
+  if [ -f /sys/kernel/debug/tracing/tracing_on ]; then
+    echo 1 &gt; /sys/kernel/debug/tracing/tracing_on
+  fi
+  if [ -f /sys/kernel/mm/transparent_hugepage/enabled ]; then
+    echo always &gt; /sys/kernel/mm/transparent_hugepage/enabled
+  fi
+  if [ -f /proc/sys/kernel/nmi_watchdog ]; then
+   echo ${NMI_WATCHDOG} &gt; /proc/sys/kernel/nmi_watchdog
+  fi
+  if [ -f /sys/devices/system/machinecheck/machinecheck0/check_interval ]; then
+   echo 300 &gt; /sys/devices/system/machinecheck/machinecheck0/check_interval
+  fi
+  if [ -f /sys/devices/virtual/workqueue/writeback/cpumask ]; then
+   echo ${DEFAULT_MASK} &gt; /sys/devices/virtual/workqueue/writeback/cpumask
+  fi
+  if [ -f /sys/devices/virtual/workqueue/cpumask ]; then
+    echo ${DEFAULT_MASK} &gt; /sys/devices/virtual/workqueue/cpumask
+  fi
+  if [ -f /proc/sys/vm/stat_interval ]; then
+    echo 1 &gt; /proc/sys/vm/stat_interval
+  fi
+  if [ -f /sys/module/processor/parameters/latency_factor ]; then
+   echo 2 &gt; /sys/module/processor/parameters/latency_factor
+  fi
+  if [ -f /sys/module/processor/parameters/ignore_ppc ]; then
+   echo 0 &gt; /sys/module/processor/parameters/ignore_ppc
+  fi
+  if [ -f /sys/module/processor/parameters/ignore_tpc ]; then
+   echo 0 &gt; /sys/module/processor/parameters/ignore_tpc
+  fi
+  if [ -f /etc/init.d/sgi_irqbalance ]; then
+   /etc/init.d/sgi_irqbalance start
+  fi
+else
+  # route irqs away from shielded cpus
+  if [ -f /etc/init.d/sgi_irqbalance ]; then
+    /etc/init.d/sgi_irqbalance stop
+  fi
+  echo $SHIELD_MASK &gt; /proc/irq/default_smp_affinity
+  for irqlist in $(ls /proc/irq/*/smp_affinity); do
+    echo $SHIELD_MASK &gt; $irqlist 2&gt;/dev/null
+  done
+
+  # poke some buttons..
+  if [ -f /proc/sys/kernel/sched_rt_runtime_us ]; then
+    echo -1 &gt; /proc/sys/kernel/sched_rt_runtime_us
+  fi
+  if [ -f /sys/kernel/debug/tracing/tracing_on ]; then
+    echo 0 &gt; /sys/kernel/debug/tracing/tracing_on
+  fi
+  if [ -f /sys/kernel/mm/transparent_hugepage/enabled ]; then
+    echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled
+  fi
+  if [ -f /proc/sys/kernel/nmi_watchdog ]; then
+    echo 0 &gt; /proc/sys/kernel/nmi_watchdog
+  fi
+  if [ -f /sys/devices/system/machinecheck/machinecheck0/check_interval ]; then
+    echo 0 &gt; /sys/devices/system/machinecheck/machinecheck0/check_interval
+  fi
+  if [ -f /sys/devices/virtual/workqueue/writeback/cpumask ]; then
+    echo ${SHIELD_MASK} &gt; /sys/devices/virtual/workqueue/writeback/cpumask
+  fi
+  if [ -f /sys/devices/virtual/workqueue/cpumask ]; then
+    echo ${SHIELD_MASK} &gt; /sys/devices/virtual/workqueue/cpumask
+  fi
+  if [ -f /proc/sys/vm/stat_interval ]; then
+    echo 999999 &gt; /proc/sys/vm/stat_interval
+  fi
+  if [ -f /sys/module/processor/parameters/latency_factor ]; then
+    echo 1 &gt; /sys/module/processor/parameters/latency_factor
+  fi
+  if [ -f /sys/module/processor/parameters/ignore_ppc ]; then
+    echo 1 &gt; /sys/module/processor/parameters/ignore_ppc
+  fi
+  if [ -f /sys/module/processor/parameters/ignore_tpc ]; then
+    echo 1 &gt; /sys/module/processor/parameters/ignore_tpc
+  fi
+
+  # ...and fire up the shield
+  cset shield --userset=rtcpus --cpu=${START_CPU}-${END_CPU} --kthread=on
+
+  # If cpuset wasn't previously mounted (systemd will, like it or not),
+  # it has now been mounted. Find the mount point.
+  if [ -z $CPUSET_ROOT ]; then
+   CPUSET_ROOT=$(grep cpuset /proc/mounts|cut -d ' ' -f2)
+   if [ -z $CPUSET_ROOT ]; then
+     # If it's not mounted now, bail.
+     echo EEK, cupset is not mounted!
+     exit
+   else
+     # ok, check for cgroup mount
+     if [ -f ${CPUSET_ROOT}/cpuset.cpus ]; then
+      CPUSET_PREFIX=cpuset.
+     fi
+   fi
+  fi
+
+  echo 0 &gt; ${CPUSET_ROOT}/${CPUSET_PREFIX}sched_load_balance
+  echo 1 &gt; ${CPUSET_ROOT}/system/${CPUSET_PREFIX}sched_load_balance
+  echo 0 &gt; ${CPUSET_ROOT}/rtcpus/${CPUSET_PREFIX}sched_relax_domain_level
+  # this ain't gonna happen in -rt kernels, but...
+  if [ -f ${CPUSET_ROOT}/rtcpus/cpu.rt_runtime_us ]; then
+    echo 300000 &gt; ${CPUSET_ROOT}/system/cpu.rt_runtime_us
+    echo 300000 &gt; ${CPUSET_ROOT}/rtcpus/cpu.rt_runtime_us
+  fi
+  echo 0 &gt; ${CPUSET_ROOT}/rtcpus/${CPUSET_PREFIX}sched_load_balance
+
+  # wait a bit for sched_domain rebuild
+  sleep 1
+
+  # now go to hpc
+  if [ -f ${CPUSET_ROOT}/rtcpus/${CPUSET_PREFIX}sched_hpc_rt ]; then
+    echo 1 &gt; ${CPUSET_ROOT}/rtcpus/${CPUSET_PREFIX}sched_hpc_rt
+  fi
+
+  # offline/online to migrate timers and whatnot
+  if [ $ONLINE -eq 1 ]; then
+    for i in `seq ${START_CPU} ${END_CPU}`; do
+      echo 0 &gt; /sys/devices/system/cpu/cpu$i/online
+    done
+    for i in `seq ${START_CPU} ${END_CPU}`; do
+      echo 1 &gt; /sys/devices/system/cpu/cpu$i/online
+    done
+
+    # re-add CPUs the kernel removed on offline
+    echo ${START_CPU}-${END_CPU} &gt; ${CPUSET_ROOT}/rtcpus/${CPUSET_PREFIX}cpus
+
+    # and prioritize re-initialized kthreads
+    systenctl restart set_kthread_prio
+  fi
+  if [ -f /proc/sys/kernel/timer_migration ]; then
+    echo 0 &gt; /proc/sys/kernel/timer_migration
+  fi
+  GOVERNOR="performance"
+fi
+
+if [ -f /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor ]; then
+  CURRENT_GOVERNOR=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
+  if ! [ $GOVERNOR = $CURRENT_GOVERNOR ]; then
+    for i in $(ls /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor); do
+     echo $GOVERNOR &gt; $i;
+    done
+  fi
+fi</pre></div></div></div><div class="example" id="id-1.4.4.4.7.3" data-id-title="Patch to sysjitter to use the user affinity instead of whole box"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 3: </span><span class="title-name">Patch to <code class="literal">sysjitter</code> to use the user affinity instead of whole box </span></span><a title="Permalink" class="permalink" href="article-virtualization.html#id-1.4.4.4.7.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div><div class="example-contents"><div class="verbatim-wrap highlight diff"><pre class="screen">sysjitter.c |   10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+
+--- a/sysjitter.c
++++ b/sysjitter.c
+@@ -412,7 +412,7 @@ static void write_raw(struct thread *thr
+ 	FILE *f;
+ 	int i;
+ 	for (i = 0; i &lt; g.n_threads; ++i) {
+-		sprintf(fname, "%s.%d", outf, i);
++		sprintf(fname, "%s.%d", outf, threads[i].core_i);
+ 		if ((f = fopen(fname, "w")) == NULL) {
+ 			fprintf(stderr, "ERROR: Could not open '%s' for writing\n", fname);
+ 			fprintf(stderr, "ERROR: %s\n", strerror(errno));
+@@ -578,6 +578,7 @@ int main(int argc, char *argv[])
+ 	const char *outf = NULL;
+ 	char dummy;
+ 	int i, n_cores, runtime = 70;
++	cpu_set_t cpus;
+
+ 	g.max_interruptions = 1000000;
+
+@@ -609,10 +610,13 @@ int main(int argc, char *argv[])
+ 	    sscanf(argv[0], "%u%c", &amp;g.threshold_nsec, &amp;dummy) != 1)
+ 		usage(app);
+
++	CPU_ZERO(&amp;cpus);
++	sched_getaffinity(0, sizeof(cpus), &amp;cpus);
++
+ 	n_cores = sysconf(_SC_NPROCESSORS_ONLN);
+-	TEST(threads = malloc(n_cores * sizeof(threads[0])));
++	TEST(threads = malloc(CPU_COUNT(&amp;cpus) * sizeof(threads[0])));
+ 	for (i = 0; i &lt; n_cores; ++i)
+-		if (move_to_core(i) == 0)
++		if (CPU_ISSET(i, &amp;cpus) &amp;&amp; move_to_core(i) == 0)
+ 			threads[g.n_threads++].core_i = i;
+
+ 	signal(SIGALRM, handle_alarm);</pre></div></div></div></section></section><section class="sect1" id="sec-virtguide-rtkvmguests" data-id-title="Running RT applications with RT KVM guests"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3 </span><span class="title-name">Running RT applications with RT KVM guests</span></span> <a title="Permalink" class="permalink" href="article-virtualization.html#sec-virtguide-rtkvmguests">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   <a class="xref" href="article-virtualization.html#sec-virtguide-rtapp" title="1. Running RT applications with non-RT KVM guests">Section 1, “Running RT applications with non-RT KVM guests”</a> shows that it is possible to
+   isolate real-time workloads running alongside KVM by using standard
+   methods. In SLE RT 15 SP2 this can be done in user space using
+   libvirt/qemu.
+  </p><p>
+   Applications and guest operating systems run inside KVM guests similarly
+   to how they run on bare metal. Guests interface with emulated hardware
+   presented by QEMU, which submits I/O requests to the host on behalf of the
+   guest. Then the host kernel treats the guest I/Os like any user-space
+   application.
+  </p><p>
+   In SLE RT 15 SP4, both QEMU and libvirt support isolating the CPUs,
+   partitioning the memory for guests, and setting the vCPU/iothread scheduler
+   policy and priority for running both non-RT KVM and RT KVM.
+  </p><section class="sect2" id="sec-virtguide-rtkvmguests-suport" data-id-title="Support of QEMU/libvirt"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.1 </span><span class="title-name">Support of QEMU/libvirt</span></span> <a title="Permalink" class="permalink" href="article-virtualization.html#sec-virtguide-rtkvmguests-suport">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
+      QEMU includes the <code class="option">-realtime mlock=on|off</code> option.
+      Mlocking QEMU and guest memory is enabled with
+      <code class="option">mlock=on</code> (which is enabled by default)
+
+      .
+     </p></li><li class="listitem"><p>
+      libvirt supports CPU Allocation, CPU Tuning, and Memory Backing, which
+      allows you to control RT parameters, see
+      <a class="xref" href="article-virtualization.html#sec-virtguide-rtkvmguests-sample" title="3.2. Sample of libvirt.xml">Section 3.2, “Sample of <code class="filename">libvirt.xml</code>”</a>.
+     </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.4.5.5.2.2.2.1"><span class="term">CPU allocation</span></dt><dd><p>
+         You can define the maximum number of virtual CPUs allocated for the
+         guest OS.
+        </p></dd><dt id="id-1.4.4.5.5.2.2.2.2"><span class="term">CPU tuning</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+           Pinning is a tuning option for the virtual CPUs in KVM guests.
+           With pinning, you can control where the guest runs in order to reduce
+           the overhead of scheduler switches, pin vCPUs to physical CPUs that
+           have low utilization, and improve the data cache performance.
+           Overall performance is improved when the memory that an application
+           uses is local to the physical CPU, and the guest vCPU is pinned to
+           this physical CPU.
+          </p></li><li class="listitem"><p>
+           We can specify the vCPU scheduler type (values <code class="literal">batch</code>,
+           <code class="literal">idle</code>, <code class="literal">fifo</code>, or
+           <code class="literal">rr</code>), and priority for particular vCPU threads.
+           Priority <code class="literal">99</code> is too high, and it will massively
+           interfere with the host's ability to function properly. There are
+           host-side per-CPU threads that must be always be able to preempt,
+           such as timer <code class="literal">sirq</code> threads.
+          </p></li></ul></div></dd><dt id="id-1.4.4.5.5.2.2.2.3"><span class="term">Memory backing</span></dt><dd><p>
+         Use memory backing to allocate enough memory in the guest to avoid
+         memory overcommit, and to lock the guest page memory in host memory to
+         prevent it from being swapped out. This will show a performance
+         improvement in some workloads.
+        </p></dd></dl></div></li></ol></div></section><section class="sect2" id="sec-virtguide-rtkvmguests-sample" data-id-title="Sample of libvirt.xml"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.2 </span><span class="title-name">Sample of <code class="filename">libvirt.xml</code></span></span> <a title="Permalink" class="permalink" href="article-virtualization.html#sec-virtguide-rtkvmguests-sample">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div></div></div></div><div class="verbatim-wrap highlight xml"><pre class="screen">&lt;domain&gt;
+   …
+   &lt;vcpu placement='static' cpuset="1-4,^3,6" current="1"&gt;4&lt;/vcpu&gt;
+   …
+   &lt;cputune&gt;
+       &lt;vcpupin vcpu="0" cpuset="1-5,^2"/&gt;
+       &lt;vcpupin vcpu="1" cpuset="0,1"/&gt;
+       &lt;vcpupin vcpu="2" cpuset="2,3"/&gt;
+       &lt;vcpupin vcpu="3" cpuset="0,4"/&gt;
+       &lt;vcpusched '0-4,^3' scheduler='fifo' priority='1'/&gt;
+   &lt;/cputune&gt;
+   …
+   &lt;memoryBacking&gt;
+       &lt;locked/&gt;
+   &lt;memoryBacking/&gt;
+   …
+&lt;/domain&gt;</pre></div></section><section class="sect2" id="sec-virtguide-rtkvmguests-othersettings" data-id-title="Other host settings"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.3 </span><span class="title-name">Other host settings</span></span> <a title="Permalink" class="permalink" href="article-virtualization.html#sec-virtguide-rtkvmguests-othersettings">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_virtualization.xml" title="Edit source document"> </a></div></div></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><span class="formalpara-title">Power management. </span>
+       Intel processors have a power management feature that puts the system
+       into power-saving mode when the system is under-utilized. The system
+       should be configured for maximum performance, rather than allowing
+       power-saving mode.
+      </p></li><li class="listitem"><p><span class="formalpara-title">Turboboost and Speedstep. </span>
+       Turboboost overclocks a core when CPU demand is high, whereas Speedstep
+       dynamically adjusts the frequency of processor to meet processing needs.
+       Turboboost requires Speedstep to be enabled, as it is an extension of
+       Speedstep. For maximum performance, enable both Turboboost and Speedstep
+       in the BIOS. The host OS may also need configuration to support running
+       at higher clock speeds. For example:
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cpupower</code> -c all frequency-set -g performance</pre></div></li><li class="listitem"><p><span class="formalpara-title">Disable interrupt balancing (irqbalance). </span>
+       The irqbalance daemon is enabled by default. It distributes hardware
+       interrupts across CPUs in a multi-core system to increase performance.
+       When irqbalance is disabled, all interrupts will be handled by cpu0, and
+       therefore the guest should NOT run on cpu0.
+      </p></li><li class="listitem"><p><span class="formalpara-title">RT throttling. </span>
+       The default values for the realtime throttling mechanism allocate 95% of
+       the CPU time to realtime tasks, and the remaining 5% to non-realtime
+       tasks. If RT throttling is disabled, realtime tasks may use up to 100%
+       of CPU time. Hence, programming failures in real-time applications can
+       cause the entire system to hang because no other task can preempt the
+       realtime tasks.
+      </p></li></ol></div><p>
+    The above settings are just part of the configurations for the RT KVM to
+    run at the <span class="quote">“<span class="quote">best-effort</span>”</span> performance. Other factors must be
+    considered, such as storage and network. The overall KVM performance is
+    dependent on the host hardware, firmware, BIOS settings, and the guest OS
+    and application charactistics.
+   </p></section></section></section><nav class="bottom-pagination"><div> </div><div><a class="pagination-link next" href="bk02ar03apb.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Appendix A </span>GNU Licenses</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="article-virtualization.html#sec-virtguide-rtapp"><span class="title-number">1 </span><span class="title-name">Running RT applications with non-RT KVM guests</span></a></span></li><li><span class="sect1"><a href="article-virtualization.html#sec-virtguide-docker"><span class="title-number">2 </span><span class="title-name">Running real-time applications within Docker</span></a></span></li><li><span class="sect1"><a href="article-virtualization.html#sec-virtguide-rtkvmguests"><span class="title-number">3 </span><span class="title-name">Running RT applications with RT KVM guests</span></a></span></li><li><span class="appendix"><a href="bk02ar03apb.html"><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></span><ul><li><span class="sect1"><a href="bk02ar03apb.html#id-1.4.4.6.4"><span class="title-number">A.1 </span><span class="title-name">GNU Free Documentation License</span></a></span></li></ul></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter/X"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2023</span></div></div></footer></body></html>

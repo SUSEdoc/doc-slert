@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>SUSE Linux Enterprise RT 15 SP4 | Setup Guide</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="Setup Guide | SUSE Linux Enterprise RT 15 SP4"/>
+<meta name="description" content="SUSE Linux Enterprise Real Time is part of SUSE® Linux…"/>
+<meta name="product-name" content="SUSE Linux Enterprise Real Time"/>
+<meta name="product-number" content="15 SP4"/>
+<meta name="book-title" content="Setup Guide"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-assignee" content="thomas.schraitle@suse.com"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE Linux Enterprise Real Time 15 SP4"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="Setup Guide | SUSE Linux Enterprise RT 15 SP4"/>
+<meta property="og:description" content="SUSE Linux Enterprise Real Time is part of SUSE® Linux Enterprise family. It allows you to run tasks which require determini…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Setup Guide | SUSE Linux Enterprise RT 15 SP4"/>
+<meta name="twitter:description" content="SUSE Linux Enterprise Real Time is part of SUSE® Linux Enterprise family. It allows you to run tasks which require determini…"/>
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script><meta name="edit-url" content="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml"/></head><body class="draft single normal offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="#article-setup">Setup Guide</a></div></div><main id="_content"><nav class="side-toc placebo" id="_side-toc-overall"> </nav><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section xml:lang="en" class="article" id="article-setup" data-id-title="Setup Guide"><div class="titlepage"><div><div class="big-version-info"><span class="productname">SUSE Linux Enterprise Real Time</span> <span class="productnumber">15 SP4</span></div><div><div class="title-container"><h1 class="title">Setup Guide <a title="Permalink" class="permalink" href="#article-setup">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div><div class="date"><span class="imprint-label">Publication Date: </span>
+12/22/2023
+</div><div><div class="abstract"><p>
+    SUSE Linux Enterprise Real Time is part of SUSE® Linux Enterprise family. It allows you to run tasks which
+    require deterministic real-time processing in a SUSE Linux Enterprise environment.
+   </p><p>
+    To meet this requirement, SUSE Linux Enterprise Real Time offers several options for CPU and I/O
+    scheduling, CPU shielding, and for setting CPU affinities of processes.
+   </p></div></div></div></div><div><div class="legalnotice" id="id-1.4.2.2.3"><p>
+  Copyright © 2006–2023
+
+  SUSE LLC and contributors. All rights reserved.
+ </p><p>
+  Permission is granted to copy, distribute and/or modify this document
+  under the terms of the GNU Free Documentation License, Version 1.2 or (at
+  your option) version 1.3; with the Invariant Section being this copyright
+  notice and license. A copy of the license version 1.2 is included in the
+  section entitled <span class="quote">“<span class="quote">GNU Free Documentation License</span>”</span>.
+ </p><p>
+  For SUSE trademarks, see
+  <a class="link" href="http://www.suse.com/company/legal/" target="_blank">http://www.suse.com/company/legal/</a>. All other
+  third-party trademarks are the property of their respective owners. Trademark
+  symbols (®, ™ etc.) denote trademarks of SUSE and its affiliates.
+  Asterisks (*) denote third-party trademarks.
+ </p><p>
+  All information found in this book has been compiled with utmost attention
+  to detail. However, this does not guarantee complete accuracy. Neither
+  SUSE LLC, its affiliates, the authors nor the translators shall be held
+  liable for possible errors or the consequences thereof.
+ </p></div></div><section class="sect1" id="sec-slert-quick-overview" data-id-title="Product overview"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">1 </span><span class="title-name">Product overview</span></span> <a title="Permalink" class="permalink" href="#sec-slert-quick-overview">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   If your business can respond more quickly to new information and changing
+   market conditions, you have a distinct advantage over those that cannot.
+   Running your time-sensitive mission-critical applications using SUSE Linux Enterprise Real Time
+   reduces process dispatch latencies and gives you the time advantage you need
+   to increase profits, or avoid further financial losses, ahead of your
+   competitors.
+  </p><section class="sect2" id="sec-slert-quick-key-features" data-id-title="Key features"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">1.1 </span><span class="title-name">Key features</span></span> <a title="Permalink" class="permalink" href="#sec-slert-quick-key-features">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    Some of the key features for SUSE Linux Enterprise Real Time are:
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+      Pre-emptible real-time kernel.
+     </p></li><li class="listitem"><p>
+      Ability to assign high-priority processes.
+     </p></li><li class="listitem"><p>
+      Greater predictability to complete critical processes on time, every
+      time.
+     </p><p>
+      In comparison to the normal Linux kernel, which is optimized for overall
+      system performance regardless of individual process response time, the
+      SUSE Linux Enterprise Real Time kernel is tuned toward predictable process response time.
+     </p></li><li class="listitem"><p>
+      Increased reliability.
+     </p></li><li class="listitem"><p>
+      Lower infrastructure costs.
+     </p></li><li class="listitem"><p>
+      Tracing and debugging tools that help you analyze and identify
+      bottlenecks in mission-critical applications.
+     </p></li></ul></div></section><section class="sect2" id="sec-slert-quick-scenarios" data-id-title="Specific scenario"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">1.2 </span><span class="title-name">Specific scenario</span></span> <a title="Permalink" class="permalink" href="#sec-slert-quick-scenarios">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    SUSE Linux Enterprise Real Time 15 SP4 supports virtualization and Docker usage as a
+    Technology Preview. For reference, see
+    <span class="intraxref">Article “Virtualization Guide”</span>.
+   </p></section></section><section class="sect1" id="sec-slert-quick-install" data-id-title="Installing SUSE Linux Enterprise Real Time"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2 </span><span class="title-name">Installing SUSE Linux Enterprise Real Time</span></span> <a title="Permalink" class="permalink" href="#sec-slert-quick-install">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   Keep the following points in mind:
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+     Boot from the quarterly update medium. SUSE Linux Enterprise Real Time is only
+     available from the quarterly update medium as this product is released
+     roughly three months later than the rest of the SLE.
+     
+    </p></li><li class="listitem"><p>
+     Refer to the <em class="citetitle">Installation Quick Start</em> of SUSE Linux Enterprise Server 15 SP4
+     <a class="link" href="https://documentation.suse.com/sles/15-SP4/#redirectmsg" target="_blank">https://documentation.suse.com/sles/15-SP4/#redirectmsg</a> to install
+     SUSE Linux Enterprise Real Time.
+    </p></li><li class="listitem"><p>
+     In the <span class="guimenu">Language, keyboard, and product selection</span>, select
+     the entry <span class="guimenu">SUSE Linux Enterprise Real Time</span>.
+    </p></li></ul></div><p>To install SUSE Linux Enterprise Real Time 15 SP4, proceed as follows:</p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Start the normal SUSE Linux Enterprise 15 SP4.</p></li><li class="step"><p>On the boot command line, add <code class="literal">start_shell=1</code>.
+    </p></li><li class="step"><p>When the prompt shows up, open the file <code class="filename">control.xml</code> and add the
+    following lines:</p><div class="verbatim-wrap"><pre class="screen">&lt;base_product&gt;
+  &lt;display_name&gt;SUSE Linux Enterprise Real Time 15 SP4&lt;/display_name&gt;
+  &lt;name&gt;SLE_RT&lt;/name&gt;
+  &lt;version&gt;15.4&lt;/version&gt;
+  &lt;register_target&gt;sle-15-$arch&lt;/register_target&gt;
+  &lt;archs&gt;x86_64&lt;/archs&gt;
+&lt;/base_product&gt;</pre></div></li><li class="step"><p>Save the file, exit the editor, and restart YaST</p></li><li class="step"><p>Select <span class="guimenu">SUSE Linux Enterprise Real Time 15 SP4</span> from the product selection list.
+    </p></li><li class="step"><p>Continue with the normal installation. The rest is the same of the other product installation.</p></li><li class="step"><p>Reboot and select the real time kernel.</p></li></ol></div></div><p>
+   The following sections provide a brief introduction to the tools and
+   possibilities of SUSE Linux Enterprise Real Time.
+  </p></section><section class="sect1" id="sec-slert-quick-cset" data-id-title="Managing CPU sets with cset"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3 </span><span class="title-name">Managing CPU sets with <code class="command">cset</code></span></span> <a title="Permalink" class="permalink" href="#sec-slert-quick-cset">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   In some circumstances, it is beneficial to be able to run specific tasks
+   only on defined CPUs. For this reason, the Linux kernel provides a
+   feature called <span class="emphasis"><em>cpuset</em></span>. The <code class="systemitem">cpuset</code> feature provides the
+   means to do so-called <span class="quote">“<span class="quote">soft partitioning</span>”</span> of the system. This
+   enables you to dedicate CPUs, together with some predefined memory,
+   to work on particular tasks.
+  </p><div id="id-1.4.2.5.3" data-id-title="CPUs, processors, and cores" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: CPUs, processors, and cores</div><p>
+    Modern servers are typically built around multi-core CPUs, which means that
+    a single processor socket typically contains many separate processor units.
+    For example, a low-end processor might have four cores, while a high-end one
+    may have from tens to hundreds of cores.
+   </p><p>
+    Secondarily, some vendors support simultaneous multithreading (SMT), which
+    enables a single core to support two or more execution threads which can be
+    partially overlapped. The processor makes this visible to the operating
+    system by reporting each threads as an additional core.
+   </p><p>
+    The <code class="systemitem">cpuset</code> feature works on the level of logical processors: individual
+    cores or SMT units, not processor sockets. When this document
+    refers to <span class="quote">“<span class="quote">a CPU</span>”</span>, this denotes a logical processor.
+   </p></div><p>
+   <code class="command">cset</code> consists of one <span class="quote">“<span class="quote">super command</span>”</span> called
+   <code class="command">shield</code> and the <span class="quote">“<span class="quote">regular commands</span>”</span>
+   <code class="command">set</code> and <code class="command">proc</code>. The purpose of the super
+   command <code class="command">shield</code> is to create a common CPU shielding setup
+   within one step by combining regular commands.
+  </p><p>
+   For more information about the options and parameters of the
+   <code class="command">shield</code> subcommand, view its help by running:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> help shield</pre></div><section class="sect2" id="sec-slert-quick-settingup-cpushield-single" data-id-title="Setting up a CPU shield for a single CPU"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.1 </span><span class="title-name">Setting up a CPU shield for a single CPU</span></span> <a title="Permalink" class="permalink" href="#sec-slert-quick-settingup-cpushield-single">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    The command <code class="command">cset</code> provides the high level functionality
+    to set up and manipulate CPU Sets. An example for setting up a CPU shield
+    is:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --cpu=3</pre></div><p>
+    On a machine with four CPUs, this will shield CPU #3. CPUs #0-2 are
+    unshielded.
+   </p></section><section class="sect2" id="sec-slert-quick-settingup-cpushield-multi" data-id-title="Setting up CPU shields for multiple CPUs"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.2 </span><span class="title-name">Setting up CPU shields for multiple CPUs</span></span> <a title="Permalink" class="permalink" href="#sec-slert-quick-settingup-cpushield-multi">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    If you need to shield more than one CPU, the argument of the
+    <code class="option">--cpu</code> option accepts comma-separated lists of CPUs,
+    including range specifications:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --cpu=1,3,5-7</pre></div><p>
+    On a machine with eight CPUs, this command will shield CPUs #1, #3,
+    and #5-7. CPUs #0, #2, and #4 will remain unshielded.
+   </p><p>
+    Existing CPU shields can be extended by the same command. For example, to
+    add CPU #4 to the CPU set described above, use this command:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --cpu=1,3-7</pre></div><p>
+    This command updates the current CPU shield schema. CPUs #1, #3, and
+    #5-6 were already shielded. Afterward, CPU #4 will also be shielded.
+   </p><p>
+    To reduce the number of shielded CPUs, redefine the scheme so as to exclude
+    the CPUs you wish to unshield. For example, to unshield CPU #1, use the
+    following command:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --cpu=3-7</pre></div><p>
+    Now only CPUs #3-7 are shielded. CPUs #0-2 are available for system usage.
+   </p></section><section class="sect2" id="sec-slert-quick-showing-cpu-shields" data-id-title="Showing CPU shields"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.3 </span><span class="title-name">Showing CPU shields</span></span> <a title="Permalink" class="permalink" href="#sec-slert-quick-showing-cpu-shields">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    After the CPU shielding is set up you can display the current configuration
+    by running <code class="command">cset shield</code> without additional options:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield
+cset: --&gt; shielding system active with
+cset: "system" cpuset of: 0-2 cpu, with: 47
+cset: "user" cpuset of:  3-7 cpu,  with: 0</pre></div><p>
+    By default, CPU shielding consists of at least of three <code class="systemitem">cpuset</code>s:
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+      <code class="systemitem">root</code> exists always and contains
+      all available CPUs.
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">system</code> is the <code class="systemitem">cpuset</code> of
+      unshielded CPUs.
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">user</code> is the <code class="systemitem">cpuset</code> of
+      shielded CPUs
+     </p></li></ul></div></section><section class="sect2" id="sec-slert-quick-shielding-processes" data-id-title="Shielding processes"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.4 </span><span class="title-name">Shielding processes</span></span> <a title="Permalink" class="permalink" href="#sec-slert-quick-shielding-processes">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    After a shielded CPU set is created, certain processes or groups of
+    processes can be assigned to the shielded <code class="systemitem">cpuset</code>. To start a new process
+    in the shielded CPU set, use the <code class="option">--exec</code> option:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --exec <em class="replaceable">APPLICATION</em></pre></div><p>
+    To move already-running processes to the shielded CPU set, use the
+    <code class="option">--shield</code> and <code class="option">--pid</code> options. The
+    <code class="option">--pid</code> option accepts a comma-separated list of PIDs and
+    range specifications:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --shield --pid=1,2,600-700</pre></div><p>
+    This moves processes with PID 1, 2, and from 600 to 700 to the shielded
+    CPU set. If there is a gap in the range from 600 to 700, then only those
+    available process will be moved to the shield without warning.
+    The <code class="command">cset</code> command handles threads like processes and will
+    also interpret TIDs and assign them to the required CPU set.
+   </p><div id="id-1.4.2.5.10.7" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>
+     The <code class="option">--shield</code> option does not check the processes you
+     request to move into the shield. This means that the command will move
+     <span class="emphasis"><em>any</em></span> processes that are bound to specific
+     CPUs—even kernel threads. You can cause a complete system lockup by
+     indiscriminately specifying arbitrary PIDs to the
+     <code class="option">--shield</code> command.
+    </p></div></section><section class="sect2" id="sec-slert-quick-showing-shielded-processes" data-id-title="Showing shielded processes"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.5 </span><span class="title-name">Showing shielded processes</span></span> <a title="Permalink" class="permalink" href="#sec-slert-quick-showing-shielded-processes">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    Use the <code class="command">cset shield</code> command to show the number of
+    currently shielded processes. (The same command can be used to show the
+    current CPU shield setup.) To list shielded and unshielded processes, add
+    the <code class="command">--verbose</code> option:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --verbose
+cset: --&gt; shielding system active with
+cset: "system" cpuset of: 0-2,4-15 cpu, with:
+   USER       PID  PPID S TASK NAME
+      -------- ----- ----- - ---------
+         root         1     0 S init [3]
+[...]
+
+cset: "user" cpuset of:    3 cpu, with: 1
+   USER       PID  PPID S TASK NAME
+      -------- ----- ----- - ---------
+         root     10202 10170 S application</pre></div></section><section class="sect2" id="sec-slert-quick-unshielding-processes" data-id-title="Unshielding processes"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.6 </span><span class="title-name">Unshielding processes</span></span> <a title="Permalink" class="permalink" href="#sec-slert-quick-unshielding-processes">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    To remove a process (or group of processes) from the CPU shield, use the
+    <code class="option">--unshield</code> option. The argument for
+    <code class="option">--unshield</code> is similar to the <code class="option">--shield</code>
+    option. This option accepts a comma-separated list of PIDs/TIDs and range
+    specifications:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> shield --unshield --pid=2,650-655</pre></div><p>
+    This command will unshield the process with the PID <code class="literal">2</code> and
+    the processes in the range between 650 and 655.
+   </p></section><section class="sect2" id="sec-slert-quick-resetting-cpusets" data-id-title="Resetting CPU sets"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.7 </span><span class="title-name">Resetting CPU sets</span></span> <a title="Permalink" class="permalink" href="#sec-slert-quick-resetting-cpusets">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    To delete CPU sets, use the <code class="command">cset</code> option
+    <code class="option">--reset</code>. This will unshield all CPUs and migrate dedicated
+    processes to all available CPUs again.
+   </p></section></section><section class="sect1" id="sec-slert-csets-tree" data-id-title="Managing tree-like structures with cset"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4 </span><span class="title-name">Managing tree-like structures with <code class="command">cset</code></span></span> <a title="Permalink" class="permalink" href="#sec-slert-csets-tree">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   More detailed configuration of cpusets can be done with the
+   <code class="command">cset</code> commands <code class="option">set</code> and
+   <code class="option">proc</code>.
+  </p><p>
+   The subcommand <code class="option">set</code> is used to create, modify and destroy
+   <code class="systemitem">cpuset</code>s. Compared to the supercommand <code class="option">shield</code>, the
+   <code class="option">set</code> subcommand can additionally assign memory nodes for
+   NUMA machines.
+  </p><p>
+   Besides assigning memory nodes, the subcommand <code class="command">set</code>
+   creates cpusets in a tree-like structure, rooted at the
+   <code class="systemitem">root</code> <code class="systemitem">cpuset</code>.
+  </p><p>
+   To create a <code class="systemitem">cpuset</code> with the subcommand <code class="command">set</code> you need to
+   specify the CPUs which should be used. Either use a comma-separated list or
+   a range specification:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> set --cpu=1-7 "/one"</pre></div><p>
+   This command will create a <code class="systemitem">cpuset</code> called <code class="systemitem">one</code> with
+   assigned CPUs from #1 to #7. To specify a new <code class="systemitem">cpuset</code> called
+   <code class="systemitem">two</code> that is a subset of
+   <code class="systemitem">one</code>, proceed as follows:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> set --cpu=6 "/one/two"</pre></div><p>
+   Cpusets follow certain rules. Children can only include CPUs that the
+   parents already have. If you try to specify a different <code class="systemitem">cpuset</code>, the kernel
+   <code class="systemitem">cpuset</code> subsystem will not let you create that <code class="systemitem">cpuset</code>. For example, if
+   you create a <code class="systemitem">cpuset</code> that contains CPU3, and then attempt to create a child
+   of that <code class="systemitem">cpuset</code> with a CPU other than 3, you will get an error, and the
+   <code class="systemitem">cpuset</code> will not be created. The resulting error is somewhat cryptic and is
+   usually <span class="quote">“<span class="quote">Permission denied</span>”</span>.
+  </p><p>
+   To show a table containing useful information, such as CPU lists and memory
+   lists, use the <code class="option">-r</code> parameter. The <span class="quote">“<span class="quote">-X</span>”</span> column
+   shows the exclusive state of CPU or memory. The <span class="quote">“<span class="quote">path</span>”</span> column
+   shows the real path in the virtual <code class="systemitem">cpuset</code> file system.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> set -r</pre></div><p>
+   On NUMA machines, memory nodes can be assigned to a <code class="systemitem">cpuset</code> similar to CPUs.
+   The <code class="option">--mem</code> option of the subcommand <code class="command">set</code>
+   allows a comma-separated and inclusive range specification of memory nodes.
+   This example will assign MEM1, MEM3, MEM4, MEM5 and MEM6 to the <code class="systemitem">cpuset</code>
+   <code class="systemitem">new_set</code>:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> set --mem=1,3-6 new_set</pre></div><p>
+   Additionally, with the <code class="option">--cpu_exclusive</code> and
+   <code class="option">--mem_exclusive</code> options (without any additional arguments)
+   set the CPUs or memory nodes exclusive to a <code class="systemitem">cpuset</code>:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> set --cpu_exclusive "/one"</pre></div><p>
+   The status of exclusive state of CPU or memory is shown in the
+   <code class="option">-X</code> column when running:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> set -r</pre></div><p>
+   For more detailed information about options and parameters of the subcommand
+   <code class="command">set</code>, view the <code class="command">cset</code> help:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> help set</pre></div><p>
+   After the <code class="systemitem">cpuset</code> is initialized, the subcommand <code class="command">proc</code>
+   can start processes on certain <code class="systemitem">cpuset</code>s with the <code class="option">--exec</code>
+   option. The following will start the application
+   <code class="systemitem">fastapp</code> within the <code class="systemitem">cpuset</code>
+   <code class="systemitem">new_set</code>:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> proc --exec --set new_set fastapp</pre></div><p>
+   To move an already-running process inside an already-existing <code class="systemitem">cpuset</code>, use
+   the option <code class="option">--move</code>. It accepts a comma-separated list and
+   range specifications of PIDs. The following command will move processes with
+   PID 2442 and within the range between 3000 and 3200 into the <code class="systemitem">cpuset</code>
+   <code class="systemitem">new_set</code>:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> proc --move 2442,3000-3200 new_set</pre></div><p>
+   Listing processes running within a specific <code class="systemitem">cpuset</code> can be done by using
+   the option <code class="option">--list</code>.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> proc --list new_set</pre></div><p>
+   The subcommand <code class="command">proc</code> can also move the entire list of
+   processes within one cpuset to another <code class="systemitem">cpuset</code> by using the option
+   <code class="option">--fromset</code> and <code class="option">--toset</code>. This will move all
+   process assigned to <code class="systemitem">old_set</code> and assign them to
+   <code class="systemitem">new_set</code>:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> proc --move --fromset old_set \
+   --toset new_set</pre></div><p>
+   For more detailed information about options and parameters of the subcommand
+   <code class="command">proc</code>, view the help:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cset</code> help proc</pre></div></section><section class="sect1" id="sec-quick-chrt" data-id-title="Setting Real-time Attributes of a Process with chrt"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5 </span><span class="title-name">Setting Real-time Attributes of a Process with <code class="command">chrt</code></span></span> <a title="Permalink" class="permalink" href="#sec-quick-chrt">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   Use the <code class="command">chrt</code> command to manipulate the real-time
+   attributes of an already-running process (such as scheduling policy and
+   priority), or to execute a new process with specified real-time attributes.
+  </p><p>
+   It is highly recommended for applications which do not use real-time
+   specific attributes by themselves, but should nevertheless experience the
+   full advantages of real-time. To get full real-time experiences, call these
+   applications with the <code class="command">chrt</code> command and the right set of
+   scheduler policy and priority parameters.
+  </p><p>
+   With the following command, all running processes with their real-time
+   specific attributes are shown. The selection <code class="literal">class</code> shows
+   the current scheduler policy and <code class="literal">rtprio</code> the real-time
+   priority:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">ps</code> -eo pid,tid,class,rtprio,comm
+...
+ 1437  1437 FF      40  fastapp</pre></div><p>
+   The truncated example above shows the <code class="systemitem">fastapp</code>
+   process with PID 1437 running and with scheduler policy
+   <code class="literal">SCHED_FIFO</code> and priority 40. Scheduler policy
+   abbreviations are:
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+     <code class="literal">TS - SCHED_OTHER</code>
+    </p></li><li class="listitem"><p>
+     <code class="literal">FF - SCHED_FIFO</code>
+    </p></li><li class="listitem"><p>
+     <code class="literal">RR - SCHED_RR</code>
+    </p></li></ul></div><p>
+   It is also possible to obtain the current scheduler policy, and the priority
+   of single processes, by specifying the PID of the process with the
+   <code class="option">-p</code> parameter. For example:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">chrt</code> -p 1437</pre></div><p>
+   Scheduler policies have different minimum and maximum priority values.
+   Minimum and maximum values for each available scheduler policy can be
+   retrieved with <code class="command">chrt</code>:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">chrt</code> -m</pre></div><p>
+   To change the scheduler policy and the priority of a running process,
+   <code class="command">chrt</code> provides the options <code class="option">--fifo</code> for
+   <code class="literal">SCHED_FIFO</code>, <code class="option">--rr</code> for
+   <code class="literal">SCHED_RR</code> and <code class="option">--other</code> for
+   <code class="literal">SCHED_OTHER</code>. The following example will change the
+   scheduler policy to <code class="literal">SCHED_FIFO</code> with priority 42 for PID
+   1437:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">chrt</code> --fifo -p 42 1437</pre></div><div id="id-1.4.2.7.14" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>
+    Handle the changing of real-time attributes of processes with care.
+    Increasing the priority of certain processes can harm the entire system,
+    depending on the behavior of the process. In some cases, this can lead to a
+    complete system lockup or bad influences on certain devices.
+   </p></div><p>
+   For more information about <code class="command">chrt</code>, see the
+   <code class="command">chrt</code> man page with <code class="command">man 1 chrt</code>.
+  </p></section><section class="sect1" id="sec-quick-taskset" data-id-title="Specifying CPU affinity with taskset"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6 </span><span class="title-name">Specifying CPU affinity with <code class="command">taskset</code></span></span> <a title="Permalink" class="permalink" href="#sec-quick-taskset">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   The default behavior of the kernel is to keep a process running on the same
+   CPU if the system load is balanced over the available CPUs. Otherwise, the
+   kernel tries to improve the load balancing by moving processes to an idling
+   CPU. In some situations, however, it is desirable to set a CPU affinity for
+   a given process. In this case, the kernel will not move the process away
+   from the selected CPUs. For example, if you use shielding, the shielded CPUs
+   will not run any processes that do not have an affinity to the shielded
+   CPUs. Another possibility to remove load from the other CPUs is to run all
+   low priority tasks on a selected CPU.
+  </p><p>
+   If a task is running inside a specific <code class="systemitem">cpuset</code>, the affinity dialog must
+   match at least one of the CPUs available in this set. The
+   <code class="command">taskset</code> command will not move a process outside the
+   <code class="systemitem">cpuset</code> it is running in.
+  </p><p>
+   To set or retrieve the CPU affinity of a task, use a bitmask. This mask is
+   represented by a hexadecimal number. If you count the bits of this bitmask,
+   the lowest bit represents the first logical CPU as found in
+   <code class="filename">/proc/cpuinfo</code>. For example:
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+     <code class="literal">0x00000001</code> means CPU <code class="literal">0</code>.
+    </p></li><li class="listitem"><p>
+     <code class="literal">0x00000002</code> means CPU <code class="literal">1</code>.
+    </p></li><li class="listitem"><p>
+     <code class="literal">0x00000003</code> means CPUs <code class="literal">0</code> and
+     <code class="literal">1</code>.
+    </p></li><li class="listitem"><p>
+     <code class="literal">0xFFFFFFFE</code> means all but the first CPU.
+    </p></li></ul></div><p>
+   If a given dialog does not contain any valid CPU on the system, the
+   <code class="command">taskset</code> command will return an error. If
+   <code class="command">taskset</code> returns without an error, the given program has
+   been scheduled to the specified list of CPUs.
+  </p><p>
+   The command <code class="command">taskset</code> starts a new process with a given CPU
+   affinity, or to redefine the CPU affinity of an already running process.
+  </p><div class="variablelist"><div class="title-container"><div class="variablelist-title-wrap"><div class="variablelist-title"><span class="title-number-name"><span class="title-name">Examples </span></span><a title="Permalink" class="permalink" href="#id-1.4.2.8.8">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div><dl class="variablelist"><dt id="id-1.4.2.8.8.2"><span class="term"><code class="option">taskset -p <em class="replaceable">PID</em></code></span></dt><dd><p>
+      Retrieves the current CPU affinity of the process with PID
+      <em class="replaceable">pid</em>.
+     </p></dd><dt id="id-1.4.2.8.8.3"><span class="term"><code class="option">taskset -p <em class="replaceable">mask</em><em class="replaceable">PID</em></code></span></dt><dd><p>
+      Sets the CPU affinity of the process with the
+      <em class="replaceable">PID</em> to <em class="replaceable">mask</em>.
+     </p></dd><dt id="id-1.4.2.8.8.4"><span class="term"><code class="option">taskset <em class="replaceable">mask</em><em class="replaceable">command</em></code></span></dt><dd><p>
+      Runs <em class="replaceable">command</em> with a CPU affinity of
+      <code class="literal">mask</code>.
+     </p></dd></dl></div><p>
+   For more detailed information about <code class="command">taskset</code>, see the man
+   page <code class="command">man 1 taskset</code>.
+  </p></section><section class="sect1" id="sec-quick-ionice" data-id-title="Changing I/O priorities with ionice"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7 </span><span class="title-name">Changing I/O priorities with <code class="command">ionice</code></span></span> <a title="Permalink" class="permalink" href="#sec-quick-ionice">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   Handling I/O is one of the critical issues for all high-performance systems.
+   If a task has lots of CPU power available, but must wait for the disk, it
+   will not work as efficiently as it could. The Linux kernel provides three
+   different scheduling classes to determine the I/O handling for a process.
+   All of these classes can be fine-tuned with a <code class="literal">nice</code> level.
+  </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.2.9.3.1"><span class="term">The <span class="emphasis"><em>Best Effort</em></span> scheduler</span></dt><dd><p>
+      The <span class="emphasis"><em>Best Effort</em></span> scheduler is the default I/O
+      scheduler, and is used for all processes that do not specify a different
+      I/O scheduler class. By default, this scheduler sets its
+      <code class="literal">nice</code> level according to the nice value of the running
+      process.
+     </p><p>
+      There are eight different <code class="literal">nice</code> levels available for
+      this scheduler. The lowest priority is represented by a
+      <code class="literal">nice</code> level of <code class="literal">7</code>, and the highest
+      priority is <code class="literal">0</code>.
+     </p><p>
+      This scheduler has the scheduling class number <code class="literal">2</code>.
+     </p></dd><dt id="id-1.4.2.9.3.2"><span class="term">The <span class="emphasis"><em>Real Time</em></span> scheduler</span></dt><dd><p>
+      The real-time I/O class always gets the highest priority for disk access.
+      The other schedulers will only be served if no real-time request is
+      present. This scheduling class may easily lock up the system if not
+      implemented with care.
+     </p><p>
+      The real-time scheduler defines <code class="literal">nice</code> levels (similar to
+      the <span class="emphasis"><em>Best Effort</em></span> scheduler).
+     </p><p>
+      This scheduler has the scheduling class number <code class="literal">1</code>.
+     </p></dd><dt id="id-1.4.2.9.3.3"><span class="term">The <span class="emphasis"><em>Idle</em></span> scheduler</span></dt><dd><p>
+      The <span class="emphasis"><em>Idle</em></span> scheduler does not define any
+      <code class="literal">nice</code> levels. I/O is only done in this class if no other
+      scheduler is running an I/O request. This scheduler has the lowest
+      available priority and can be used for processes that are not
+      time-critical.
+     </p><p>
+      This scheduler has the scheduling class number <code class="literal">3</code>.
+     </p></dd></dl></div><p>
+   To change I/O schedulers and <code class="literal">nice</code> values, use the
+   <code class="command">ionice</code> command. This provides a means to tune the
+   scheduler of already-running processes, or to start new processes with
+   specific I/O settings.
+  </p><div class="variablelist"><div class="title-container"><div class="variablelist-title-wrap"><div class="variablelist-title"><span class="title-number-name"><span class="title-name">Examples </span></span><a title="Permalink" class="permalink" href="#id-1.4.2.9.5">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div><dl class="variablelist"><dt id="id-1.4.2.9.5.2"><span class="term"><code class="command">ionice -c3 -p$$</code></span></dt><dd><p>
+      Sets the scheduler of the current shell to <code class="literal">Idle</code>.
+     </p></dd><dt id="id-1.4.2.9.5.3"><span class="term"><code class="command">ionice</code></span></dt><dd><p>
+      Without additional parameters, this prints the I/O scheduler settings of
+      the current shell.
+     </p></dd><dt id="id-1.4.2.9.5.4"><span class="term"><code class="command">ionice -c1 -p42 -n2</code></span></dt><dd><p>
+      Sets the scheduler of the process with process ID 42 to <code class="literal">Real
+      Time</code>, and its <code class="literal">nice</code> value to
+      <code class="literal">2</code>.
+     </p></dd><dt id="id-1.4.2.9.5.5"><span class="term"><code class="command">ionice -c3 /bin/bash</code></span></dt><dd><p>
+      Starts the Bash shell with the <code class="literal">Idle</code> I/O scheduler.
+     </p></dd></dl></div><p>
+   For more detailed information about <code class="command">ionice</code>, see the
+   <code class="command">ionice</code> man page with <code class="command">man 1 ionice</code>
+  </p></section><section class="sect1" id="sec-quick-io-block-change" data-id-title="Changing the I/O scheduler for block devices"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8 </span><span class="title-name">Changing the I/O scheduler for block devices</span></span> <a title="Permalink" class="permalink" href="#sec-quick-io-block-change">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   The Linux kernel provides several block device schedulers that can be
+   selected individually for each block device. All but the
+   <code class="literal">noop</code> scheduler perform a kind of ordering of requested
+   blocks to reduce head movements on the hard disk. If you use an external
+   storage system that has its own scheduler, you should disable the Linux
+   internal reordering by selecting the <code class="literal">noop</code> scheduler.
+  </p><div class="variablelist"><div class="title-container"><div class="variablelist-title-wrap"><div class="variablelist-title"><span class="title-number-name"><span class="title-name">The Linux I/O schedulers </span></span><a title="Permalink" class="permalink" href="#id-1.4.2.10.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div><dl class="variablelist"><dt id="id-1.4.2.10.3.2"><span class="term">noop</span></dt><dd><p>
+      The <span class="emphasis"><em>noop</em></span> scheduler is a very simple scheduler that
+      performs basic merging and sorting on I/O requests. This scheduler is
+      mainly used for specialized environments that run their own schedulers
+      optimized for the used hardware, such as storage systems or hardware RAID
+      controllers.
+     </p></dd><dt id="id-1.4.2.10.3.3"><span class="term">deadline</span></dt><dd><p>
+      The main point of <span class="emphasis"><em>deadline</em></span> scheduling is to try hard
+      to answer a request before a given deadline. This results in very good
+      I/O for a random single I/O in real-time environments.
+     </p><p>
+      In principle, the <span class="emphasis"><em>deadline</em></span> scheduler uses two lists
+      with all requests. One is sorted by block sequences to reduce seeking
+      latencies, the other is sorted by expire times for each request.
+      Normally, requests are served according to the block sequence, but if a
+      request reaches its deadline, the scheduler starts to work on this
+      request.
+     </p></dd><dt id="id-1.4.2.10.3.4"><span class="term">cfq</span></dt><dd><p>
+      The <span class="emphasis"><em>Completely Fair Queuing</em></span> scheduler uses a
+      separate I/O queue for each process. All of these queues get a similar
+      time slice for disk access. With this procedure, the
+      <span class="emphasis"><em>CFQ</em></span> tries to divide the bandwidth evenly between all
+      requesting processes. This scheduler allows throughput similar to the
+      <span class="emphasis"><em>anticipatory</em></span> scheduler, but the maximum latency is
+      much shorter.
+     </p><p>
+      For the average system, this scheduler yields the best results, and thus
+      it is the default I/O scheduler on SUSE Linux Enterprise systems.
+     </p></dd></dl></div><p>
+   To print the current scheduler of a block device such as
+   <code class="filename">/dev/sda</code>, use the following command:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">cat</code> /sys/block/sda/queue/scheduler
+noop deadline [cfq]</pre></div><p>
+   In this case, the scheduler for <code class="filename">/dev/sda</code> is set to
+   <code class="literal">cfq</code>, the <code class="literal">Completely Fair Queuing</code>
+   scheduler. This is the default scheduler on SUSE Linux Enterprise Real Time.
+  </p><p>
+   To change the schedulers, echo one of the names <code class="literal">noop</code>,
+   <code class="literal">deadline</code>, or <code class="literal">cfq</code> into
+   <code class="filename">/sys/block/&lt;device&gt;/scheduler</code>. For example, if
+   you want to set the I/O scheduler of the device
+   <code class="filename">/dev/sda</code> to <code class="literal">noop</code>, use the following
+   command:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">echo</code> "noop" &gt; /sys/block/sda/queue/scheduler</pre></div><p>
+   To set other variables in the <code class="filename">/sys</code> file system, use a
+   similar approach.
+  </p></section><section class="sect1" id="sec-quick-io-block-tune" data-id-title="Tuning the block device I/O scheduler"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">9 </span><span class="title-name">Tuning the block device I/O scheduler</span></span> <a title="Permalink" class="permalink" href="#sec-quick-io-block-tune">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   All schedulers, except for the <span class="emphasis"><em>noop</em></span> scheduler, have
+   several common parameters that may be tuned for each block device. You can
+   access these parameters with <code class="filename">sysfs</code> in the
+   <code class="filename">/sys/block/&lt;device&gt;/queue/iosched/</code> directory. The
+   following parameters are tuneable for the respective scheduler:
+  </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.2.11.3.1"><span class="term">Anticipatory scheduler</span></dt><dd><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.2.11.3.1.2.1.1"><span class="term"><code class="option">read_batch_expire</code></span></dt><dd><p>
+         If write requests are scheduled, this is the time in milliseconds that
+         reads are served before pending writes get a time slice. If writes are
+         more important than reads, set this value lower than
+         <code class="option">read_expire</code>.
+        </p></dd><dt id="id-1.4.2.11.3.1.2.1.2"><span class="term"><code class="option">write_batch_expire</code></span></dt><dd><p>
+         Similar to <code class="option">read_batch_expire</code> for write requests.
+        </p></dd></dl></div></dd><dt id="id-1.4.2.11.3.2"><span class="term">Deadline scheduler</span></dt><dd><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.2.11.3.2.2.1.1"><span class="term"><code class="option">read_expire</code></span></dt><dd><p>
+         The main focus of this scheduler is to limit the start latency for a
+         request to a given time. Therefore, for each request, a deadline is
+         calculated from the current time plus the value of
+         <code class="option">read_expire</code> in milliseconds.
+        </p></dd><dt id="id-1.4.2.11.3.2.2.1.2"><span class="term"><code class="option">write_expire</code></span></dt><dd><p>
+         Similar to <code class="option">read_expire</code> for write requests.
+        </p></dd><dt id="id-1.4.2.11.3.2.2.1.3"><span class="term"><code class="option">fifo_batch</code></span></dt><dd><p>
+         If a request hits its deadline, it is necessary to move the request
+         from the sorted I/O scheduler list to the dispatch queue. The variable
+         <code class="option">fifo_batch</code> controls how many requests are moved,
+         depending on the cost of each request.
+        </p></dd><dt id="id-1.4.2.11.3.2.2.1.4"><span class="term"><code class="option">front_merges</code></span></dt><dd><p>
+         The scheduler normally tries to find contiguous I/O requests and
+         merges them. There are two kinds of merges: The new I/O request may be
+         in front of the existing I/O request (front merge), or it may follow
+         behind the existing request (back merge). Most merges are back merges.
+         Therefore, you can disable the front merge functionality by setting
+         <code class="option">front_merges</code> to <code class="literal">0</code>.
+        </p></dd><dt id="id-1.4.2.11.3.2.2.1.5"><span class="term"><code class="option">write_starved</code></span></dt><dd><p>
+         In case some read or write requests hit their deadline, the scheduler
+         prefers the read requests by default. To prevent write requests from
+         being postponed forever, the variable <code class="option">write_starved</code>
+         controls how often read requests are preferred until write requests
+         are preferred over read requests.
+        </p></dd></dl></div></dd><dt id="id-1.4.2.11.3.3"><span class="term">CFQ Scheduler</span></dt><dd><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.2.11.3.3.2.1.1"><span class="term"><code class="option">back_seek_max</code> and <code class="option">back_seek_penalty</code></span></dt><dd><p>
+         The <span class="emphasis"><em>CFQ</em></span> scheduler normally uses a strict
+         ascending elevator. When needed, it also allows small backward seeks,
+         but it puts some penalty on them. The maximum backward sector seek is
+         defined with <code class="option">back_seek_max</code>, and the multiplier for
+         the penalty is set by <code class="option">back_seek_penalty</code>.
+        </p></dd><dt id="id-1.4.2.11.3.3.2.1.2"><span class="term"><code class="option">fifo_expire_async</code> and <code class="option">fifo_expire_sync</code></span></dt><dd><p>
+         The <code class="option">fifo_expire_*</code> variables define the timeout in
+         milliseconds for asynchronous and synchronous I/O requests. To prefer
+         synchronous operations over asynchronous ones,
+         <code class="option">fifo_expire_sync</code> value should be lower than
+         fifo_expire_async.
+        </p></dd><dt id="id-1.4.2.11.3.3.2.1.3"><span class="term"><code class="option">quantum</code></span></dt><dd><p>
+         Defines number of I/O requests to be dispatched at once by the block
+         device. This parameter is used for synchronous requests.
+        </p></dd><dt id="id-1.4.2.11.3.3.2.1.4"><span class="term"><code class="option">slice_async</code>, <code class="option">slice_async_rq</code>, <code class="option">slice_sync</code>, and <code class="option">slice_idle</code></span></dt><dd><p>
+         These variables define the time slices a block device gets for
+         synchronous or asynchronous operations.
+        </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+           <code class="option">slice_async</code> and <code class="option">slice_sync</code> serve
+           as a base value in milliseconds for asynchronous or synchronous disk
+           slice length calculations.
+          </p></li><li class="listitem"><p>
+           <code class="option">slice_async_rq</code> for how many requests can an
+           asynchronous disk slice accommodate.
+          </p></li><li class="listitem"><p>
+           <code class="option">slice_idle</code> defines how long I/O scheduler idles
+           before servicing next thread.
+          </p></li></ul></div></dd></dl></div></dd></dl></div><p>
+   The system default Block Device I/O Scheduler can be also set by the kernel
+   parameter <code class="literal">elevator=</code>. For example,
+   <code class="literal">elevator=deadline</code> changes the I/O Scheduler to
+   <code class="literal">deadline</code>.
+  </p></section><section class="sect1" id="sec-quick-more" data-id-title="More information"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">10 </span><span class="title-name">More information</span></span> <a title="Permalink" class="permalink" href="#sec-quick-more">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/article_setup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   A lot of information about real-time implementations and administration can
+   be found on the Internet. The following list contains several selected
+   links:
+
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+     More detailed information about the real-time Linux development and an
+     introduction how to write a real-time application can be found in the
+     real-time Linux community Wiki.
+     <a class="link" href="https://rt.wiki.kernel.org" target="_blank">https://rt.wiki.kernel.org</a>, <a class="link" href="https://rt.wiki.kernel.org/index.php/HOWTO:_Build_an_RT-application" target="_blank">https://rt.wiki.kernel.org/index.php/HOWTO:_Build_an_RT-application</a>
+    </p></li><li class="listitem"><p>
+     The <code class="systemitem">cpuset</code> feature of the kernel is explained in
+     <code class="filename">/usr/src/linux/Documentation/cgroups/cpusets.txt</code>.
+     More detailed documentation is available from
+
+     <a class="link" href="http://lwn.net/Articles/127936/" target="_blank">http://lwn.net/Articles/127936/</a>. --&gt;
+    </p></li><li class="listitem"><p>
+     For more information about the deadline I/O scheduler, refer to
+     <a class="link" href="https://en.wikipedia.org/wiki/Deadline_scheduler" target="_blank">https://en.wikipedia.org/wiki/Deadline_scheduler</a>.
+
+     In your installed system, find further information in
+     <code class="filename">/usr/src/linux/Documentation/block/deadline-iosched.txt</code>.
+    </p></li><li class="listitem"><p>
+     The CFQ I/O scheduler is covered in detail in
+     <a class="link" href="http://en.wikipedia.org/wiki/CFQ" target="_blank">http://en.wikipedia.org/wiki/CFQ</a> and
+     <code class="filename">/usr/src/linux/Documentation/block/cfq-iosched.txt</code>.
+    </p></li></ul></div></section><div class="legal-section"><section class="appendix" id="id-1.4.2.13" data-id-title="GNU Licenses"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">A </span><span class="title-name">GNU Licenses</span></span> <a title="Permalink" class="permalink" href="#id-1.4.2.13">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/common_legal.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  This appendix contains the GNU Free Documentation License version 1.2.
+ </p><section class="sect1" id="id-1.4.2.13.4" data-id-title="GNU Free Documentation License"><div class="titlepage"><div><div><div class="title-container"><h2 class="title legal"><span class="title-number-name"><span class="title-name">GNU Free Documentation License</span></span> <a title="Permalink" class="permalink" href="#id-1.4.2.13.4">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/common_gfdl1.2_i.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  Copyright (C) 2000, 2001, 2002 Free Software Foundation, Inc. 51 Franklin
+  St, Fifth Floor, Boston, MA 02110-1301 USA. Everyone is permitted to copy
+  and distribute verbatim copies of this license document, but changing it
+  is not allowed.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.2.13.4.3"><span class="name">
+    0. PREAMBLE
+  </span><a title="Permalink" class="permalink" href="#id-1.4.2.13.4.3">#</a></h5></div><p>
+  The purpose of this License is to make a manual, textbook, or other
+  functional and useful document "free" in the sense of freedom: to assure
+  everyone the effective freedom to copy and redistribute it, with or
+  without modifying it, either commercially or noncommercially. Secondarily,
+  this License preserves for the author and publisher a way to get credit
+  for their work, while not being considered responsible for modifications
+  made by others.
+ </p><p>
+  This License is a kind of "copyleft", which means that derivative works of
+  the document must themselves be free in the same sense. It complements the
+  GNU General Public License, which is a copyleft license designed for free
+  software.
+ </p><p>
+  We have designed this License in order to use it for manuals for free
+  software, because free software needs free documentation: a free program
+  should come with manuals providing the same freedoms that the software
+  does. But this License is not limited to software manuals; it can be used
+  for any textual work, regardless of subject matter or whether it is
+  published as a printed book. We recommend this License principally for
+  works whose purpose is instruction or reference.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.2.13.4.7"><span class="name">
+    1. APPLICABILITY AND DEFINITIONS
+  </span><a title="Permalink" class="permalink" href="#id-1.4.2.13.4.7">#</a></h5></div><p>
+  This License applies to any manual or other work, in any medium, that
+  contains a notice placed by the copyright holder saying it can be
+  distributed under the terms of this License. Such a notice grants a
+  world-wide, royalty-free license, unlimited in duration, to use that work
+  under the conditions stated herein. The "Document", below, refers to any
+  such manual or work. Any member of the public is a licensee, and is
+  addressed as "you". You accept the license if you copy, modify or
+  distribute the work in a way requiring permission under copyright law.
+ </p><p>
+  A "Modified Version" of the Document means any work containing the
+  Document or a portion of it, either copied verbatim, or with modifications
+  and/or translated into another language.
+ </p><p>
+  A "Secondary Section" is a named appendix or a front-matter section of the
+  Document that deals exclusively with the relationship of the publishers or
+  authors of the Document to the Document's overall subject (or to related
+  matters) and contains nothing that could fall directly within that overall
+  subject. (Thus, if the Document is in part a textbook of mathematics, a
+  Secondary Section may not explain any mathematics.) The relationship could
+  be a matter of historical connection with the subject or with related
+  matters, or of legal, commercial, philosophical, ethical or political
+  position regarding them.
+ </p><p>
+  The "Invariant Sections" are certain Secondary Sections whose titles are
+  designated, as being those of Invariant Sections, in the notice that says
+  that the Document is released under this License. If a section does not
+  fit the above definition of Secondary then it is not allowed to be
+  designated as Invariant. The Document may contain zero Invariant Sections.
+  If the Document does not identify any Invariant Sections then there are
+  none.
+ </p><p>
+  The "Cover Texts" are certain short passages of text that are listed, as
+  Front-Cover Texts or Back-Cover Texts, in the notice that says that the
+  Document is released under this License. A Front-Cover Text may be at most
+  5 words, and a Back-Cover Text may be at most 25 words.
+ </p><p>
+  A "Transparent" copy of the Document means a machine-readable copy,
+  represented in a format whose specification is available to the general
+  public, that is suitable for revising the document straightforwardly with
+  generic text editors or (for images composed of pixels) generic paint
+  programs or (for drawings) some widely available drawing editor, and that
+  is suitable for input to text formatters or for automatic translation to a
+  variety of formats suitable for input to text formatters. A copy made in
+  an otherwise Transparent file format whose markup, or absence of markup,
+  has been arranged to thwart or discourage subsequent modification by
+  readers is not Transparent. An image format is not Transparent if used for
+  any substantial amount of text. A copy that is not "Transparent" is called
+  "Opaque".
+ </p><p>
+  Examples of suitable formats for Transparent copies include plain ASCII
+  without markup, Texinfo input format, LaTeX input format, SGML or XML
+  using a publicly available DTD, and standard-conforming simple HTML,
+  PostScript or PDF designed for human modification. Examples of transparent
+  image formats include PNG, XCF and JPG. Opaque formats include proprietary
+  formats that can be read and edited only by proprietary word processors,
+  SGML or XML for which the DTD and/or processing tools are not generally
+  available, and the machine-generated HTML, PostScript or PDF produced by
+  some word processors for output purposes only.
+ </p><p>
+  The "Title Page" means, for a printed book, the title page itself, plus
+  such following pages as are needed to hold, legibly, the material this
+  License requires to appear in the title page. For works in formats which
+  do not have any title page as such, "Title Page" means the text near the
+  most prominent appearance of the work's title, preceding the beginning of
+  the body of the text.
+ </p><p>
+  A section "Entitled XYZ" means a named subunit of the Document whose title
+  either is precisely XYZ or contains XYZ in parentheses following text that
+  translates XYZ in another language. (Here XYZ stands for a specific
+  section name mentioned below, such as "Acknowledgements", "Dedications",
+  "Endorsements", or "History".) To "Preserve the Title" of such a section
+  when you modify the Document means that it remains a section "Entitled
+  XYZ" according to this definition.
+ </p><p>
+  The Document may include Warranty Disclaimers next to the notice which
+  states that this License applies to the Document. These Warranty
+  Disclaimers are considered to be included by reference in this License,
+  but only as regards disclaiming warranties: any other implication that
+  these Warranty Disclaimers may have is void and has no effect on the
+  meaning of this License.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.2.13.4.18"><span class="name">
+    2. VERBATIM COPYING
+  </span><a title="Permalink" class="permalink" href="#id-1.4.2.13.4.18">#</a></h5></div><p>
+  You may copy and distribute the Document in any medium, either
+  commercially or noncommercially, provided that this License, the copyright
+  notices, and the license notice saying this License applies to the
+  Document are reproduced in all copies, and that you add no other
+  conditions whatsoever to those of this License. You may not use technical
+  measures to obstruct or control the reading or further copying of the
+  copies you make or distribute. However, you may accept compensation in
+  exchange for copies. If you distribute a large enough number of copies you
+  must also follow the conditions in section 3.
+ </p><p>
+  You may also lend copies, under the same conditions stated above, and you
+  may publicly display copies.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.2.13.4.21"><span class="name">
+    3. COPYING IN QUANTITY
+  </span><a title="Permalink" class="permalink" href="#id-1.4.2.13.4.21">#</a></h5></div><p>
+  If you publish printed copies (or copies in media that commonly have
+  printed covers) of the Document, numbering more than 100, and the
+  Document's license notice requires Cover Texts, you must enclose the
+  copies in covers that carry, clearly and legibly, all these Cover Texts:
+  Front-Cover Texts on the front cover, and Back-Cover Texts on the back
+  cover. Both covers must also clearly and legibly identify you as the
+  publisher of these copies. The front cover must present the full title
+  with all words of the title equally prominent and visible. You may add
+  other material on the covers in addition. Copying with changes limited to
+  the covers, as long as they preserve the title of the Document and satisfy
+  these conditions, can be treated as verbatim copying in other respects.
+ </p><p>
+  If the required texts for either cover are too voluminous to fit legibly,
+  you should put the first ones listed (as many as fit reasonably) on the
+  actual cover, and continue the rest onto adjacent pages.
+ </p><p>
+  If you publish or distribute Opaque copies of the Document numbering more
+  than 100, you must either include a machine-readable Transparent copy
+  along with each Opaque copy, or state in or with each Opaque copy a
+  computer-network location from which the general network-using public has
+  access to download using public-standard network protocols a complete
+  Transparent copy of the Document, free of added material. If you use the
+  latter option, you must take reasonably prudent steps, when you begin
+  distribution of Opaque copies in quantity, to ensure that this Transparent
+  copy will remain thus accessible at the stated location until at least one
+  year after the last time you distribute an Opaque copy (directly or
+  through your agents or retailers) of that edition to the public.
+ </p><p>
+  It is requested, but not required, that you contact the authors of the
+  Document well before redistributing any large number of copies, to give
+  them a chance to provide you with an updated version of the Document.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.2.13.4.26"><span class="name">
+    4. MODIFICATIONS
+  </span><a title="Permalink" class="permalink" href="#id-1.4.2.13.4.26">#</a></h5></div><p>
+  You may copy and distribute a Modified Version of the Document under the
+  conditions of sections 2 and 3 above, provided that you release the
+  Modified Version under precisely this License, with the Modified Version
+  filling the role of the Document, thus licensing distribution and
+  modification of the Modified Version to whoever possesses a copy of it. In
+  addition, you must do these things in the Modified Version:
+ </p><div class="orderedlist"><ol class="orderedlist" type="A"><li class="listitem"><p>
+    Use in the Title Page (and on the covers, if any) a title distinct from
+    that of the Document, and from those of previous versions (which should,
+    if there were any, be listed in the History section of the Document).
+    You may use the same title as a previous version if the original
+    publisher of that version gives permission.
+   </p></li><li class="listitem"><p>
+    List on the Title Page, as authors, one or more persons or entities
+    responsible for authorship of the modifications in the Modified Version,
+    together with at least five of the principal authors of the Document
+    (all of its principal authors, if it has fewer than five), unless they
+    release you from this requirement.
+   </p></li><li class="listitem"><p>
+    State on the Title page the name of the publisher of the Modified
+    Version, as the publisher.
+   </p></li><li class="listitem"><p>
+    Preserve all the copyright notices of the Document.
+   </p></li><li class="listitem"><p>
+    Add an appropriate copyright notice for your modifications adjacent to
+    the other copyright notices.
+   </p></li><li class="listitem"><p>
+    Include, immediately after the copyright notices, a license notice
+    giving the public permission to use the Modified Version under the terms
+    of this License, in the form shown in the Addendum below.
+   </p></li><li class="listitem"><p>
+    Preserve in that license notice the full lists of Invariant Sections and
+    required Cover Texts given in the Document's license notice.
+   </p></li><li class="listitem"><p>
+    Include an unaltered copy of this License.
+   </p></li><li class="listitem"><p>
+    Preserve the section Entitled "History", Preserve its Title, and add to
+    it an item stating at least the title, year, new authors, and publisher
+    of the Modified Version as given on the Title Page. If there is no
+    section Entitled "History" in the Document, create one stating the
+    title, year, authors, and publisher of the Document as given on its
+    Title Page, then add an item describing the Modified Version as stated
+    in the previous sentence.
+   </p></li><li class="listitem"><p>
+    Preserve the network location, if any, given in the Document for public
+    access to a Transparent copy of the Document, and likewise the network
+    locations given in the Document for previous versions it was based on.
+    These may be placed in the "History" section. You may omit a network
+    location for a work that was published at least four years before the
+    Document itself, or if the original publisher of the version it refers
+    to gives permission.
+   </p></li><li class="listitem"><p>
+    For any section Entitled "Acknowledgements" or "Dedications", Preserve
+    the Title of the section, and preserve in the section all the substance
+    and tone of each of the contributor acknowledgements and/or dedications
+    given therein.
+   </p></li><li class="listitem"><p>
+    Preserve all the Invariant Sections of the Document, unaltered in their
+    text and in their titles. Section numbers or the equivalent are not
+    considered part of the section titles.
+   </p></li><li class="listitem"><p>
+    Delete any section Entitled "Endorsements". Such a section may not be
+    included in the Modified Version.
+   </p></li><li class="listitem"><p>
+    Do not retitle any existing section to be Entitled "Endorsements" or to
+    conflict in title with any Invariant Section.
+   </p></li><li class="listitem"><p>
+    Preserve any Warranty Disclaimers.
+   </p></li></ol></div><p>
+  If the Modified Version includes new front-matter sections or appendices
+  that qualify as Secondary Sections and contain no material copied from the
+  Document, you may at your option designate some or all of these sections
+  as invariant. To do this, add their titles to the list of Invariant
+  Sections in the Modified Version's license notice. These titles must be
+  distinct from any other section titles.
+ </p><p>
+  You may add a section Entitled "Endorsements", provided it contains
+  nothing but endorsements of your Modified Version by various parties--for
+  example, statements of peer review or that the text has been approved by
+  an organization as the authoritative definition of a standard.
+ </p><p>
+  You may add a passage of up to five words as a Front-Cover Text, and a
+  passage of up to 25 words as a Back-Cover Text, to the end of the list of
+  Cover Texts in the Modified Version. Only one passage of Front-Cover Text
+  and one of Back-Cover Text may be added by (or through arrangements made
+  by) any one entity. If the Document already includes a cover text for the
+  same cover, previously added by you or by arrangement made by the same
+  entity you are acting on behalf of, you may not add another; but you may
+  replace the old one, on explicit permission from the previous publisher
+  that added the old one.
+ </p><p>
+  The author(s) and publisher(s) of the Document do not by this License give
+  permission to use their names for publicity for or to assert or imply
+  endorsement of any Modified Version.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.2.13.4.33"><span class="name">
+    5. COMBINING DOCUMENTS
+  </span><a title="Permalink" class="permalink" href="#id-1.4.2.13.4.33">#</a></h5></div><p>
+  You may combine the Document with other documents released under this
+  License, under the terms defined in section 4 above for modified versions,
+  provided that you include in the combination all of the Invariant Sections
+  of all of the original documents, unmodified, and list them all as
+  Invariant Sections of your combined work in its license notice, and that
+  you preserve all their Warranty Disclaimers.
+ </p><p>
+  The combined work need only contain one copy of this License, and multiple
+  identical Invariant Sections may be replaced with a single copy. If there
+  are multiple Invariant Sections with the same name but different contents,
+  make the title of each such section unique by adding at the end of it, in
+  parentheses, the name of the original author or publisher of that section
+  if known, or else a unique number. Make the same adjustment to the section
+  titles in the list of Invariant Sections in the license notice of the
+  combined work.
+ </p><p>
+  In the combination, you must combine any sections Entitled "History" in
+  the various original documents, forming one section Entitled "History";
+  likewise combine any sections Entitled "Acknowledgements", and any
+  sections Entitled "Dedications". You must delete all sections Entitled
+  "Endorsements".
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.2.13.4.37"><span class="name">
+    6. COLLECTIONS OF DOCUMENTS
+  </span><a title="Permalink" class="permalink" href="#id-1.4.2.13.4.37">#</a></h5></div><p>
+  You may make a collection consisting of the Document and other documents
+  released under this License, and replace the individual copies of this
+  License in the various documents with a single copy that is included in
+  the collection, provided that you follow the rules of this License for
+  verbatim copying of each of the documents in all other respects.
+ </p><p>
+  You may extract a single document from such a collection, and distribute
+  it individually under this License, provided you insert a copy of this
+  License into the extracted document, and follow this License in all other
+  respects regarding verbatim copying of that document.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.2.13.4.40"><span class="name">
+    7. AGGREGATION WITH INDEPENDENT WORKS
+  </span><a title="Permalink" class="permalink" href="#id-1.4.2.13.4.40">#</a></h5></div><p>
+  A compilation of the Document or its derivatives with other separate and
+  independent documents or works, in or on a volume of a storage or
+  distribution medium, is called an "aggregate" if the copyright resulting
+  from the compilation is not used to limit the legal rights of the
+  compilation's users beyond what the individual works permit. When the
+  Document is included in an aggregate, this License does not apply to the
+  other works in the aggregate which are not themselves derivative works of
+  the Document.
+ </p><p>
+  If the Cover Text requirement of section 3 is applicable to these copies
+  of the Document, then if the Document is less than one half of the entire
+  aggregate, the Document's Cover Texts may be placed on covers that bracket
+  the Document within the aggregate, or the electronic equivalent of covers
+  if the Document is in electronic form. Otherwise they must appear on
+  printed covers that bracket the whole aggregate.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.2.13.4.43"><span class="name">
+    8. TRANSLATION
+  </span><a title="Permalink" class="permalink" href="#id-1.4.2.13.4.43">#</a></h5></div><p>
+  Translation is considered a kind of modification, so you may distribute
+  translations of the Document under the terms of section 4. Replacing
+  Invariant Sections with translations requires special permission from
+  their copyright holders, but you may include translations of some or all
+  Invariant Sections in addition to the original versions of these Invariant
+  Sections. You may include a translation of this License, and all the
+  license notices in the Document, and any Warranty Disclaimers, provided
+  that you also include the original English version of this License and the
+  original versions of those notices and disclaimers. In case of a
+  disagreement between the translation and the original version of this
+  License or a notice or disclaimer, the original version will prevail.
+ </p><p>
+  If a section in the Document is Entitled "Acknowledgements",
+  "Dedications", or "History", the requirement (section 4) to Preserve its
+  Title (section 1) will typically require changing the actual title.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.2.13.4.46"><span class="name">
+    9. TERMINATION
+  </span><a title="Permalink" class="permalink" href="#id-1.4.2.13.4.46">#</a></h5></div><p>
+  You may not copy, modify, sublicense, or distribute the Document except as
+  expressly provided for under this License. Any other attempt to copy,
+  modify, sublicense or distribute the Document is void, and will
+  automatically terminate your rights under this License. However, parties
+  who have received copies, or rights, from you under this License will not
+  have their licenses terminated so long as such parties remain in full
+  compliance.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.2.13.4.48"><span class="name">
+    10. FUTURE REVISIONS OF THIS LICENSE
+  </span><a title="Permalink" class="permalink" href="#id-1.4.2.13.4.48">#</a></h5></div><p>
+  The Free Software Foundation may publish new, revised versions of the GNU
+  Free Documentation License from time to time. Such new versions will be
+  similar in spirit to the present version, but may differ in detail to
+  address new problems or concerns. See
+  <a class="link" href="http://www.gnu.org/copyleft/" target="_blank">http://www.gnu.org/copyleft/</a>.
+ </p><p>
+  Each version of the License is given a distinguishing version number. If
+  the Document specifies that a particular numbered version of this License
+  "or any later version" applies to it, you have the option of following the
+  terms and conditions either of that specified version or of any later
+  version that has been published (not as a draft) by the Free Software
+  Foundation. If the Document does not specify a version number of this
+  License, you may choose any version ever published (not as a draft) by the
+  Free Software Foundation.
+ </p><div class="sect4 bridgehead"><h5 class="title legal" id="id-1.4.2.13.4.51"><span class="name">
+    ADDENDUM: How to use this License for your documents
+  </span><a title="Permalink" class="permalink" href="#id-1.4.2.13.4.51">#</a></h5></div><div class="verbatim-wrap"><pre class="screen">   Copyright (c) YEAR YOUR NAME.
+   Permission is granted to copy, distribute and/or modify this document
+   under the terms of the GNU Free Documentation License, Version 1.2
+   or any later version published by the Free Software Foundation;
+   with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+   A copy of the license is included in the section entitled &amp;ldquo;GNU
+   Free Documentation License&amp;rdquo;.</pre></div><p>
+  If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
+  replace the “with...Texts.” line with this:
+ </p><div class="verbatim-wrap"><pre class="screen">   with the Invariant Sections being LIST THEIR TITLES, with the
+   Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.</pre></div><p>
+  If you have Invariant Sections without Cover Texts, or some other
+  combination of the three, merge those two alternatives to suit the
+  situation.
+ </p><p>
+  If your document contains nontrivial examples of program code, we
+  recommend releasing these examples in parallel under your choice of free
+  software license, such as the GNU General Public License, to permit their
+  use in free software.
+ </p></section></section></div></section></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="#sec-slert-quick-overview"><span class="title-number">1 </span><span class="title-name">Product overview</span></a></span></li><li><span class="sect1"><a href="#sec-slert-quick-install"><span class="title-number">2 </span><span class="title-name">Installing SUSE Linux Enterprise Real Time</span></a></span></li><li><span class="sect1"><a href="#sec-slert-quick-cset"><span class="title-number">3 </span><span class="title-name">Managing CPU sets with <code class="command">cset</code></span></a></span></li><li><span class="sect1"><a href="#sec-slert-csets-tree"><span class="title-number">4 </span><span class="title-name">Managing tree-like structures with <code class="command">cset</code></span></a></span></li><li><span class="sect1"><a href="#sec-quick-chrt"><span class="title-number">5 </span><span class="title-name">Setting Real-time Attributes of a Process with <code class="command">chrt</code></span></a></span></li><li><span class="sect1"><a href="#sec-quick-taskset"><span class="title-number">6 </span><span class="title-name">Specifying CPU affinity with <code class="command">taskset</code></span></a></span></li><li><span class="sect1"><a href="#sec-quick-ionice"><span class="title-number">7 </span><span class="title-name">Changing I/O priorities with <code class="command">ionice</code></span></a></span></li><li><span class="sect1"><a href="#sec-quick-io-block-change"><span class="title-number">8 </span><span class="title-name">Changing the I/O scheduler for block devices</span></a></span></li><li><span class="sect1"><a href="#sec-quick-io-block-tune"><span class="title-number">9 </span><span class="title-name">Tuning the block device I/O scheduler</span></a></span></li><li><span class="sect1"><a href="#sec-quick-more"><span class="title-number">10 </span><span class="title-name">More information</span></a></span></li><li><span class="appendix"><a href="#id-1.4.2.13"><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></span><ul><li><span class="sect1"><a href="#id-1.4.2.13.4"><span class="title-number">A.1 </span><span class="title-name">GNU Free Documentation License</span></a></span></li></ul></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter/X"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2023</span></div></div></footer></body></html>
