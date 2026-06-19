@@ -3,7 +3,7 @@
 <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.dcterms" href="http://purl.org/dc/terms/"/>
 <meta name="dcterms.created" content="2022-11-25"/>
 <meta name="dcterms.modified" content="2022-11-25"/>
-<meta name="dcterms.dateSubmitted" content="2026-05-12"/>
+<meta name="dcterms.dateSubmitted" content="2026-06-19"/>
 <meta name="title" content="Shielding with systemd | SLE RT 15 SP7"/>
 <meta name="description" content="Shielding with systemd"/>
 <meta name="product-name" content="SUSE Linux Enterprise Real Time"/>
@@ -48,7 +48,7 @@
       
     "dateCreated": "2022-11-25T00:00+02:00",
     "dateModified": "2022-11-25T00:00+02:00",
-    "datePublished": "2026-05-12T13:59+02:00",
+    "datePublished": "2026-06-19T10:59+02:00",
 
     "about": [
       
@@ -103,6 +103,10 @@
 [Scope]
 AllowedCPUs=0-1</pre></div><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>cat /etc/systemd/system/system.slice.d/40-shielding.conf
 [Slice]
+AllowedCPUs=0-1</pre></div><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>cat /etc/systemd/system/user.slice.d/40-shielding.conf
+[Slice]
+AllowedCPUs=0-1</pre></div><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>cat /etc/systemd/system/machine.slice.d/40-shielding.conf
+[Slice]
 AllowedCPUs=0-1</pre></div><p>
         This way we constrain the supporting system workload just to the first two CPUs.
 </p><p>
@@ -110,15 +114,22 @@ AllowedCPUs=0-1</pre></div><p>
 </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>cat /etc/systemd/system/workload.slice
 [Slice]
 AllowedCPUs=2-15</pre></div><p>
-        The setup can also be changed at runtime (for debugging reasons):
-</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>systemctl set-property --runtime workload.slice AllowedCPUs=4-15
-<code class="prompt user">root # </code>systemctl set-property --runtime init.scope AllowedCPUs=0-3
-<code class="prompt user">root # </code>systemctl set-property --runtime system.slice AllowedCPUs=0-3</pre></div></section><section class="sect1" id="sec-shielding-systemd-ex-move" data-id-title="Running jobs in the shield"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3.2 </span><span class="title-name">Running jobs in the shield</span></span> <a title="Permalink" class="permalink" href="cha-shielding-with-systemd.html#sec-shielding-systemd-ex-move">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_systemd_shielding.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+        and apply the new config files to systemd:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>systemctl daemon-reload</pre></div><p>
+        The setup can also be changed dynamically until the next reboot (for debugging reasons):
+</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>systemctl set-property --runtime workload.slice AllowedCPUs=2-15
+<code class="prompt user">root # </code>systemctl set-property --runtime init.scope AllowedCPUs=0-1
+<code class="prompt user">root # </code>systemctl set-property --runtime system.slice AllowedCPUs=0-1
+<code class="prompt user">root # </code>systemctl set-property --runtime user.slice AllowedCPUs=0-1
+<code class="prompt user">root # </code>systemctl set-property --runtime machine.slice AllowedCPUs=0-1</pre></div></section><section class="sect1" id="sec-shielding-systemd-ex-move" data-id-title="Running jobs in the shield"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3.2 </span><span class="title-name">Running jobs in the shield</span></span> <a title="Permalink" class="permalink" href="cha-shielding-with-systemd.html#sec-shielding-systemd-ex-move">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-slert/edit/main/xml/slert_systemd_shielding.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     When the <code class="literal">workload.slice</code> is prepared according to the previous section, running the sensitive jobs is as simple as configuring their service into that slice.
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>cat /etc/systemd/system/sensitive.service.d/40-shielding.conf
 [Service]
 Slice=workload.slice</pre></div><div id="id-1.3.5.5.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>Beware that the <code class="literal">Slice=</code> directive only takes effect upon service (re)start.</p></div><p>
-        Should not the sensitive job have a form of a service but an ad-hoc command, you may start it in a systemd scope:
-</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>systemd-run --scope -p Slice=workload.slice command arg1 ...</pre></div><div id="id-1.3.5.5.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>Existing processes cannot be moved under the shield since that would involve process migration between cgroups which would cause distortion of the accounting state.
-        But sensitive workload should start with their resources secured in advance anyway.</p></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-shielding-model.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 2 </span>The basic shielding model</span></a> </div><div><a class="pagination-link next" href="cha-shielding-cpuset.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 4 </span>Full-featured cpuset manipulation commands</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-shielding-with-systemd.html#sec-systemd-shielding-teardown"><span class="title-number">3.1 </span><span class="title-name">Setup of the shield</span></a></span></li><li><span class="sect1"><a href="cha-shielding-with-systemd.html#sec-shielding-systemd-ex-move"><span class="title-number">3.2 </span><span class="title-name">Running jobs in the shield</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE  2026</span></div></div></footer>
+        Should not the sensitive job have a form of a service, but an ad-hoc command, you may start it in a systemd scope:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>systemd-run --scope --uid=&lt;UID&gt; -p Slice=workload.slice command arg1 ...</pre></div><p>
+       Starting such a scope is a privileged operation, but you can pass the <code class="literal">--uid</code>
+        argument to run the workload as the given user.
+</p><div id="id-1.3.5.5.8" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>Existing processes cannot be moved under the shield since that would involve process migration between cgroups, which would distort the accounting state.
+        But sensitive workloads should start with their resources secured in advance anyway.</p></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-shielding-model.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 2 </span>The basic shielding model</span></a> </div><div><a class="pagination-link next" href="cha-shielding-cpuset.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 4 </span>Full-featured cpuset manipulation commands</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-shielding-with-systemd.html#sec-systemd-shielding-teardown"><span class="title-number">3.1 </span><span class="title-name">Setup of the shield</span></a></span></li><li><span class="sect1"><a href="cha-shielding-with-systemd.html#sec-shielding-systemd-ex-move"><span class="title-number">3.2 </span><span class="title-name">Running jobs in the shield</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE  2026</span></div></div></footer>
 <script type="text/javascript" src="static/js/language-switcher.js"> </script></body></html>
